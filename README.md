@@ -512,7 +512,6 @@ O lançamento é feito sempre a partir do `node1`, que é o primeiro nó de todo
 | [`dados/por_execucao.csv`](dados/por_execucao.csv) | Uma linha por execução (54): Tmax, Tcomp, Tcomm, Fcomm, trocas, checksum e volumes |
 | [`dados/por_rank.csv`](dados/por_rank.csv) | Uma linha por rank e execução (288): tempos por chamada, contagens, linhas e nó |
 | [`dados/tempo_externo.csv`](dados/tempo_externo.csv) | Tempo externo (`date`) de cada `mpirun` |
-| [`dados/ambiente.md`](dados/ambiente.md) | Ambiente de teste e fontes de cada informação |
 | [`dados/saidas_brutas_completas.txt`](dados/saidas_brutas_completas.txt) | Saídas completas de todas as execuções, calibração do serial, validações, `carga.log` e machinefiles |
 
 ### 12.4 Estrutura do repositório
