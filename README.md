@@ -14,7 +14,7 @@ Este trabalho paraleliza, com MPI, o mesmo algoritmo do trabalho anterior (memó
 - **Weak scaling:** com o trabalho por processo constante (N ∝ P^(1/3)), o Tcomp fica em ~30 s em todos os P, mas o Tmax sobe de 30,3 s para 74,7 s (eficiência fraca de 40,6% com 13 processos). Com N = P × 500 (literal do enunciado), o tempo vai de 0,28 s a 176,5 s.
 - **Otimização:** enviar só as colunas úteis da linha pivô (as à esquerda de k são zeros) reduz 25,0% dos bytes do `Bcast` e dá speedup de **1,28× a 1,33×** sobre a versão original em todos os P, sem mudar o resultado. A saturação, porém, continua.
 - **OpenMP vs MPI:** com 4 threads o OpenMP (trabalho anterior) chegou a 1,22× por saturar a banda de memória compartilhada; com 4 processos, um por nó, o MPI chegou a 3,24×. O gargalo trocou de lugar: da memória para a rede.
-- **Limitações declaradas:** `/usr/bin/time -v`, mpiP e `perf` não estão instalados no cluster e não foram usados; o P = 16 não foi executado. A seção 13 lista todas.
+- **Limitações declaradas:** `/usr/bin/time -v`, mpiP e `perf` não estão instalados no cluster e não foram usados. A seção 12 lista todas.
 
 ## Sumário
 
@@ -25,12 +25,11 @@ Este trabalho paraleliza, com MPI, o mesmo algoritmo do trabalho anterior (memó
 - [5. Weak scaling](#5-weak-scaling)
 - [6. Comunicação vs computação](#6-comunicação-vs-computação)
 - [7. mpiP: análise das chamadas MPI mais caras](#7-mpip-análise-das-chamadas-mpi-mais-caras)
-- [8. perf stat](#8-perf-stat)
-- [9. Balanceamento de carga](#9-balanceamento-de-carga)
-- [10. OpenMP vs MPI](#10-openmp-vs-mpi)
-- [11. Otimização proposta](#11-otimização-proposta)
-- [12. Conclusões](#12-conclusões)
-- [13. Reprodutibilidade, limitações e dados](#13-reprodutibilidade-limitações-e-dados)
+- [8. Balanceamento de carga](#8-balanceamento-de-carga)
+- [9. OpenMP vs MPI](#9-openmp-vs-mpi)
+- [10. Otimização proposta](#10-otimização-proposta)
+- [11. Conclusões](#11-conclusões)
+- [12. Reprodutibilidade, limitações e dados](#12-reprodutibilidade-limitações-e-dados)
 
 ## 1. Algoritmo, volume de dados e decomposição
 
@@ -65,7 +64,7 @@ O volume foi calibrado no `node1` do cluster com o programa serial (`gcc -O2`), 
 
 Com **N = 4000** o serial leva **241,644 s** na eliminação e 243,559 s no total do programa, acima dos 200 s exigidos. O arquivo de entrada tem 128 MB e a matriz aumentada [A | I] ocupa 256 MB (2N² `double`). Na versão MPI cada processo guarda cerca de 16·N²/P bytes (cerca de 19,7 MB com P = 13). `Tserial` = tempo de eliminação (não inclui leitura, montagem da matriz aumentada nem escrita), que é o que a seção paralela mede.
 
-### 1.3 Decomposição paralela adotada (Opção A: blocos de linhas)
+### 1.3 Decomposição paralela (blocos de linhas)
 
 Cada processo (rank) guarda um bloco **contíguo** de linhas completas de [A | I]; quando N não é múltiplo de P, os primeiros N mod P ranks ficam com uma linha a mais. A divisão depende só de N, P e do rank, então é determinística e todos os ranks a calculam sem trocar mensagens.
 
@@ -98,21 +97,18 @@ Em cada iteração k os ranks fazem três coisas combinadas e uma fase local:
 ### 1.5 Validação
 
 - A inversa MPI foi comparada elemento a elemento com a gravada pelo serial: diferença máxima **zero** em N = 1000 com P = 1, 2 e 4 e em N = 4000 com P = 4 (16 milhões de elementos), todos no cluster.
-- Testes adicionais em ambiente local (OpenMPI 4.1.6): P = 1, 2, 3, 4, 5, 7 e 8, matrizes com muitos empates de pivô, e mais ranks que linhas (N = 5, P = 8). Todos idênticos ao serial.
-- A soma de verificação (soma dos \|elementos\| da inversa) é a mesma em todas as execuções de um mesmo N, para qualquer P: são 8 valores de N e 8 somas distintas. Em N = 4000 vale `6.775485558388e+05` nas 30 execuções (original e otimizada).
-
-- **Verificação independente:** a soma de verificação foi recalculada com a inversa do NumPy (LAPACK) a partir das mesmas matrizes (mesmo gerador e semente), com diferença relativa de 1,4·10⁻¹³ a 3,6·10⁻¹² para N = 500, 1000, 2000, 2520, 3175 e 4000 (N = 4703 e 6500 não foram recalculados). A soma de N = 2000 (6,19·10⁶) é ~10× maior que a dos tamanhos vizinhos porque aquela matriz é mal condicionada (número de condição 2,5·10⁵, contra 1,5·10⁴ em N = 2520); não é erro. Detalhes na seção 13.5.
+- **Verificação independente:** a soma de verificação (soma dos \|elementos\| da inversa) foi recalculada com a inversa do NumPy (LAPACK) a partir das mesmas matrizes (mesmo gerador e semente), com diferença relativa de 1,4·10⁻¹³ a 3,6·10⁻¹² para N = 500, 1000, 2000, 2520, 3175 e 4000 (N = 4703 e 6500 não foram recalculados). A soma de N = 2000 (6,19·10⁶) é ~10× maior que a dos tamanhos vizinhos porque aquela matriz é mal condicionada (número de condição 2,5·10⁵, contra 1,5·10⁴ em N = 2520); não é erro.
 
 ## 2. Código-fonte e ambiente de teste
 
 ### 2.1 Arquivos
 
-| Arquivo | Descrição | Linhas |
-|---|---|---|
-| [`programa_serial.c`](programa_serial.c) | Versão serial (a do trabalho anterior, sem alteração); linha de base | 450 |
-| [`programa_mpi.c`](programa_mpi.c) | Versão MPI, Opção A, instrumentada com `MPI_Wtime` | 507 |
-| [`programa_otimizado.c`](programa_otimizado.c) | Versão MPI otimizada (seção 11), com contagem de bytes trocados | 533 |
-| [`gerador_matriz.c`](gerador_matriz.c) | Gerador da matriz de entrada | 80 |
+| Arquivo | Descrição |
+|---|---|
+| [`programa_serial.c`](programa_serial.c) | Versão serial (a do trabalho anterior, sem alteração); linha de base |
+| [`programa_mpi.c`](programa_mpi.c) | Versão MPI instrumentada com `MPI_Wtime` |
+| [`programa_otimizado.c`](programa_otimizado.c) | Versão MPI otimizada (seção 10), com contagem de bytes trocados |
+| [`gerador_matriz.c`](gerador_matriz.c) | Gerador da matriz de entrada |
 
 ### 2.2 Compilação e execução
 
@@ -135,7 +131,6 @@ O serial só compila com o comando literal do enunciado se for acrescentado `-lm
 - **Por nó** (informado no material do cluster): Intel Core i3-3240, 2 GiB de RAM, 80 GiB de disco. Medido (`nproc`): 4 CPUs lógicas por nó.
 - **Rede:** Gigabit Ethernet (1000 Mb/s medido na interface); latência ICMP node1 → node2 de 0,169 ms em média (20 pacotes, mín 0,154 e máx 0,244 ms, sem perdas).
 - **Configuração de execução:** 1 processo por nó, nós `node1` a `nodeP`, `mpirun` lançado a partir do `node1`.
-- **Interferência:** o `carga.log` registra a carga de 1 minuto do `node1` no início de cada execução. Em 31 das 54 execuções ela era no máximo 0,15; em 18 das outras 23 a execução começou até 5 s depois do fim de outra execução do próprio trabalho (carga de 0,45 a 1,00), e as 5 restantes (carga de 0,28 a 0,47) começaram de 44 a 77 s depois do fim da anterior, o que é compatível com o decaimento da média de 1 minuto. As verificações de ocupação dos 13 nós (18/10 e 22/10, esta antes das séries de weak scaling literal e da otimizada) encontraram carga 0,00 e nenhum processo de outro usuário, e ao fim das execuções otimizadas não havia rank sobrando em nenhum nó. A carga dos demais nós durante cada execução não foi registrada.
 - Especificação pública do i3-3240 (Intel, **não medida** nos nós): 2 núcleos, 4 threads, 3,4 GHz, 3 MB de cache L3.
 
 ## 3. Medições de tempo (seção 2.2)
@@ -150,7 +145,7 @@ Cada rank mede, entre uma `MPI_Barrier` inicial e o fim do seu trabalho:
 
 ![Cronômetros](figs/fig_cronometro.png)
 
-A espera pela barreira final é reportada à parte (`t_espera`). **O tempo que um rank passa esperando os mais lentos dentro de uma coletiva conta como Tcomm**; por isso o indicador limpo de desbalanceamento é o Tcomp (seção 9). Cada rank imprime os seus valores ao final (linhas `RANK` das saídas), e o rank 0 imprime Tmax, Tmin, Tmédia e desvio entre os ranks.
+A espera pela barreira final é reportada à parte (`t_espera`). **O tempo que um rank passa esperando os mais lentos dentro de uma coletiva conta como Tcomm**; por isso o indicador limpo de desbalanceamento é o Tcomp (seção 8). Cada rank imprime os seus valores ao final (linhas `RANK` das saídas), e o rank 0 imprime Tmax, Tmin, Tmédia e desvio entre os ranks.
 
 ### 3.2 Tmax, Tmin, Tmédia e desvio entre os ranks
 
@@ -176,7 +171,7 @@ Estatísticas entre os P ranks de cada execução, depois **média das 3 execuç
 
 ### 3.3 Por que o tempo paralelo é o Tmax, e o que a Tmédia indica
 
-O programa só termina quando o último rank termina: o rank mais lento limita o tempo paralelo, e os demais ficam esperando. Por isso o speedup usa `Speedup(P) = Tserial / Tmax(P)`. Já a Tmédia indica o balanceamento: se Tmédia ≈ Tmax, os ranks trabalharam o mesmo tempo; se Tmédia ≪ Tmax, há ranks ociosos. Aqui o Ttotal é praticamente igual em todos os ranks (diferenças de poucos milissegundos, de 1 a 8 ms, porque as coletivas sincronizam os ranks a cada iteração), e a diferença entre ranks aparece no Tcomp (seção 9).
+O programa só termina quando o último rank termina: o rank mais lento limita o tempo paralelo, e os demais ficam esperando. Por isso o speedup usa `Speedup(P) = Tserial / Tmax(P)`. Já a Tmédia indica o balanceamento: se Tmédia ≈ Tmax, os ranks trabalharam o mesmo tempo; se Tmédia ≪ Tmax, há ranks ociosos. Aqui o Ttotal é praticamente igual em todos os ranks (diferenças de poucos milissegundos, de 1 a 8 ms, porque as coletivas sincronizam os ranks a cada iteração), e a diferença entre ranks aparece no Tcomp (seção 8).
 
 ### 3.4 Tempo externo e a limitação do `time` sobre o launcher
 
@@ -325,23 +320,9 @@ O tempo médio por chamada do `Bcast` acompanha o modelo (P − 1) × 64.000 B /
 | 8 | 3,56 | 3,58 | 0,992 |
 | 13 | 6,16 | 6,14 | 1,003 |
 
-**Análise.** (1) O `Bcast` da linha pivô responde por 78,5% do tempo de comunicação. (2) O seu custo por chamada cresce linearmente com o número de destinos, P − 1, na taxa do enlace Gigabit: a razão medido/modelo é de 0,98 a 1,00 no strong scaling e de 0,87 a 1,08 considerando também as séries de weak scaling (N de 1000 a 6500). É como se o rank raiz entregasse as cópias uma após a outra pelo seu enlace. Este é um ajuste aos dados: não verificamos qual algoritmo de broadcast o OpenMPI usou, e a taxa implícita (~125 MB/s) fica um pouco acima do que o TCP costuma entregar em Gigabit (~117 MB/s), então o modelo é aproximado. (3) O `Allreduce` de 16 bytes leva em média 1,56 ms, muito acima da latência de ida e volta medida (0,169 ms): é limitado por latência e sincroniza todos os ranks a cada iteração, o que é compatível com ranks que terminam o `Bcast` antes dos outros esperando no `Allreduce` seguinte. (4) O `Sendrecv` é a chamada mais barata (1,5% do Tcomm), apesar de ser a única de ponto a ponto; o seu tempo por chamada (0,93 a 2,04 ms) fica acima do mínimo físico de ~0,51 ms para 64 KB em cada sentido. O modelo é consistente com a otimização da seção 11: tirar 25% dos bytes tira ~25% do tempo do `Bcast` (medido: 28,6% com P = 13).
+**Análise.** (1) O `Bcast` da linha pivô responde por 78,5% do tempo de comunicação. (2) O seu custo por chamada cresce linearmente com o número de destinos, P − 1, na taxa do enlace Gigabit: a razão medido/modelo é de 0,98 a 1,00 no strong scaling e de 0,87 a 1,08 considerando também as séries de weak scaling (N de 1000 a 6500). É como se o rank raiz entregasse as cópias uma após a outra pelo seu enlace. Este é um ajuste aos dados: não verificamos qual algoritmo de broadcast o OpenMPI usou, e a taxa implícita (~125 MB/s) fica um pouco acima do que o TCP costuma entregar em Gigabit (~117 MB/s), então o modelo é aproximado. (3) O `Allreduce` de 16 bytes leva em média 1,56 ms, muito acima da latência de ida e volta medida (0,169 ms): é limitado por latência e sincroniza todos os ranks a cada iteração, o que é compatível com ranks que terminam o `Bcast` antes dos outros esperando no `Allreduce` seguinte. (4) O `Sendrecv` é a chamada mais barata (1,5% do Tcomm), apesar de ser a única de ponto a ponto; o seu tempo por chamada (0,93 a 2,04 ms) fica acima do mínimo físico de ~0,51 ms para 64 KB em cada sentido. O modelo é consistente com a otimização da seção 10: tirar 25% dos bytes tira ~25% do tempo do `Bcast` (medido: 28,6% com P = 13).
 
-## 8. perf stat
-
-**O `perf` não foi executado**: o pacote não está instalado no cluster. Não há, portanto, IPC nem taxa de cache-miss por nó para a versão MPI. Como contexto, o trabalho anterior mediu esses contadores no C serial e no C + OpenMP (Intel i7-3770, N = 2500):
-
-| Configuração (trabalho anterior) | IPC | Taxa de cache-miss |
-|---|---|---|
-| C serial | 2,18 | 39,4% |
-| OpenMP, 1 thread | 2,310 | 40,9% |
-| OpenMP, 2 threads | 1,319 | 40,4% |
-| OpenMP, 4 threads | 0,703 | 44,7% |
-| OpenMP, 8 threads | 0,355 | 51,7% |
-
-**Limitação do `perf` em MPI.** O `perf stat` mede por processo e por nó: um `mpirun` com `perf stat` envolvendo cada rank gera uma saída por rank, com os contadores do núcleo em que ele rodou; não existe uma visão global agregada, e os relógios de nós diferentes não são sincronizados. Além disso, a espera ativa do MPI executa instruções de verificação em laço, que entram nos contadores: o IPC de um rank misturaria cálculo útil e espera por mensagem, e o IPC durante a comunicação não representa eficiência de cálculo. Esta discussão descreve o comportamento esperado; não foi medido aqui.
-
-## 9. Balanceamento de carga
+## 8. Balanceamento de carga
 
 Valores por rank para P = 13, N = 4000, versão original (média das 3 execuções):
 
@@ -379,11 +360,11 @@ Resumo por P (Tcomp, versão original; razão e impacto por execução, depois m
 
 **A dispersão entre ranks é, em boa parte, ruído.** O desbalanceamento causado só pelo número de linhas (308 contra 307,7 em média) seria de 0,1%, e o medido com P = 13 é de 1,7%. Esse excesso tem o tamanho da variação de um mesmo rank entre execuções: 0,12 s em média, contra 0,16 s de dispersão entre os ranks, e o rank mais lento muda de uma execução para outra (ranks 9, 9, 2 nas três execuções com P = 13). Só com P = 8 o mesmo rank (o 2) foi o mais lento nas três execuções. A escala do eixo da figura, que começa em 17 s, exagera as diferenças: a variação total entre os ranks é de 3,2%.
 
-## 10. OpenMP vs MPI
+## 9. OpenMP vs MPI
 
 Esta seção relaciona o trabalho com o anterior (Paralelismo com Memória Compartilhada, mesmo algoritmo): do relatório do trabalho anterior vêm os dados do OpenMP; os do MPI são deste trabalho.
 
-### 10.1 Comparação conceitual
+### 9.1 Comparação conceitual
 
 | Aspecto | OpenMP (C) | MPI (C) |
 |---|---|---|
@@ -395,7 +376,7 @@ Esta seção relaciona o trabalho com o anterior (Paralelismo com Memória Compa
 | Escalabilidade máxima típica | Limitada aos núcleos de um nó e pela banda de memória (aqui, 1,22× com 4 threads) | Centenas a milhares de processos, limitada pela rede (aqui, saturou em 4,85× com 8 a 13 processos) |
 | Dificuldade e fragmentação do código | Baixa: diretivas `#pragma omp` sobre o código serial (`programa_openmp.c` tem 436 linhas) | Alta: exige reestruturar o programa (partição, índice global, `Allreduce`, `Sendrecv`, `Bcast`); chamadas de biblioteca espalhadas pelo código (`programa_mpi.c` tem 507 linhas, contra 450 do serial) |
 
-### 10.2 Speedups obtidos
+### 9.2 Speedups obtidos
 
 | P (threads ou processos) | OpenMP: speedup | OpenMP: eficiência | MPI: speedup | MPI: eficiência |
 |---|---|---|---|---|
@@ -407,7 +388,7 @@ Esta seção relaciona o trabalho com o anterior (Paralelismo com Memória Compa
 
 **Ressalvas da comparação.** Os dados não vêm do mesmo ambiente: o OpenMP foi medido em um i7-3770 (4 núcleos físicos, 8 lógicos, 16 GiB), com N = 2500, matriz diagonalmente dominante e linha de base serial de 29,82 s (wall-clock); o MPI, no cluster de i3-3240, com N = 4000, matriz aleatória e `Tserial` de 241,6 s (tempo de eliminação). Por isso a comparação é de **speedup e eficiência**, nunca de tempos absolutos. Os dois modelos não foram medidos no mesmo hardware nesta entrega.
 
-### 10.3 Discussão
+### 9.3 Discussão
 
 **Por que os resultados diferem.** O trabalho anterior diagnosticou que o algoritmo é limitado pela banda de memória: o IPC do OpenMP caiu de 2,31 (1 thread) para 0,70 (4 threads) por competição pelo mesmo barramento de memória, e o speedup parou em 1,22×. No MPI com 1 processo por nó, cada processo tem o seu próprio barramento de memória, e o cálculo escala quase linearmente: a soma dos Tcomp de todos os ranks fica entre 240 e 243 s de P = 1 até P = 13. O limite deixa de ser a memória e passa a ser a rede: a comunicação cresce até ocupar 63,6% do tempo com 13 processos. O gargalo trocou de lugar. Isso não prova que o MPI seria melhor no mesmo hardware, porque não medimos o IPC no cluster nem o OpenMP nos i3; mostra que, aqui, a distribuição da memória removeu o limite que travou o OpenMP.
 
@@ -415,13 +396,13 @@ Esta seção relaciona o trabalho com o anterior (Paralelismo com Memória Compa
 
 **Quando usar só um deles.** Só OpenMP quando o problema cabe na memória de um nó e o número de núcleos basta: é mais simples e não tem custo de mensagens, mas fica limitado à banda de memória do nó (aqui, 1,22×). Só MPI quando os dados excedem a memória de um nó ou é preciso usar a banda e os núcleos de vários nós; foi o que deu 4,85× aqui, ao somar a banda de memória de 13 nós, ao preço de reestruturar o código e de pagar comunicação.
 
-## 11. Otimização proposta
+## 10. Otimização proposta
 
-### 11.1 Justificativa fundamentada nos dados
+### 10.1 Justificativa fundamentada nos dados
 
 A instrumentação mostrou que, com P = 13, o `Bcast` da linha pivô ocupa 79% do Tcomm (seções 6 e 7), e que a fração de comunicação chega a 63,6% do tempo. O `Bcast` envia a linha pivô inteira (2N `double`), mas **na iteração k as colunas 0 a k−1 dessa linha são zeros exatos**: foram eliminadas nas iterações anteriores (x − x = 0 e x/x = 1 em aritmética IEEE) e permanecem zero. Só as colunas k a 2N−1 carregam informação, e elas são contíguas na memória. Enviá-las custa em média 25% menos bytes.
 
-### 11.2 O que muda no código
+### 10.2 O que muda no código
 
 Em `programa_otimizado.c`, a mesma ideia é aplicada em cinco pontos: o `Bcast` envia 2N − k valores em vez de 2N; a troca de linhas (`Sendrecv` ou local) troca só as colunas k a 2N−1; a normalização e a atualização das linhas começam na coluna k; e foram acrescentados contadores de bytes trocados.
 
@@ -437,7 +418,7 @@ for (size_t j = k; j < W; j++) lin[j] -= fator * linha_pivo[j];
 
 As operações omitidas eram `x − fator × 0 = x`, então o resultado é **idêntico** ao do serial (validado no cluster em N = 1000 com P = 4, e localmente em vários P, com empates de pivô e com mais ranks que linhas; o checksum de N = 4000 é o mesmo nas 15 execuções otimizadas).
 
-### 11.3 Resultados: original contra otimizado (N = 4000)
+### 10.3 Resultados: original contra otimizado (N = 4000)
 
 | P | Tmax original (s) | Tmax otimizado (s) | Speedup relativo | Fcomm | Tcomm médio por rank (s) |
 |---|---|---|---|---|---|
@@ -468,14 +449,14 @@ Tempo médio por rank por chamada, P = 13 (s):
 | Tcomm total | 31,38 | 25,04 | −20,2% |
 | Tcomp | 18,42 | 13,80 | −25,1% |
 
-### 11.4 Análise
+### 10.4 Análise
 
 - **O ganho é de 1,28× a 1,33× em todos os P, e vem de duas fontes.** Com P = 13, dos 11,0 s economizados por rank, 4,6 s são cálculo (o Tcomp caiu 25% porque a atualização deixou de processar colunas nulas) e 6,3 s são comunicação (o `Bcast` caiu 28,6%). Com P = 1 só há cálculo, e o ganho de 1,325× isola o efeito algorítmico.
 - **A otimização não resolve a saturação.** O Tcomm cai 20 a 24% para P ≥ 4, mas a fração de comunicação não diminui (com P = 13, de 63,6% para 65,1%), porque o cálculo também diminuiu. A razão está no modelo da seção 7: o tempo do `Bcast` é proporcional a (P − 1) × bytes, então tirar 25% dos bytes reduz o `Bcast` em ~25% (medido: 28,6% com P = 13) sem alterar a dependência em P − 1. Tomando como base o P = 1 otimizado (183,1 s), a eficiência é 93,9% (P = 2), 80,9% (P = 4), 59,9% (P = 8), 36,3% (P = 13), o mesmo desenho da versão original, e P = 13 continua sem ganhar de P = 8 (38,84 s contra 38,23 s).
 - **Em P = 2 o Tcomm não caiu** (6,08 s para 6,39 s): com poucos processos o tempo é dominado por espera e latência, não por banda, então tirar 25% dos bytes quase não ajuda. Também por isso, a divisão do Tcomm entre chamadas muda de forma não monotônica (seção 6).
 - **Cuidado ao apresentar o speedup contra o serial original:** a versão otimizada, por fazer menos cálculo, chega a 6,32× com 8 processos sobre o `Tserial` de 241,6 s. Esse número inclui o ganho algorítmico e **não** deve ser lido como escalabilidade; a comparação limpa é otimizado contra original, no mesmo P.
 
-## 12. Conclusões
+## 11. Conclusões
 
 - **Memória distribuída troca o gargalo de lugar.** No OpenMP o limite foi a banda de memória compartilhada (1,22× com 4 threads); no MPI, com 1 processo por nó, cada processo tem a sua banda e o cálculo escalou linearmente, mas o limite passou a ser a rede (4,85× com 13 processos).
 - **O custo de comunicação domina a escalabilidade.** A fração de comunicação foi de 5,0% com 2 processos a 63,6% com 13. Cada rank recebe a linha pivô inteira a cada iteração, qualquer que seja P, e o tempo do `Bcast` acompanha (P − 1) × 0,512 ms (64 KB a 1 Gb/s), enquanto o cálculo por rank cai com 1/P.
@@ -485,9 +466,9 @@ Tempo médio por rank por chamada, P = 13 (s):
 - **Medir bem importa.** A instrumentação por rank mostrou que a divisão do Tcomm entre chamadas não é confiável isoladamente, porque a espera migra entre elas; e a comparação com o tempo externo mostrou ~2 s fixos de lançamento que a seção medida deixa de fora.
 - **Os dois modelos se complementam.** O MPI distribui memória e banda entre nós; o OpenMP é mais simples dentro de um nó. A combinação dos dois (híbrido) é o desenho natural para clusters de nós multinúcleo.
 
-## 13. Reprodutibilidade, limitações e dados
+## 12. Reprodutibilidade, limitações e dados
 
-### 13.1 Como reproduzir
+### 12.1 Como reproduzir
 
 ```bash
 # 1) compilar e gerar as matrizes
@@ -513,10 +494,9 @@ done; done
 
 O lançamento é feito sempre a partir do `node1`, que é o primeiro nó de todos os machinefiles. As saídas completas de todas as execuções estão em [`dados/saidas_brutas_completas.txt`](dados/saidas_brutas_completas.txt).
 
-### 13.2 Limitações e desvios declarados
+### 12.2 Limitações e desvios declarados
 
-- `/usr/bin/time -v`, mpiP e `perf stat` **não foram usados**: os pacotes não estão instalados no cluster. O tempo externo foi medido com `date` (resolução de 1 s); user time, system time e Maximum RSS não foram medidos; as seções 7 e 8 são substituídas, respectivamente, pela instrumentação manual e por contexto do trabalho anterior.
-- **P = 16 não foi executado.** O máximo com 1 processo por nó é 13; chegar a 16 exigiria processos dividindo nó.
+- `/usr/bin/time -v`, mpiP e `perf stat` **não foram usados**: os pacotes não estão instalados no cluster. O tempo externo foi medido com `date` (resolução de 1 s); user time, system time e Maximum RSS não foram medidos; a seção 7 é substituída pela instrumentação manual.
 - `Tserial` (241,644 s) vem de **uma única execução** do serial, sem desvio padrão; ele é o numerador de todos os speedups.
 - A fração serial de Amdahl é **estimada** pela estrutura do algoritmo (s = 1/2N), não medida. O trabalho anterior mediu 0,30% com o Callgrind, mas incluía leitura e escrita, que aqui ficam fora da seção medida.
 - O weak scaling foi medido com duas definições (N ∝ P^(1/3) e N = P × 500); a primeira difere da sugestão literal do enunciado, e por isso a segunda também foi executada.
@@ -526,7 +506,7 @@ O lançamento é feito sempre a partir do `node1`, que é o primeiro nó de todo
 - O serial precisa de `-lm` para compilar (o `sqrt` da verificação opcional).
 - No `carga.log`, as linhas `O P...` anteriores às 18:34:45 (relógio do `node1`) são tentativas interrompidas por Ctrl+C, com duração de 0 a 20 s; as 15 execuções otimizadas válidas são as da sequência seguinte, e nenhum processo ficou sobrando nos nós.
 
-### 13.3 Dados
+### 12.3 Dados
 
 | Arquivo | Conteúdo |
 |---|---|
@@ -536,7 +516,7 @@ O lançamento é feito sempre a partir do `node1`, que é o primeiro nó de todo
 | [`dados/ambiente.md`](dados/ambiente.md) | Ambiente de teste e fontes de cada informação |
 | [`dados/saidas_brutas_completas.txt`](dados/saidas_brutas_completas.txt) | Saídas completas de todas as execuções, calibração do serial, validações, `carga.log` e machinefiles |
 
-### 13.4 Estrutura do repositório
+### 12.4 Estrutura do repositório
 
 ```
 memoria_distribuida/
@@ -548,26 +528,3 @@ memoria_distribuida/
 ├── figs/      Figuras deste relatório
 └── dados/     Tabelas CSV e saídas brutas das execuções
 ```
-
-### 13.5 Verificações de coerência dos valores
-
-Conferências feitas sobre os dados, além de recalcular as tabelas por um caminho independente (a partir das linhas `RESULT` do texto bruto, sem passar pelos CSV):
-
-| Verificação | Esperado | Observado |
-|---|---|---|
-| Tabelas deste README contra o recálculo direto das linhas `RESULT` | iguais | diferença máxima de 7·10⁻¹⁵ |
-| Por rank: Tcomp + Tcomm = Ttotal; Tcomm = soma das chamadas | iguais | diferença máxima de 2 µs |
-| Contagens | N chamadas de `Allreduce` e de `Bcast` por rank; soma dos `Sendrecv` = 2 × trocas entre ranks; as linhas dos ranks somam N | confere nas 54 execuções |
-| Crescimento do serial com N | cúbico (expoente 3) | expoentes 3,04, 2,98 e 2,99 |
-| Taxa de operações do serial | bem abaixo do pico (algoritmo limitado por memória) | 1,06 GFLOP/s, ou 0,31 flop por ciclo a 3,4 GHz; ~8,5 GB/s de tráfego de memória |
-| P × Tcomp no strong scaling | constante (trabalho total) | 239,5 a 242,6 s |
-| Banda de memória por rank (32·N²·n_loc / Tcomp) | constante se cada nó usa a sua própria memória | 8,4 a 8,6 GB/s em todos os P |
-| Tcomp medido / (c·N³/P), com c = Tserial/4000³, nas séries de weak scaling | 1,00 | 0,99 a 1,00 (N = 500 fica em 0,58: efeito de cache) |
-| `Bcast` por chamada | 64 KB a 1 Gb/s = 0,512 ms por destino | razão medido / ((P − 1) × 0,512 ms) de 0,87 a 1,08 |
-| `Sendrecv` por chamada | pelo menos ~0,51 ms (64 KB a 1 Gb/s) | 0,93 a 2,04 ms |
-| `Allreduce` por chamada | pelo menos a latência de ida e volta (0,169 ms) | 0,49 a 1,56 ms |
-| Tempo externo menos interno | constante, independente de P (custo de lançamento) | 1,7 a 2,2 s (médias por P), sem crescer com P |
-| Soma de verificação contra NumPy/LAPACK, mesmas matrizes | iguais | diferença relativa de 1,4·10⁻¹³ a 3,6·10⁻¹² (N = 500, 1000, 2000, 2520, 3175 e 4000) |
-| Desbalanceamento teórico pelas linhas contra o medido | medido ≥ teórico | 0,1% (308 contra 307,7 linhas) contra 1,7% com P = 13; o excesso é ruído (seção 9) |
-
-O número de condição de A, calculado por decomposição em valores singulares das matrizes regeradas, é 2,3·10³ (N = 500), 4,1·10³ (N = 1000), 2,5·10⁵ (N = 2000) e 1,5·10⁴ (N = 2520). Isso explica por que a soma de verificação de N = 2000 (6,19·10⁶) é ~10× maior que a dos vizinhos.
