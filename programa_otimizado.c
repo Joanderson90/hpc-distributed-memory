@@ -1,64 +1,27 @@
 /*
  * ============================================================================
- * Algoritmo: Inversao de Matriz (Gauss-Jordan com pivotamento parcial)
- * Versao MPI OTIMIZADA (memoria distribuida) - OPCAO A: blocos de linhas
+ * Algoritmo: Inversao de Matriz (Gauss-Jordan) -- MPI otimizado
  * ============================================================================
  *
- * Decomposicao de dados
- *   A matriz aumentada [A | I] (N x 2N) e' dividida em blocos CONTIGUOS de
- *   linhas: o rank r guarda n_r linhas completas (n_r = N/P, com as N%P
- *   primeiras ranks recebendo uma linha a mais quando N nao e' multiplo de P).
- *   Cada rank le do arquivo apenas as suas linhas (leitura paralela do mesmo
- *   arquivo compartilhado) e monta localmente a sua parte da identidade.
+ * Identico ao programa_mpi.c (mesma decomposicao em blocos de linhas, mesma
+ * instrumentacao), com uma otimizacao: enviar so' o trecho util da linha pivo.
  *
- * Em cada iteracao k (k = 0 .. N-1):
- *   1. cada rank procura, nas suas linhas com indice global >= k, o maior
- *      |M[i][k]| (candidato local);
- *   2. MPI_Allreduce com MPI_MAXLOC escolhe o pivo global p (em empate vence
- *      o MENOR indice global, igual ao '>' estrito da versao serial);
- *   3. TROCA FISICA das linhas k e p: se pertencem a ranks diferentes, os dois
- *      donos trocam a linha inteira com MPI_Sendrecv (ponto-a-ponto); se
- *      pertencem ao mesmo rank, a troca e' local;
- *   4. o dono da linha k a divide pelo pivo;
- *   5. MPI_Bcast da linha pivo normalizada (2N doubles) a todos os ranks;
- *   6. cada rank atualiza as suas linhas i != k (fase 100% local).
+ * Na iteracao k, as colunas 0..k-1 da linha pivo (e das linhas trocadas) sao
+ * zeros exatos: ja foram eliminadas nas iteracoes anteriores (x - x = 0).
+ * Portanto so' as colunas k..2N-1 (W-k valores, contiguos em memoria) carregam
+ * informacao. Aqui:
+ *   - o Bcast envia W-k valores em vez de W;
+ *   - a troca de linhas (Sendrecv ou local) troca so' as colunas k..W-1;
+ *   - a normalizacao e a atualizacao das linhas comecam na coluna k.
  *
- * As operacoes de ponto flutuante sobre cada elemento sao as mesmas da versao
- * serial, na mesma ordem; por isso a inversa deve ser IDENTICA a da serial,
- * qualquer que seja P.
+ * As operacoes omitidas eram "x - fator*0 = x": a inversa continua identica a
+ * do serial. O volume trocado e' contado em bytes (bytes_bcast, bytes_sendrecv).
  *
- * Validacao (--comparar inversa_serial.bin): reune a inversa inteira no rank 0
- * (MPI_Gatherv) e compara com o arquivo gerado pelo programa serial. So para N
- * pequeno. A soma de verificacao (MPI_Reduce) e' sempre calculada.
+ * Compilacao:
+ *   mpicc -O2 -g -o programa_otimizado programa_otimizado.c
  *
- * Instrumentacao (secao 2.2.1 do enunciado), com MPI_Wtime, em cada rank:
- *   Tcomm  = tempo acumulado DENTRO de chamadas MPI (Allreduce, Sendrecv,
- *            Bcast e o Reduce final), tambem discriminado por chamada;
- *   Tcomp  = tempo acumulado FORA de chamadas MPI (calculo);
- *   Ttotal = tempo do rank entre a barreira inicial e o fim do seu trabalho
- *            (Tcomp + Tcomm); depois vem a barreira final, cuja espera e'
- *            reportada a parte (Tespera).
- * Atencao: o tempo que um rank espera pelos mais lentos DENTRO de uma coletiva
- * conta como Tcomm. O indicador limpo de desbalanceamento e' o Tcomp.
- * Cada rank imprime os seus valores; o rank 0 imprime Tmax, Tmin, Tmedia e
- * desvio padrao (populacional) entre os P ranks, e Fcomm = Tcomm_max/Ttotal_max.
- *
- * OTIMIZACAO (secao 2.10): enviar so' o trecho util da linha pivo.
- *   Nos dados de profiling do programa original, o MPI_Bcast da linha pivo e'
- *   ~79% do Tcomm (P=13). Na iteracao k, as colunas 0..k-1 da linha pivo (e das
- *   linhas trocadas) sao ZEROS EXATOS: ja foram eliminadas nas iteracoes
- *   anteriores (x - x = 0), e permanecem zero. Portanto so' as colunas k..2N-1
- *   (W-k valores, contiguos em memoria) carregam informacao. Aqui:
- *     - o Bcast envia W-k valores em vez de W;
- *     - a troca de linhas (Sendrecv ou local) troca so' as colunas k..W-1;
- *     - a normalizacao e a atualizacao das linhas comecam na coluna k.
- *   Em media sao 25% menos bytes e 25% menos operacoes de atualizacao. As
- *   operacoes omitidas eram "x - fator*0 = x", logo a inversa continua IDENTICA
- *   a do serial. O volume trocado e' contado em bytes (bytes_bcast, bytes_sendrecv).
- *
- * Compilacao:  mpicc -O2 -g -o programa_otimizado programa_otimizado.c
- * Execucao:    mpirun -np P -machinefile mf ./programa_otimizado <N> <matriz.bin>
- *                       [--comparar inversa_serial.bin]
+ * Uso:
+ *   mpirun -np P -machinefile mf ./programa_otimizado <N> <matriz.bin> [--comparar inversa_serial.bin]
  * ============================================================================
  */
 
@@ -128,7 +91,7 @@ static double g_marca;
         g_marca = _t;                     \
     } while (0)
 
-/* raiz quadrada por Newton: evita depender de -lm (comando de compilacao do enunciado) */
+/* raiz quadrada por Newton: evita depender de -lm na compilacao */
 static double raiz(double x)
 {
     if (x <= 0.0)

@@ -1,51 +1,26 @@
 /*
  * ============================================================================
- * Algoritmo: Inversao de Matriz (Gauss-Jordan com pivotamento parcial)
- * Versao MPI (memoria distribuida) - OPCAO A: blocos de linhas
+ * Algoritmo: Inversao de Matriz (Gauss-Jordan) -- Paralelo com MPI
  * ============================================================================
  *
- * Decomposicao de dados
- *   A matriz aumentada [A | I] (N x 2N) e' dividida em blocos CONTIGUOS de
- *   linhas: o rank r guarda n_r linhas completas (n_r = N/P, com as N%P
- *   primeiras ranks recebendo uma linha a mais quando N nao e' multiplo de P).
- *   Cada rank le do arquivo apenas as suas linhas (leitura paralela do mesmo
- *   arquivo compartilhado) e monta localmente a sua parte da identidade.
+ * Mesma eliminacao do programa_serial.c (pivotamento parcial, troca fisica de
+ * linhas), com a matriz aumentada [A | I] dividida em blocos contiguos de
+ * linhas, um por rank. A cada iteracao k o pivo global e' escolhido com
+ * MPI_Allreduce (MAXLOC), a linha pivo e' distribuida com MPI_Bcast e cada
+ * rank atualiza apenas as suas linhas.
  *
- * Em cada iteracao k (k = 0 .. N-1):
- *   1. cada rank procura, nas suas linhas com indice global >= k, o maior
- *      |M[i][k]| (candidato local);
- *   2. MPI_Allreduce com MPI_MAXLOC escolhe o pivo global p (em empate vence
- *      o MENOR indice global, igual ao '>' estrito da versao serial);
- *   3. TROCA FISICA das linhas k e p: se pertencem a ranks diferentes, os dois
- *      donos trocam a linha inteira com MPI_Sendrecv (ponto-a-ponto); se
- *      pertencem ao mesmo rank, a troca e' local;
- *   4. o dono da linha k a divide pelo pivo;
- *   5. MPI_Bcast da linha pivo normalizada (2N doubles) a todos os ranks;
- *   6. cada rank atualiza as suas linhas i != k (fase 100% local).
+ * As operacoes sobre cada elemento sao as do serial, na mesma ordem: a
+ * inversa e' identica a da versao serial, qualquer que seja P.
  *
- * As operacoes de ponto flutuante sobre cada elemento sao as mesmas da versao
- * serial, na mesma ordem; por isso a inversa deve ser IDENTICA a da serial,
- * qualquer que seja P.
+ * Tempos por rank (MPI_Wtime): Tcomm = tempo dentro de chamadas MPI (inclui a
+ * espera pelos ranks mais lentos); Tcomp = tempo fora delas; Ttotal = soma.
  *
- * Validacao (--comparar inversa_serial.bin): reune a inversa inteira no rank 0
- * (MPI_Gatherv) e compara com o arquivo gerado pelo programa serial. So para N
- * pequeno. A soma de verificacao (MPI_Reduce) e' sempre calculada.
+ * Compilacao:
+ *   mpicc -O2 -g -o programa_mpi programa_mpi.c
  *
- * Instrumentacao (secao 2.2.1 do enunciado), com MPI_Wtime, em cada rank:
- *   Tcomm  = tempo acumulado DENTRO de chamadas MPI (Allreduce, Sendrecv,
- *            Bcast e o Reduce final), tambem discriminado por chamada;
- *   Tcomp  = tempo acumulado FORA de chamadas MPI (calculo);
- *   Ttotal = tempo do rank entre a barreira inicial e o fim do seu trabalho
- *            (Tcomp + Tcomm); depois vem a barreira final, cuja espera e'
- *            reportada a parte (Tespera).
- * Atencao: o tempo que um rank espera pelos mais lentos DENTRO de uma coletiva
- * conta como Tcomm. O indicador limpo de desbalanceamento e' o Tcomp.
- * Cada rank imprime os seus valores; o rank 0 imprime Tmax, Tmin, Tmedia e
- * desvio padrao (populacional) entre os P ranks, e Fcomm = Tcomm_max/Ttotal_max.
- *
- * Compilacao:  mpicc -O2 -g -o programa_mpi programa_mpi.c
- * Execucao:    mpirun -np P -machinefile mf ./programa_mpi <N> <matriz.bin>
- *                       [--comparar inversa_serial.bin]
+ * Uso (--comparar reune a inversa no rank 0 e a compara, elemento a elemento,
+ * com a gravada pelo serial):
+ *   mpirun -np P -machinefile mf ./programa_mpi <N> <matriz.bin> [--comparar inversa_serial.bin]
  * ============================================================================
  */
 
@@ -114,7 +89,7 @@ static double g_marca;
         g_marca = _t;                     \
     } while (0)
 
-/* raiz quadrada por Newton: evita depender de -lm (comando de compilacao do enunciado) */
+/* raiz quadrada por Newton: evita depender de -lm na compilacao */
 static double raiz(double x)
 {
     if (x <= 0.0)

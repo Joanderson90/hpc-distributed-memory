@@ -373,7 +373,7 @@ Esta seção relaciona o trabalho com o anterior (Paralelismo com Memória Compa
 | Comunicação | Acesso direto à memória (leitura e escrita de variáveis compartilhadas; sincronização em barreiras) | Envio de mensagens (`Send`/`Recv`, coletivas); aqui, a linha pivô viaja em um `Bcast` por iteração |
 | Latência relativa | Nanossegundos a microssegundos (memória e cache) | Microssegundos a milissegundos pela rede (0,169 ms de latência de ida e volta medida; ~6 ms por `Bcast` com 13 processos, incluindo espera) |
 | Escalabilidade máxima típica | Limitada aos núcleos de um nó e pela banda de memória (aqui, 1,22× com 4 threads) | Centenas a milhares de processos, limitada pela rede (aqui, saturou em 4,85× com 8 a 13 processos) |
-| Dificuldade e fragmentação do código | Baixa: diretivas `#pragma omp` sobre o código serial (`programa_openmp.c` tem 436 linhas) | Alta: exige reestruturar o programa (partição, índice global, `Allreduce`, `Sendrecv`, `Bcast`); chamadas de biblioteca espalhadas pelo código (`programa_mpi.c` tem 507 linhas, contra 450 do serial) |
+| Dificuldade e fragmentação do código | Baixa: diretivas `#pragma omp` sobre o código serial (`programa_openmp.c` tem 436 linhas) | Alta: exige reestruturar o programa (partição, índice global, `Allreduce`, `Sendrecv`, `Bcast`); chamadas de biblioteca espalhadas pelo código (`programa_mpi.c` tem 482 linhas, contra 450 do serial) |
 
 ### 9.2 Speedups obtidos
 

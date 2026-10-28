@@ -1,58 +1,25 @@
 #!/usr/bin/env bash
-# =============================================================================
-# run_all.sh: reprodutibilidade do trabalho
-# Inversao de matriz por eliminacao de Gauss-Jordan com memoria distribuida (MPI)
-# TEC508 - Computacao de Alto Desempenho (UEFS)
+# ==============================================================================
+# run_all.sh -- Inversao de Matriz (Gauss-Jordan) com MPI
+# ==============================================================================
+# Automatiza: compilacao, geracao das matrizes, serial, validacao, strong e weak
+# scaling, versao otimizada e consolidacao dos dados da campanha.
 #
-# Reproduz, com os mesmos comandos e a mesma nomenclatura de arquivos da campanha
-# de medicao: compilacao, matrizes, serial (corretude, calibracao e linha de base),
-# validacao, strong scaling, weak scaling (duas definicoes), versao otimizada,
-# consolidacao dos dados e verificacao final dos nos.
+# Onde: no node1 do cluster, em ~/mpi (1 processo por no, machinefile mf/mf_P).
 #
-# ONDE EXECUTAR
-#   No node1 do cluster UMBU, em ~/mpi (pasta com os .c). O mpirun e' lancado a
-#   partir do node1, com 1 processo por no (machinefile "nodeX slots=1").
+# Uso (sem argumentos mostra esta ajuda):
+#   ./run_all.sh compilar matrizes serial validar      # etapas escolhidas
+#   nohup ./run_all.sh tudo > run_all.log 2>&1 &       # campanha completa (~1h30)
 #
-# COMO USAR (nao executa nada sem argumentos)
-#   ./run_all.sh ajuda
-#   ./run_all.sh compilar matrizes ocupacao serial validar
-#   nohup ./run_all.sh tudo > run_all.log 2>&1 &      # campanha completa
+# Etapas: compilar, matrizes, ocupacao, serial, validar, forte, fraco,
+#         otimizada, perfil, resumo, consolidar, limpeza
 #
-# ETAPAS (na ordem de "tudo")
-#   compilar    gcc/mpicc dos quatro programas
-#   matrizes    gerador_matriz com semente 42 para todos os N usados
-#   ocupacao    who + uptime + os 4 processos mais ativos de cada no (secao 7 do enunciado)
-#   serial      corretude (N=300 --verify), calibracao (N=1000, 2000, 3000), inversas
-#               de referencia e linha de base (N=4000, UMA execucao)
-#   validar     inversa MPI e otimizada contra a do serial, elemento a elemento
-#   forte       strong scaling: N=4000, P=1,2,4,8,13, 3 execucoes por P
-#   fraco       weak scaling: N ~ P^(1/3) e N = 500*P (3 execucoes por ponto)
-#   otimizada   versao otimizada: N=4000, P=1,2,4,8,13, 3 execucoes por P
-#   perfil      /usr/bin/time -v, mpiP e perf stat (somente se as ferramentas existirem)
-#   resumo      media, desvio, speedup e eficiencia do strong scaling
-#   consolidar  junta todas as saidas em dados_completos.txt
-#   limpeza     confere que nao sobrou processo em nenhum no
+# Variaveis (padrao): DIR_TRAB=$HOME/mpi  REPS=3  N_FORTE=4000
+#   PS_FORTE="1 2 4 8 13"  FORCAR=0 (1 refaz o que ja existe)
 #
-# TEMPO ESTIMADO DA CAMPANHA COMPLETA (nos ociosos): cerca de 1 h 30 min
-#   serial ~7 min; forte ~28 min; fraco ~18 min; otimizada ~21 min; validacao ~5 min.
-#   Espaco em disco: ~1 GB de matrizes de entrada, mais as inversas escritas pelo serial.
-#
-# SOBRE O PROFILING (etapa "perfil")
-#   No cluster usado, /usr/bin/time, mpiP e perf NAO estao instalados. Esta etapa
-#   so executa o que encontrar e, no nosso ambiente, NAO foi executada: o relatorio
-#   declara a limitacao e substitui essas medidas pela instrumentacao manual
-#   (MPI_Wtime por rank e por chamada, ja embutida no programa_mpi) e pelo tempo
-#   externo registrado com `uptime` em res/carga.log (resolucao de 1 s).
-#
-# VARIAVEIS (valores padrao entre parenteses; sobrescreva no ambiente)
-#   DIR_TRAB ($HOME/mpi)   SEED (42)   REPS (3)   N_FORTE (4000)
-#   PS_FORTE ("1 2 4 8 13")   CALIB_NS ("1000 2000 3000")   N_VALID ("300 1000")
-#   WEAK_CBRT ("1:2000 2:2520 4:3175 13:4703")   WEAK_LIT ("1:500 2:1000 4:2000 13:6500")
-#   HOSTS (node1 ... node13)   MPIRUN_OPTS ("")   SKIP_SSH (0)   FORCAR (0)
-#   SEM_MACHINEFILE (0): 1 omite o machinefile; so para testar o script em uma maquina
-#   O ponto P=8 (N=4000) das duas series de weak scaling reaproveita as
-#   execucoes do strong scaling (res/mpi_P8_r*.out), como no relatorio.
-# =============================================================================
+# Requisitos: gcc, OpenMPI (mpicc, mpirun), ssh sem senha entre os nos.
+# perfil: /usr/bin/time, mpiP e perf sao opcionais e so rodam se existirem.
+# ==============================================================================
 
 set -u
 
@@ -71,7 +38,7 @@ FORCAR=${FORCAR:-0}
 HOSTS=${HOSTS:-$(for n in $(seq 1 13); do printf 'node%s ' "$n"; done)}
 read -r -a HOSTS_ARR <<< "$HOSTS"
 
-ajuda() { sed -n '2,55p' "$0" | sed 's/^# \{0,1\}//'; }
+ajuda() { sed -n '2,22p' "$0" | sed 's/^# \{0,1\}//'; }
 
 # sem argumentos: so mostra a ajuda (nenhum efeito colateral)
 if [ $# -eq 0 ]; then ajuda; exit 0; fi
@@ -255,7 +222,7 @@ etapa_perfil() {
     msg "perfil (/usr/bin/time, mpiP, perf): executa apenas as ferramentas encontradas"
     local pmax lib
     pmax=$(echo $PS_FORTE | tr ' ' '\n' | sort -n | tail -1)
-    # 2.2.2: /usr/bin/time -v no serial e no launcher (mede o mpirun, nao os ranks)
+    # /usr/bin/time -v no serial e no launcher (mede o mpirun, nao os ranks)
     if [ -x /usr/bin/time ]; then
         /usr/bin/time -v ./programa_serial "$N_FORTE" "m$N_FORTE.bin" linha /dev/null "stats${N_FORTE}_tv.txt" > serial_tv.out 2> serial_tv.time
         machinefile "$pmax" || return 1
@@ -265,7 +232,7 @@ etapa_perfil() {
     else
         echo "[perfil] /usr/bin/time ausente: nao executado (limitacao declarada no relatorio)"
     fi
-    # 2.6: mpiP por LD_PRELOAD (variavel MPIP: -f diretorio, -k profundidade da pilha de chamadas)
+    # mpiP por LD_PRELOAD (variavel MPIP: -f diretorio, -k profundidade da pilha de chamadas)
     lib=${MPIP_LIB:-$(find /usr /opt "$HOME" -name 'libmpiP.so*' 2> /dev/null | head -1)}
     if [ -n "$lib" ]; then
         mkdir -p res/mpip
@@ -276,7 +243,7 @@ etapa_perfil() {
     else
         echo "[perfil] mpiP ausente (libmpiP.so nao encontrada): nao executado (limitacao declarada)"
     fi
-    # 2.7: perf stat por no (um rank por no); exige perf e permissao em perf_event_paranoid
+    # perf stat por no (um rank por no); exige perf e permissao em perf_event_paranoid
     if command -v perf > /dev/null 2>&1; then
         machinefile "$pmax" || return 1
         # shellcheck disable=SC2086
