@@ -97,7 +97,7 @@ Em cada iteração k os ranks fazem três coisas combinadas e uma fase local:
 ### 1.5 Validação
 
 - A inversa MPI foi comparada elemento a elemento com a gravada pelo serial: diferença máxima **zero** em N = 1000 com P = 1, 2 e 4 e em N = 4000 com P = 4 (16 milhões de elementos), todos no cluster.
-- **Verificação independente:** a soma de verificação (soma dos \|elementos\| da inversa) foi recalculada com a inversa do NumPy (LAPACK) a partir das mesmas matrizes (mesmo gerador e semente), com diferença relativa de 1,4·10⁻¹³ a 3,6·10⁻¹² para N = 500, 1000, 2000, 2520, 3175 e 4000 (N = 4703 e 6500 não foram recalculados). A soma de N = 2000 (6,19·10⁶) é ~10× maior que a dos tamanhos vizinhos porque aquela matriz é mal condicionada (número de condição 2,5·10⁵, contra 1,5·10⁴ em N = 2520); não é erro.
+- A soma de verificação (soma dos \|elementos\| da inversa) é a mesma em todas as execuções de um mesmo N, para qualquer P: são 8 valores de N e 8 somas distintas. Em N = 4000 vale `6.775485558388e+05` nas 30 execuções (original e otimizada).
 
 ## 2. Código-fonte e ambiente de teste
 
