@@ -1,0 +1,1839 @@
+######## res/mpi_L_P13_N6500_r1.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=6500 P=13 ===
+RANK r=0 P=13 N=6500 host=node1 linhas=500 t_comp=78.652801 t_comm=98.932305 t_total=177.585106 t_espera=0.000083 t_allreduce=45.486427 t_sendrecv=0.881388 t_bcast=52.554760 t_reduce=0.009730 n_allreduce=6500 n_sendrecv=486 n_bcast=6500
+RANK r=1 P=13 N=6500 host=node2 linhas=500 t_comp=78.767233 t_comm=98.815377 t_total=177.582610 t_espera=0.000186 t_allreduce=31.463561 t_sendrecv=1.322202 t_bcast=66.028797 t_reduce=0.000817 n_allreduce=6500 n_sendrecv=510 n_bcast=6500
+RANK r=2 P=13 N=6500 host=node3 linhas=500 t_comp=79.595700 t_comm=97.985825 t_total=177.581525 t_espera=0.000266 t_allreduce=28.940958 t_sendrecv=1.336556 t_bcast=67.708040 t_reduce=0.000270 n_allreduce=6500 n_sendrecv=550 n_bcast=6500
+RANK r=3 P=13 N=6500 host=node4 linhas=500 t_comp=78.769700 t_comm=98.811671 t_total=177.581370 t_espera=0.000547 t_allreduce=28.050088 t_sendrecv=1.930533 t_bcast=68.829772 t_reduce=0.001279 n_allreduce=6500 n_sendrecv=622 n_bcast=6500
+RANK r=5 P=13 N=6500 host=node6 linhas=500 t_comp=78.543773 t_comm=99.039921 t_total=177.583693 t_espera=0.000181 t_allreduce=25.160902 t_sendrecv=2.773626 t_bcast=71.104171 t_reduce=0.001221 n_allreduce=6500 n_sendrecv=681 n_bcast=6500
+RANK r=4 P=13 N=6500 host=node5 linhas=500 t_comp=78.572015 t_comm=99.011636 t_total=177.583650 t_espera=0.000358 t_allreduce=27.868920 t_sendrecv=1.086614 t_bcast=70.056051 t_reduce=0.000052 n_allreduce=6500 n_sendrecv=665 n_bcast=6500
+RANK r=6 P=13 N=6500 host=node7 linhas=500 t_comp=78.676105 t_comm=98.907762 t_total=177.583867 t_espera=0.000366 t_allreduce=27.547347 t_sendrecv=1.158616 t_bcast=70.201745 t_reduce=0.000054 n_allreduce=6500 n_sendrecv=755 n_bcast=6500
+RANK r=7 P=13 N=6500 host=node8 linhas=500 t_comp=77.874608 t_comm=99.711375 t_total=177.585983 t_espera=0.000729 t_allreduce=23.327122 t_sendrecv=3.030758 t_bcast=73.353461 t_reduce=0.000034 n_allreduce=6500 n_sendrecv=828 n_bcast=6500
+RANK r=8 P=13 N=6500 host=node9 linhas=500 t_comp=78.678163 t_comm=98.905287 t_total=177.583450 t_espera=0.000670 t_allreduce=23.429010 t_sendrecv=1.960303 t_bcast=73.515938 t_reduce=0.000037 n_allreduce=6500 n_sendrecv=909 n_bcast=6500
+RANK r=9 P=13 N=6500 host=node10 linhas=500 t_comp=80.076202 t_comm=97.505299 t_total=177.581501 t_espera=0.000236 t_allreduce=18.943824 t_sendrecv=4.127769 t_bcast=74.433669 t_reduce=0.000037 n_allreduce=6500 n_sendrecv=1047 n_bcast=6500
+RANK r=10 P=13 N=6500 host=node11 linhas=500 t_comp=78.725606 t_comm=98.856207 t_total=177.581813 t_espera=0.000434 t_allreduce=19.104088 t_sendrecv=6.179515 t_bcast=73.572569 t_reduce=0.000035 n_allreduce=6500 n_sendrecv=1138 n_bcast=6500
+RANK r=12 P=13 N=6500 host=node13 linhas=500 t_comp=78.752270 t_comm=98.821072 t_total=177.573342 t_espera=0.009760 t_allreduce=25.167876 t_sendrecv=1.558895 t_bcast=72.094269 t_reduce=0.000033 n_allreduce=6500 n_sendrecv=1285 n_bcast=6500
+RANK r=11 P=13 N=6500 host=node12 linhas=500 t_comp=78.497378 t_comm=99.085634 t_total=177.583012 t_espera=0.000557 t_allreduce=20.868690 t_sendrecv=4.648699 t_bcast=73.568207 t_reduce=0.000038 n_allreduce=6500 n_sendrecv=1260 n_bcast=6500
+
+=== Estatisticas entre os 13 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       80.076202    77.874608    78.783196     0.510308
+Tcomm                       99.711375    97.505299    98.799182     0.511246
+Ttotal                     177.585983   177.573342   177.582379     0.002936
+  Tcomm: Allreduce          45.486427    18.943824    26.566063     6.580679
+  Tcomm: Sendrecv            6.179515     0.881388     2.461190     1.564050
+  Tcomm: Bcast              74.433669    52.554760    69.770881     5.550164
+  Tcomm: Reduce              0.009730     0.000033     0.001049     0.002546
+Tespera (barr. final)        0.009760     0.000083     0.001105     0.002506
+Leitura (fora da secao)      2.903583     2.889094     2.901152     0.003631
+
+Fcomm = Tcomm_max / Ttotal_max            = 56.15 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0164  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 177.585189 s
+Trocas de linha: 6492 (entre ranks: 5368) de 6500 iteracoes
+Checksum (soma |Inv|): 1.164871830346e+06
+RESULT mpi P=13 N=6500 t_secao=177.585189 tmax_total=177.585983 tmax_comp=80.076202 tmin_comp=77.874608 tmedia_comp=78.783196 desvio_comp=0.510308 tmax_comm=99.711375 tmedia_comm=98.799182 fcomm=56.1482 trocas=6492 trocas_inter=5368 checksum=1.164871830346e+06
+######## res/mpi_L_P13_N6500_r2.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=6500 P=13 ===
+RANK r=0 P=13 N=6500 host=node1 linhas=500 t_comp=78.846686 t_comm=97.399620 t_total=176.246306 t_espera=0.000108 t_allreduce=39.565061 t_sendrecv=0.838733 t_bcast=56.994077 t_reduce=0.001750 n_allreduce=6500 n_sendrecv=486 n_bcast=6500
+RANK r=1 P=13 N=6500 host=node2 linhas=500 t_comp=78.920356 t_comm=97.323297 t_total=176.243653 t_espera=0.000221 t_allreduce=30.974128 t_sendrecv=1.346752 t_bcast=65.000994 t_reduce=0.001423 n_allreduce=6500 n_sendrecv=510 n_bcast=6500
+RANK r=2 P=13 N=6500 host=node3 linhas=500 t_comp=78.866170 t_comm=97.376503 t_total=176.242673 t_espera=0.000193 t_allreduce=28.788214 t_sendrecv=1.415148 t_bcast=67.172828 t_reduce=0.000313 n_allreduce=6500 n_sendrecv=550 n_bcast=6500
+RANK r=3 P=13 N=6500 host=node4 linhas=500 t_comp=78.930160 t_comm=97.312670 t_total=176.242831 t_espera=0.000267 t_allreduce=26.719669 t_sendrecv=1.568683 t_bcast=69.023693 t_reduce=0.000627 n_allreduce=6500 n_sendrecv=622 n_bcast=6500
+RANK r=4 P=13 N=6500 host=node5 linhas=500 t_comp=78.486294 t_comm=97.758423 t_total=176.244717 t_espera=0.000469 t_allreduce=25.824271 t_sendrecv=1.923543 t_bcast=70.008103 t_reduce=0.002505 n_allreduce=6500 n_sendrecv=665 n_bcast=6500
+RANK r=5 P=13 N=6500 host=node6 linhas=500 t_comp=78.960128 t_comm=97.284547 t_total=176.244676 t_espera=0.000364 t_allreduce=24.120190 t_sendrecv=1.746176 t_bcast=71.417540 t_reduce=0.000641 n_allreduce=6500 n_sendrecv=681 n_bcast=6500
+RANK r=6 P=13 N=6500 host=node7 linhas=500 t_comp=78.100861 t_comm=98.144273 t_total=176.245134 t_espera=0.000207 t_allreduce=23.811334 t_sendrecv=1.786670 t_bcast=72.545627 t_reduce=0.000643 n_allreduce=6500 n_sendrecv=755 n_bcast=6500
+RANK r=7 P=13 N=6500 host=node8 linhas=500 t_comp=78.865542 t_comm=97.382076 t_total=176.247618 t_espera=0.000297 t_allreduce=20.617266 t_sendrecv=3.670125 t_bcast=73.094628 t_reduce=0.000058 n_allreduce=6500 n_sendrecv=828 n_bcast=6500
+RANK r=8 P=13 N=6500 host=node9 linhas=500 t_comp=78.499850 t_comm=97.744970 t_total=176.244820 t_espera=0.000473 t_allreduce=21.913543 t_sendrecv=1.873461 t_bcast=73.957932 t_reduce=0.000034 n_allreduce=6500 n_sendrecv=909 n_bcast=6500
+RANK r=9 P=13 N=6500 host=node10 linhas=500 t_comp=78.943688 t_comm=97.298674 t_total=176.242362 t_espera=0.000486 t_allreduce=19.603751 t_sendrecv=3.551843 t_bcast=74.143045 t_reduce=0.000035 n_allreduce=6500 n_sendrecv=1047 n_bcast=6500
+RANK r=10 P=13 N=6500 host=node11 linhas=500 t_comp=78.586456 t_comm=97.656612 t_total=176.243068 t_espera=0.000263 t_allreduce=18.325210 t_sendrecv=4.238444 t_bcast=75.092924 t_reduce=0.000035 n_allreduce=6500 n_sendrecv=1138 n_bcast=6500
+RANK r=11 P=13 N=6500 host=node12 linhas=500 t_comp=78.754732 t_comm=97.489717 t_total=176.244449 t_espera=0.000289 t_allreduce=17.718569 t_sendrecv=4.801774 t_bcast=74.969337 t_reduce=0.000037 n_allreduce=6500 n_sendrecv=1260 n_bcast=6500
+RANK r=12 P=13 N=6500 host=node13 linhas=500 t_comp=78.751565 t_comm=97.483007 t_total=176.234572 t_espera=0.009670 t_allreduce=22.294622 t_sendrecv=1.646271 t_bcast=73.542080 t_reduce=0.000034 n_allreduce=6500 n_sendrecv=1285 n_bcast=6500
+
+=== Estatisticas entre os 13 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       78.960128    78.100861    78.731730     0.241035
+Tcomm                       98.144273    97.284547    97.511876     0.241386
+Ttotal                     176.247618   176.234572   176.243606     0.002977
+  Tcomm: Allreduce          39.565061    17.718569    24.636602     5.744790
+  Tcomm: Sendrecv            4.801774     0.838733     2.339048     1.212879
+  Tcomm: Bcast              75.092924    56.994077    70.535601     4.910239
+  Tcomm: Reduce              0.002505     0.000034     0.000626     0.000765
+Tespera (barr. final)        0.009670     0.000108     0.001024     0.002498
+Leitura (fora da secao)      0.241802     0.018810     0.036882     0.059196
+
+Fcomm = Tcomm_max / Ttotal_max            = 55.69 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0029  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 176.246415 s
+Trocas de linha: 6492 (entre ranks: 5368) de 6500 iteracoes
+Checksum (soma |Inv|): 1.164871830346e+06
+RESULT mpi P=13 N=6500 t_secao=176.246415 tmax_total=176.247618 tmax_comp=78.960128 tmin_comp=78.100861 tmedia_comp=78.731730 desvio_comp=0.241035 tmax_comm=98.144273 tmedia_comm=97.511876 fcomm=55.6854 trocas=6492 trocas_inter=5368 checksum=1.164871830346e+06
+######## res/mpi_L_P13_N6500_r3.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=6500 P=13 ===
+RANK r=0 P=13 N=6500 host=node1 linhas=500 t_comp=78.548540 t_comm=97.164020 t_total=175.712561 t_espera=0.000135 t_allreduce=39.975937 t_sendrecv=1.055451 t_bcast=56.129649 t_reduce=0.002983 n_allreduce=6500 n_sendrecv=486 n_bcast=6500
+RANK r=1 P=13 N=6500 host=node2 linhas=500 t_comp=78.860755 t_comm=96.848870 t_total=175.709625 t_espera=0.000600 t_allreduce=28.877706 t_sendrecv=1.109991 t_bcast=66.859025 t_reduce=0.002148 n_allreduce=6500 n_sendrecv=510 n_bcast=6500
+RANK r=2 P=13 N=6500 host=node3 linhas=500 t_comp=79.511287 t_comm=96.197756 t_total=175.709043 t_espera=0.000146 t_allreduce=28.254522 t_sendrecv=1.167955 t_bcast=66.773610 t_reduce=0.001669 n_allreduce=6500 n_sendrecv=550 n_bcast=6500
+RANK r=3 P=13 N=6500 host=node4 linhas=500 t_comp=78.954544 t_comm=96.753307 t_total=175.707851 t_espera=0.001471 t_allreduce=24.965184 t_sendrecv=2.501711 t_bcast=69.286353 t_reduce=0.000059 n_allreduce=6500 n_sendrecv=622 n_bcast=6500
+RANK r=4 P=13 N=6500 host=node5 linhas=500 t_comp=78.224455 t_comm=97.486011 t_total=175.710466 t_espera=0.001075 t_allreduce=25.772776 t_sendrecv=1.296559 t_bcast=70.416635 t_reduce=0.000042 n_allreduce=6500 n_sendrecv=665 n_bcast=6500
+RANK r=5 P=13 N=6500 host=node6 linhas=500 t_comp=79.038582 t_comm=96.672253 t_total=175.710835 t_espera=0.000562 t_allreduce=21.685239 t_sendrecv=3.004826 t_bcast=71.982151 t_reduce=0.000037 n_allreduce=6500 n_sendrecv=681 n_bcast=6500
+RANK r=6 P=13 N=6500 host=node7 linhas=500 t_comp=78.961395 t_comm=96.750212 t_total=175.711607 t_espera=0.000133 t_allreduce=23.991037 t_sendrecv=1.999403 t_bcast=70.758734 t_reduce=0.001039 n_allreduce=6500 n_sendrecv=755 n_bcast=6500
+RANK r=7 P=13 N=6500 host=node8 linhas=500 t_comp=78.768971 t_comm=96.943426 t_total=175.712397 t_espera=0.001865 t_allreduce=21.574601 t_sendrecv=3.011297 t_bcast=72.357485 t_reduce=0.000043 n_allreduce=6500 n_sendrecv=828 n_bcast=6500
+RANK r=8 P=13 N=6500 host=node9 linhas=500 t_comp=78.796552 t_comm=96.913745 t_total=175.710297 t_espera=0.001244 t_allreduce=21.462256 t_sendrecv=2.071655 t_bcast=73.379801 t_reduce=0.000034 n_allreduce=6500 n_sendrecv=909 n_bcast=6500
+RANK r=9 P=13 N=6500 host=node10 linhas=500 t_comp=79.753237 t_comm=95.954977 t_total=175.708214 t_espera=0.001004 t_allreduce=19.491212 t_sendrecv=2.918121 t_bcast=73.545609 t_reduce=0.000035 n_allreduce=6500 n_sendrecv=1047 n_bcast=6500
+RANK r=10 P=13 N=6500 host=node11 linhas=500 t_comp=78.624153 t_comm=97.085313 t_total=175.709466 t_espera=0.000216 t_allreduce=19.557550 t_sendrecv=4.508056 t_bcast=73.019671 t_reduce=0.000036 n_allreduce=6500 n_sendrecv=1138 n_bcast=6500
+RANK r=11 P=13 N=6500 host=node12 linhas=500 t_comp=78.541224 t_comm=97.167625 t_total=175.708849 t_espera=0.002145 t_allreduce=19.493715 t_sendrecv=4.365048 t_bcast=73.308825 t_reduce=0.000036 n_allreduce=6500 n_sendrecv=1260 n_bcast=6500
+RANK r=12 P=13 N=6500 host=node13 linhas=500 t_comp=78.154026 t_comm=97.546945 t_total=175.700971 t_espera=0.009603 t_allreduce=23.149621 t_sendrecv=1.625787 t_bcast=72.771491 t_reduce=0.000045 n_allreduce=6500 n_sendrecv=1285 n_bcast=6500
+
+=== Estatisticas entre os 13 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       79.753237    78.154026    78.825979     0.432078
+Tcomm                       97.546945    95.954977    96.883420     0.431524
+Ttotal                     175.712561   175.700971   175.709399     0.002817
+  Tcomm: Allreduce          39.975937    19.491212    24.480874     5.384929
+  Tcomm: Sendrecv            4.508056     1.055451     2.356605     1.122301
+  Tcomm: Bcast              73.545609    56.129649    70.045311     4.600358
+  Tcomm: Reduce              0.002983     0.000034     0.000631     0.000969
+Tespera (barr. final)        0.009603     0.000133     0.001554     0.002411
+Leitura (fora da secao)      0.240406     0.019898     0.054201     0.064461
+
+Fcomm = Tcomm_max / Ttotal_max            = 55.52 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0118  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 175.712696 s
+Trocas de linha: 6492 (entre ranks: 5368) de 6500 iteracoes
+Checksum (soma |Inv|): 1.164871830346e+06
+RESULT mpi P=13 N=6500 t_secao=175.712696 tmax_total=175.712561 tmax_comp=79.753237 tmin_comp=78.154026 tmedia_comp=78.825979 desvio_comp=0.432078 tmax_comm=97.546945 tmedia_comm=96.883420 fcomm=55.5151 trocas=6492 trocas_inter=5368 checksum=1.164871830346e+06
+######## res/mpi_L_P1_N500_r1.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=500 P=1 ===
+RANK r=0 P=1 N=500 host=node1 linhas=500 t_comp=0.290365 t_comm=0.000775 t_total=0.291139 t_espera=0.000000 t_allreduce=0.000584 t_sendrecv=0.000000 t_bcast=0.000168 t_reduce=0.000022 n_allreduce=500 n_sendrecv=0 n_bcast=500
+
+=== Estatisticas entre os 1 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                        0.290365     0.290365     0.290365     0.000000
+Tcomm                        0.000775     0.000775     0.000775     0.000000
+Ttotal                       0.291139     0.291139     0.291139     0.000000
+  Tcomm: Allreduce           0.000584     0.000584     0.000584     0.000000
+  Tcomm: Sendrecv            0.000000     0.000000     0.000000     0.000000
+  Tcomm: Bcast               0.000168     0.000168     0.000168     0.000000
+  Tcomm: Reduce              0.000022     0.000022     0.000022     0.000000
+Tespera (barr. final)        0.000000     0.000000     0.000000     0.000000
+Leitura (fora da secao)      0.022445     0.022445     0.022445     0.000000
+
+Fcomm = Tcomm_max / Ttotal_max            = 0.27 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0000  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 0.291140 s
+Trocas de linha: 498 (entre ranks: 0) de 500 iteracoes
+Checksum (soma |Inv|): 3.738138285912e+04
+RESULT mpi P=1 N=500 t_secao=0.291140 tmax_total=0.291139 tmax_comp=0.290365 tmin_comp=0.290365 tmedia_comp=0.290365 desvio_comp=0.000000 tmax_comm=0.000775 tmedia_comm=0.000775 fcomm=0.2661 trocas=498 trocas_inter=0 checksum=3.738138285912e+04
+######## res/mpi_L_P1_N500_r2.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=500 P=1 ===
+RANK r=0 P=1 N=500 host=node1 linhas=500 t_comp=0.270172 t_comm=0.000788 t_total=0.270960 t_espera=0.000000 t_allreduce=0.000595 t_sendrecv=0.000000 t_bcast=0.000170 t_reduce=0.000023 n_allreduce=500 n_sendrecv=0 n_bcast=500
+
+=== Estatisticas entre os 1 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                        0.270172     0.270172     0.270172     0.000000
+Tcomm                        0.000788     0.000788     0.000788     0.000000
+Ttotal                       0.270960     0.270960     0.270960     0.000000
+  Tcomm: Allreduce           0.000595     0.000595     0.000595     0.000000
+  Tcomm: Sendrecv            0.000000     0.000000     0.000000     0.000000
+  Tcomm: Bcast               0.000170     0.000170     0.000170     0.000000
+  Tcomm: Reduce              0.000023     0.000023     0.000023     0.000000
+Tespera (barr. final)        0.000000     0.000000     0.000000     0.000000
+Leitura (fora da secao)      0.002773     0.002773     0.002773     0.000000
+
+Fcomm = Tcomm_max / Ttotal_max            = 0.29 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0000  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 0.270961 s
+Trocas de linha: 498 (entre ranks: 0) de 500 iteracoes
+Checksum (soma |Inv|): 3.738138285912e+04
+RESULT mpi P=1 N=500 t_secao=0.270961 tmax_total=0.270960 tmax_comp=0.270172 tmin_comp=0.270172 tmedia_comp=0.270172 desvio_comp=0.000000 tmax_comm=0.000788 tmedia_comm=0.000788 fcomm=0.2908 trocas=498 trocas_inter=0 checksum=3.738138285912e+04
+######## res/mpi_L_P1_N500_r3.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=500 P=1 ===
+RANK r=0 P=1 N=500 host=node1 linhas=500 t_comp=0.267538 t_comm=0.000749 t_total=0.268287 t_espera=0.000000 t_allreduce=0.000579 t_sendrecv=0.000000 t_bcast=0.000147 t_reduce=0.000023 n_allreduce=500 n_sendrecv=0 n_bcast=500
+
+=== Estatisticas entre os 1 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                        0.267538     0.267538     0.267538     0.000000
+Tcomm                        0.000749     0.000749     0.000749     0.000000
+Ttotal                       0.268287     0.268287     0.268287     0.000000
+  Tcomm: Allreduce           0.000579     0.000579     0.000579     0.000000
+  Tcomm: Sendrecv            0.000000     0.000000     0.000000     0.000000
+  Tcomm: Bcast               0.000147     0.000147     0.000147     0.000000
+  Tcomm: Reduce              0.000023     0.000023     0.000023     0.000000
+Tespera (barr. final)        0.000000     0.000000     0.000000     0.000000
+Leitura (fora da secao)      0.002435     0.002435     0.002435     0.000000
+
+Fcomm = Tcomm_max / Ttotal_max            = 0.28 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0000  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 0.268287 s
+Trocas de linha: 498 (entre ranks: 0) de 500 iteracoes
+Checksum (soma |Inv|): 3.738138285912e+04
+RESULT mpi P=1 N=500 t_secao=0.268287 tmax_total=0.268287 tmax_comp=0.267538 tmin_comp=0.267538 tmedia_comp=0.267538 desvio_comp=0.000000 tmax_comm=0.000749 tmedia_comm=0.000749 fcomm=0.2791 trocas=498 trocas_inter=0 checksum=3.738138285912e+04
+######## res/mpi_L_P2_N1000_r1.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=1000 P=2 ===
+RANK r=0 P=2 N=1000 host=node1 linhas=500 t_comp=1.926985 t_comm=0.354591 t_total=2.281576 t_espera=0.000013 t_allreduce=0.121715 t_sendrecv=0.090873 t_bcast=0.141963 t_reduce=0.000041 n_allreduce=1000 n_sendrecv=359 n_bcast=1000
+RANK r=1 P=2 N=1000 host=node2 linhas=500 t_comp=1.817395 t_comm=0.463568 t_total=2.280962 t_espera=0.000587 t_allreduce=0.231130 t_sendrecv=0.114903 t_bcast=0.117500 t_reduce=0.000034 n_allreduce=1000 n_sendrecv=359 n_bcast=1000
+
+=== Estatisticas entre os 2 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                        1.926985     1.817395     1.872190     0.054795
+Tcomm                        0.463568     0.354591     0.409079     0.054488
+Ttotal                       2.281576     2.280962     2.281269     0.000307
+  Tcomm: Allreduce           0.231130     0.121715     0.176423     0.054708
+  Tcomm: Sendrecv            0.114903     0.090873     0.102888     0.012015
+  Tcomm: Bcast               0.141963     0.117500     0.129731     0.012231
+  Tcomm: Reduce              0.000041     0.000034     0.000037     0.000003
+Tespera (barr. final)        0.000587     0.000013     0.000300     0.000287
+Leitura (fora da secao)      0.039980     0.006095     0.023038     0.016942
+
+Fcomm = Tcomm_max / Ttotal_max            = 20.32 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0293  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 2.281589 s
+Trocas de linha: 991 (entre ranks: 359) de 1000 iteracoes
+Checksum (soma |Inv|): 8.476808432587e+04
+RESULT mpi P=2 N=1000 t_secao=2.281589 tmax_total=2.281576 tmax_comp=1.926985 tmin_comp=1.817395 tmedia_comp=1.872190 desvio_comp=0.054795 tmax_comm=0.463568 tmedia_comm=0.409079 fcomm=20.3179 trocas=991 trocas_inter=359 checksum=8.476808432587e+04
+######## res/mpi_L_P2_N1000_r2.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=1000 P=2 ===
+RANK r=0 P=2 N=1000 host=node1 linhas=500 t_comp=1.793696 t_comm=0.403208 t_total=2.196903 t_espera=0.000012 t_allreduce=0.168776 t_sendrecv=0.094126 t_bcast=0.140265 t_reduce=0.000040 n_allreduce=1000 n_sendrecv=359 n_bcast=1000
+
+=== Estatisticas entre os 2 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+RANK r=1 P=2 N=1000 host=node2 linhas=500 t_comp=1.813957 t_comm=0.382691 t_total=2.196648 t_espera=0.000224 t_allreduce=0.149865 t_sendrecv=0.111305 t_bcast=0.121488 t_reduce=0.000033 n_allreduce=1000 n_sendrecv=359 n_bcast=1000
+Tcomp                        1.813957     1.793696     1.803826     0.010131
+Tcomm                        0.403208     0.382691     0.392949     0.010259
+Ttotal                       2.196903     2.196648     2.196776     0.000128
+  Tcomm: Allreduce           0.168776     0.149865     0.159321     0.009456
+  Tcomm: Sendrecv            0.111305     0.094126     0.102715     0.008589
+  Tcomm: Bcast               0.140265     0.121488     0.130877     0.009388
+  Tcomm: Reduce              0.000040     0.000033     0.000036     0.000004
+Tespera (barr. final)        0.000224     0.000012     0.000118     0.000106
+Leitura (fora da secao)      0.003932     0.003635     0.003783     0.000149
+
+Fcomm = Tcomm_max / Ttotal_max            = 18.35 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0056  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 2.196915 s
+Trocas de linha: 991 (entre ranks: 359) de 1000 iteracoes
+Checksum (soma |Inv|): 8.476808432587e+04
+RESULT mpi P=2 N=1000 t_secao=2.196915 tmax_total=2.196903 tmax_comp=1.813957 tmin_comp=1.793696 tmedia_comp=1.803826 desvio_comp=0.010131 tmax_comm=0.403208 tmedia_comm=0.392949 fcomm=18.3535 trocas=991 trocas_inter=359 checksum=8.476808432587e+04
+######## res/mpi_L_P2_N1000_r3.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=1000 P=2 ===
+RANK r=0 P=2 N=1000 host=node1 linhas=500 t_comp=1.941753 t_comm=0.417809 t_total=2.359562 t_espera=0.000013 t_allreduce=0.173208 t_sendrecv=0.094689 t_bcast=0.149873 t_reduce=0.000040 n_allreduce=1000 n_sendrecv=359 n_bcast=1000
+RANK r=1 P=2 N=1000 host=node2 linhas=500 t_comp=1.941837 t_comm=0.417448 t_total=2.359285 t_espera=0.000247 t_allreduce=0.183428 t_sendrecv=0.116393 t_bcast=0.117592 t_reduce=0.000035 n_allreduce=1000 n_sendrecv=359 n_bcast=1000
+
+=== Estatisticas entre os 2 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                        1.941837     1.941753     1.941795     0.000042
+Tcomm                        0.417809     0.417448     0.417629     0.000181
+Ttotal                       2.359562     2.359285     2.359423     0.000138
+  Tcomm: Allreduce           0.183428     0.173208     0.178318     0.005110
+  Tcomm: Sendrecv            0.116393     0.094689     0.105541     0.010852
+  Tcomm: Bcast               0.149873     0.117592     0.133733     0.016140
+  Tcomm: Reduce              0.000040     0.000035     0.000037     0.000002
+Tespera (barr. final)        0.000247     0.000013     0.000130     0.000117
+Leitura (fora da secao)      0.003730     0.003595     0.003663     0.000067
+
+Fcomm = Tcomm_max / Ttotal_max            = 17.71 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0000  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 2.359574 s
+Trocas de linha: 991 (entre ranks: 359) de 1000 iteracoes
+Checksum (soma |Inv|): 8.476808432587e+04
+RESULT mpi P=2 N=1000 t_secao=2.359574 tmax_total=2.359562 tmax_comp=1.941837 tmin_comp=1.941753 tmedia_comp=1.941795 desvio_comp=0.000042 tmax_comm=0.417809 tmedia_comm=0.417629 fcomm=17.7071 trocas=991 trocas_inter=359 checksum=8.476808432587e+04
+######## res/mpi_L_P4_N2000_r1.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=2000 P=4 ===
+RANK r=0 P=4 N=2000 host=node1 linhas=500 t_comp=7.338084 t_comm=2.687462 t_total=10.025546 t_espera=0.000043 t_allreduce=1.510770 t_sendrecv=0.216998 t_bcast=0.959049 t_reduce=0.000646 n_allreduce=2000 n_sendrecv=420 n_bcast=2000
+RANK r=1 P=4 N=2000 host=node2 linhas=500 t_comp=7.474927 t_comm=2.550857 t_total=10.025784 t_espera=0.000444 t_allreduce=1.033442 t_sendrecv=0.321960 t_bcast=1.195412 t_reduce=0.000044 n_allreduce=2000 n_sendrecv=552 n_bcast=2000
+RANK r=2 P=4 N=2000 host=node3 linhas=500 t_comp=7.454075 t_comm=2.571521 t_total=10.025595 t_espera=0.000113 t_allreduce=0.783964 t_sendrecv=0.369144 t_bcast=1.418382 t_reduce=0.000031 n_allreduce=2000 n_sendrecv=687 n_bcast=2000
+RANK r=3 P=4 N=2000 host=node4 linhas=500 t_comp=7.457076 t_comm=2.567562 t_total=10.024638 t_espera=0.000778 t_allreduce=0.469829 t_sendrecv=0.394133 t_bcast=1.703566 t_reduce=0.000034 n_allreduce=2000 n_sendrecv=683 n_bcast=2000
+
+=== Estatisticas entre os 4 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                        7.474927     7.338084     7.431040     0.054257
+Tcomm                        2.687462     2.550857     2.594351     0.054314
+Ttotal                      10.025784    10.024638    10.025391     0.000444
+  Tcomm: Allreduce           1.510770     0.469829     0.949501     0.380643
+  Tcomm: Sendrecv            0.394133     0.216998     0.325559     0.067824
+  Tcomm: Bcast               1.703566     0.959049     1.319102     0.275048
+  Tcomm: Reduce              0.000646     0.000031     0.000189     0.000264
+Tespera (barr. final)        0.000778     0.000043     0.000344     0.000293
+Leitura (fora da secao)      0.290357     0.203047     0.229246     0.035489
+
+Fcomm = Tcomm_max / Ttotal_max            = 26.81 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0059  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 10.025589 s
+Trocas de linha: 1989 (entre ranks: 1171) de 2000 iteracoes
+Checksum (soma |Inv|): 6.185307565785e+06
+RESULT mpi P=4 N=2000 t_secao=10.025589 tmax_total=10.025784 tmax_comp=7.474927 tmin_comp=7.338084 tmedia_comp=7.431040 desvio_comp=0.054257 tmax_comm=2.687462 tmedia_comm=2.594351 fcomm=26.8055 trocas=1989 trocas_inter=1171 checksum=6.185307565785e+06
+######## res/mpi_L_P4_N2000_r2.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=2000 P=4 ===
+RANK r=0 P=4 N=2000 host=node1 linhas=500 t_comp=7.482074 t_comm=2.789152 t_total=10.271226 t_espera=0.000030 t_allreduce=1.572577 t_sendrecv=0.232565 t_bcast=0.983639 t_reduce=0.000370 n_allreduce=2000 n_sendrecv=420 n_bcast=2000
+RANK r=1 P=4 N=2000 host=node2 linhas=500 t_comp=7.613574 t_comm=2.658233 t_total=10.271807 t_espera=0.000117 t_allreduce=1.129234 t_sendrecv=0.316973 t_bcast=1.211980 t_reduce=0.000045 n_allreduce=2000 n_sendrecv=552 n_bcast=2000
+RANK r=2 P=4 N=2000 host=node3 linhas=500 t_comp=7.457554 t_comm=2.813814 t_total=10.271368 t_espera=0.000121 t_allreduce=0.973203 t_sendrecv=0.373415 t_bcast=1.467166 t_reduce=0.000030 n_allreduce=2000 n_sendrecv=687 n_bcast=2000
+RANK r=3 P=4 N=2000 host=node4 linhas=500 t_comp=7.757418 t_comm=2.512933 t_total=10.270351 t_espera=0.000720 t_allreduce=0.397272 t_sendrecv=0.361256 t_bcast=1.754374 t_reduce=0.000031 n_allreduce=2000 n_sendrecv=683 n_bcast=2000
+
+=== Estatisticas entre os 4 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                        7.757418     7.457554     7.577655     0.119546
+Tcomm                        2.813814     2.512933     2.693533     0.119868
+Ttotal                      10.271807    10.270351    10.271188     0.000529
+  Tcomm: Allreduce           1.572577     0.397272     1.018071     0.420488
+  Tcomm: Sendrecv            0.373415     0.232565     0.321052     0.055238
+  Tcomm: Bcast               1.754374     0.983639     1.354290     0.287421
+  Tcomm: Reduce              0.000370     0.000030     0.000119     0.000145
+Tespera (barr. final)        0.000720     0.000030     0.000247     0.000276
+Leitura (fora da secao)      0.007259     0.006645     0.007006     0.000235
+
+Fcomm = Tcomm_max / Ttotal_max            = 27.39 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0237  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 10.271255 s
+Trocas de linha: 1989 (entre ranks: 1171) de 2000 iteracoes
+Checksum (soma |Inv|): 6.185307565785e+06
+RESULT mpi P=4 N=2000 t_secao=10.271255 tmax_total=10.271807 tmax_comp=7.757418 tmin_comp=7.457554 tmedia_comp=7.577655 desvio_comp=0.119546 tmax_comm=2.813814 tmedia_comm=2.693533 fcomm=27.3936 trocas=1989 trocas_inter=1171 checksum=6.185307565785e+06
+######## res/mpi_L_P4_N2000_r3.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=2000 P=4 ===
+RANK r=0 P=4 N=2000 host=node1 linhas=500 t_comp=7.600561 t_comm=2.658143 t_total=10.258703 t_espera=0.000060 t_allreduce=1.420378 t_sendrecv=0.235723 t_bcast=1.001364 t_reduce=0.000678 n_allreduce=2000 n_sendrecv=420 n_bcast=2000
+RANK r=2 P=4 N=2000 host=node3 linhas=500 t_comp=7.586695 t_comm=2.672087 t_total=10.258781 t_espera=0.000109 t_allreduce=0.870011 t_sendrecv=0.358558 t_bcast=1.443471 t_reduce=0.000046 n_allreduce=2000 n_sendrecv=687 n_bcast=2000
+RANK r=1 P=4 N=2000 host=node2 linhas=500 t_comp=7.426649 t_comm=2.832214 t_total=10.258863 t_espera=0.000509 t_allreduce=1.255823 t_sendrecv=0.313021 t_bcast=1.263330 t_reduce=0.000040 n_allreduce=2000 n_sendrecv=552 n_bcast=2000
+RANK r=3 P=4 N=2000 host=node4 linhas=500 t_comp=7.540680 t_comm=2.716652 t_total=10.257332 t_espera=0.001241 t_allreduce=0.606379 t_sendrecv=0.388898 t_bcast=1.721342 t_reduce=0.000033 n_allreduce=2000 n_sendrecv=683 n_bcast=2000
+
+=== Estatisticas entre os 4 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                        7.600561     7.426649     7.538646     0.068355
+Tcomm                        2.832214     2.658143     2.719774     0.068420
+Ttotal                      10.258863    10.257332    10.258420     0.000631
+  Tcomm: Allreduce           1.420378     0.606379     1.038148     0.319443
+  Tcomm: Sendrecv            0.388898     0.235723     0.324050     0.057705
+  Tcomm: Bcast               1.721342     1.001364     1.357377     0.262428
+  Tcomm: Reduce              0.000678     0.000033     0.000199     0.000276
+Tespera (barr. final)        0.001241     0.000060     0.000480     0.000473
+Leitura (fora da secao)      0.006621     0.006302     0.006414     0.000124
+
+Fcomm = Tcomm_max / Ttotal_max            = 27.61 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0082  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 10.258764 s
+Trocas de linha: 1989 (entre ranks: 1171) de 2000 iteracoes
+Checksum (soma |Inv|): 6.185307565785e+06
+RESULT mpi P=4 N=2000 t_secao=10.258764 tmax_total=10.258863 tmax_comp=7.600561 tmin_comp=7.426649 tmedia_comp=7.538646 desvio_comp=0.068355 tmax_comm=2.832214 tmedia_comm=2.719774 fcomm=27.6075 trocas=1989 trocas_inter=1171 checksum=6.185307565785e+06
+######## res/mpi_P13_r1.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=4000 P=13 ===
+RANK r=0 P=13 N=4000 host=node1 linhas=308 t_comp=18.482369 t_comm=30.916511 t_total=49.398881 t_espera=0.000143 t_allreduce=23.252432 t_sendrecv=0.277284 t_bcast=7.380885 t_reduce=0.005910 n_allreduce=4000 n_sendrecv=294 n_bcast=4000
+RANK r=1 P=13 N=4000 host=node2 linhas=308 t_comp=18.332767 t_comm=31.065381 t_total=49.398149 t_espera=0.000197 t_allreduce=8.015196 t_sendrecv=0.316889 t_bcast=22.729598 t_reduce=0.003698 n_allreduce=4000 n_sendrecv=320 n_bcast=4000
+RANK r=2 P=13 N=4000 host=node3 linhas=308 t_comp=18.511570 t_comm=30.885919 t_total=49.397489 t_espera=0.000469 t_allreduce=4.591189 t_sendrecv=0.325459 t_bcast=25.968748 t_reduce=0.000523 n_allreduce=4000 n_sendrecv=341 n_bcast=4000
+RANK r=3 P=13 N=4000 host=node4 linhas=308 t_comp=18.338283 t_comm=31.059283 t_total=49.397566 t_espera=0.000437 t_allreduce=3.995468 t_sendrecv=0.349278 t_bcast=26.714014 t_reduce=0.000524 n_allreduce=4000 n_sendrecv=367 n_bcast=4000
+RANK r=4 P=13 N=4000 host=node5 linhas=308 t_comp=18.144082 t_comm=31.253761 t_total=49.397843 t_espera=0.000841 t_allreduce=4.658804 t_sendrecv=0.361764 t_bcast=26.233154 t_reduce=0.000039 n_allreduce=4000 n_sendrecv=400 n_bcast=4000
+RANK r=5 P=13 N=4000 host=node6 linhas=308 t_comp=18.155388 t_comm=31.243947 t_total=49.399335 t_espera=0.000162 t_allreduce=4.257928 t_sendrecv=0.405984 t_bcast=26.579242 t_reduce=0.000793 n_allreduce=4000 n_sendrecv=424 n_bcast=4000
+RANK r=6 P=13 N=4000 host=node7 linhas=308 t_comp=18.525954 t_comm=30.873127 t_total=49.399082 t_espera=0.000431 t_allreduce=3.963770 t_sendrecv=0.451947 t_bcast=26.457350 t_reduce=0.000060 n_allreduce=4000 n_sendrecv=503 n_bcast=4000
+RANK r=7 P=13 N=4000 host=node8 linhas=308 t_comp=18.451819 t_comm=30.947844 t_total=49.399663 t_espera=0.000516 t_allreduce=3.805561 t_sendrecv=0.549007 t_bcast=26.593242 t_reduce=0.000033 n_allreduce=4000 n_sendrecv=551 n_bcast=4000
+RANK r=8 P=13 N=4000 host=node9 linhas=308 t_comp=18.344133 t_comm=31.053668 t_total=49.397801 t_espera=0.000901 t_allreduce=4.450088 t_sendrecv=0.460530 t_bcast=26.143016 t_reduce=0.000034 n_allreduce=4000 n_sendrecv=555 n_bcast=4000
+RANK r=9 P=13 N=4000 host=node10 linhas=307 t_comp=18.641552 t_comm=30.756278 t_total=49.397830 t_espera=0.000242 t_allreduce=3.777474 t_sendrecv=0.591528 t_bcast=26.387243 t_reduce=0.000032 n_allreduce=4000 n_sendrecv=646 n_bcast=4000
+RANK r=10 P=13 N=4000 host=node11 linhas=307 t_comp=18.154814 t_comm=31.242660 t_total=49.397474 t_espera=0.000630 t_allreduce=3.954007 t_sendrecv=0.685661 t_bcast=26.602960 t_reduce=0.000031 n_allreduce=4000 n_sendrecv=691 n_bcast=4000
+RANK r=11 P=13 N=4000 host=node12 linhas=307 t_comp=18.410872 t_comm=30.987126 t_total=49.397998 t_espera=0.000450 t_allreduce=3.927350 t_sendrecv=0.730755 t_bcast=26.328987 t_reduce=0.000033 n_allreduce=4000 n_sendrecv=802 n_bcast=4000
+RANK r=12 P=13 N=4000 host=node13 linhas=307 t_comp=18.588915 t_comm=30.803168 t_total=49.392083 t_espera=0.006354 t_allreduce=4.136624 t_sendrecv=0.552084 t_bcast=26.114435 t_reduce=0.000025 n_allreduce=4000 n_sendrecv=808 n_bcast=4000
+
+=== Estatisticas entre os 13 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       18.641552    18.144082    18.390963     0.158786
+Tcomm                       31.253761    30.756278    31.006821     0.159317
+Ttotal                      49.399663    49.392083    49.397784     0.001792
+  Tcomm: Allreduce          23.252432     3.777474     5.906607     5.119257
+  Tcomm: Sendrecv            0.730755     0.277284     0.466013     0.139869
+  Tcomm: Bcast              26.714014     7.380885    24.633298     5.077868
+  Tcomm: Reduce              0.005910     0.000025     0.000903     0.001736
+Tespera (barr. final)        0.006354     0.000143     0.000906     0.001589
+Leitura (fora da secao)      0.943265     0.220648     0.791232     0.244155
+
+Fcomm = Tcomm_max / Ttotal_max            = 63.27 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0136  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 49.399024 s
+Trocas de linha: 3991 (entre ranks: 3351) de 4000 iteracoes
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=13 N=4000 t_secao=49.399024 tmax_total=49.399663 tmax_comp=18.641552 tmin_comp=18.144082 tmedia_comp=18.390963 desvio_comp=0.158786 tmax_comm=31.253761 tmedia_comm=31.006821 fcomm=63.2672 trocas=3991 trocas_inter=3351 checksum=6.775485558388e+05
+######## res/mpi_P13_r2.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=4000 P=13 ===
+RANK r=0 P=13 N=4000 host=node1 linhas=308 t_comp=18.499054 t_comm=31.375409 t_total=49.874463 t_espera=0.000116 t_allreduce=23.240073 t_sendrecv=0.282050 t_bcast=7.847404 t_reduce=0.005882 n_allreduce=4000 n_sendrecv=294 n_bcast=4000
+RANK r=1 P=13 N=4000 host=node2 linhas=308 t_comp=18.242682 t_comm=31.630854 t_total=49.873535 t_espera=0.000236 t_allreduce=9.201420 t_sendrecv=0.334396 t_bcast=22.091344 t_reduce=0.003695 n_allreduce=4000 n_sendrecv=320 n_bcast=4000
+RANK r=2 P=13 N=4000 host=node3 linhas=308 t_comp=18.489283 t_comm=31.383994 t_total=49.873277 t_espera=0.000187 t_allreduce=5.654093 t_sendrecv=0.315320 t_bcast=25.414327 t_reduce=0.000254 n_allreduce=4000 n_sendrecv=341 n_bcast=4000
+RANK r=3 P=13 N=4000 host=node4 linhas=308 t_comp=18.633809 t_comm=31.239340 t_total=49.873149 t_espera=0.000338 t_allreduce=4.007249 t_sendrecv=0.346350 t_bcast=26.885367 t_reduce=0.000374 n_allreduce=4000 n_sendrecv=367 n_bcast=4000
+RANK r=4 P=13 N=4000 host=node5 linhas=308 t_comp=18.230599 t_comm=31.643225 t_total=49.873824 t_espera=0.000511 t_allreduce=4.601660 t_sendrecv=0.378066 t_bcast=26.663436 t_reduce=0.000063 n_allreduce=4000 n_sendrecv=400 n_bcast=4000
+RANK r=5 P=13 N=4000 host=node6 linhas=308 t_comp=18.402728 t_comm=31.471726 t_total=49.874453 t_espera=0.000636 t_allreduce=4.231173 t_sendrecv=0.437078 t_bcast=26.803436 t_reduce=0.000039 n_allreduce=4000 n_sendrecv=424 n_bcast=4000
+RANK r=6 P=13 N=4000 host=node7 linhas=308 t_comp=18.473203 t_comm=31.401776 t_total=49.874979 t_espera=0.000168 t_allreduce=3.966027 t_sendrecv=0.444603 t_bcast=26.991085 t_reduce=0.000060 n_allreduce=4000 n_sendrecv=503 n_bcast=4000
+RANK r=7 P=13 N=4000 host=node8 linhas=308 t_comp=18.717413 t_comm=31.158144 t_total=49.875557 t_espera=0.000313 t_allreduce=3.577648 t_sendrecv=0.505946 t_bcast=27.074521 t_reduce=0.000029 n_allreduce=4000 n_sendrecv=551 n_bcast=4000
+RANK r=8 P=13 N=4000 host=node9 linhas=308 t_comp=18.264431 t_comm=31.608892 t_total=49.873323 t_espera=0.000957 t_allreduce=4.955226 t_sendrecv=0.454775 t_bcast=26.198849 t_reduce=0.000042 n_allreduce=4000 n_sendrecv=555 n_bcast=4000
+RANK r=9 P=13 N=4000 host=node10 linhas=307 t_comp=18.752001 t_comm=31.120663 t_total=49.872663 t_espera=0.000828 t_allreduce=3.942627 t_sendrecv=0.616782 t_bcast=26.561223 t_reduce=0.000031 n_allreduce=4000 n_sendrecv=646 n_bcast=4000
+RANK r=10 P=13 N=4000 host=node11 linhas=307 t_comp=18.109906 t_comm=31.763365 t_total=49.873270 t_espera=0.000336 t_allreduce=4.414797 t_sendrecv=0.674180 t_bcast=26.674354 t_reduce=0.000034 n_allreduce=4000 n_sendrecv=691 n_bcast=4000
+RANK r=11 P=13 N=4000 host=node12 linhas=307 t_comp=18.440804 t_comm=31.431958 t_total=49.872761 t_espera=0.001189 t_allreduce=4.497364 t_sendrecv=0.967198 t_bcast=25.967357 t_reduce=0.000039 n_allreduce=4000 n_sendrecv=802 n_bcast=4000
+RANK r=12 P=13 N=4000 host=node13 linhas=307 t_comp=18.428230 t_comm=31.439628 t_total=49.867858 t_espera=0.006225 t_allreduce=4.458600 t_sendrecv=0.585649 t_bcast=26.395350 t_reduce=0.000029 n_allreduce=4000 n_sendrecv=808 n_bcast=4000
+
+=== Estatisticas entre os 13 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       18.752001    18.109906    18.437242     0.184575
+Tcomm                       31.763365    31.120663    31.436075     0.184420
+Ttotal                      49.875557    49.867858    49.873316     0.001781
+  Tcomm: Allreduce          23.240073     3.577648     6.211381     5.103084
+  Tcomm: Sendrecv            0.967198     0.282050     0.487876     0.180660
+  Tcomm: Bcast              27.074521     7.847404    24.736004     5.033277
+  Tcomm: Reduce              0.005882     0.000029     0.000813     0.001751
+Tespera (barr. final)        0.006225     0.000116     0.000926     0.001563
+Leitura (fora da secao)      0.056253     0.006834     0.012012     0.012974
+
+Fcomm = Tcomm_max / Ttotal_max            = 63.69 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0171  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 49.874578 s
+Trocas de linha: 3991 (entre ranks: 3351) de 4000 iteracoes
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=13 N=4000 t_secao=49.874578 tmax_total=49.875557 tmax_comp=18.752001 tmin_comp=18.109906 tmedia_comp=18.437242 desvio_comp=0.184575 tmax_comm=31.763365 tmedia_comm=31.436075 fcomm=63.6852 trocas=3991 trocas_inter=3351 checksum=6.775485558388e+05
+######## res/mpi_P13_r3.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=4000 P=13 ===
+RANK r=0 P=13 N=4000 host=node1 linhas=308 t_comp=18.297016 t_comm=31.844639 t_total=50.141655 t_espera=0.000138 t_allreduce=23.504532 t_sendrecv=0.295889 t_bcast=8.038224 t_reduce=0.005994 n_allreduce=4000 n_sendrecv=294 n_bcast=4000
+RANK r=1 P=13 N=4000 host=node2 linhas=308 t_comp=18.230286 t_comm=31.910617 t_total=50.140903 t_espera=0.000187 t_allreduce=9.809607 t_sendrecv=0.348962 t_bcast=21.748429 t_reduce=0.003619 n_allreduce=4000 n_sendrecv=320 n_bcast=4000
+RANK r=2 P=13 N=4000 host=node3 linhas=308 t_comp=18.824182 t_comm=31.316224 t_total=50.140406 t_espera=0.000320 t_allreduce=5.230377 t_sendrecv=0.317985 t_bcast=25.767753 t_reduce=0.000109 n_allreduce=4000 n_sendrecv=341 n_bcast=4000
+RANK r=3 P=13 N=4000 host=node4 linhas=308 t_comp=18.601139 t_comm=31.539405 t_total=50.140544 t_espera=0.000281 t_allreduce=4.461690 t_sendrecv=0.344654 t_bcast=26.732713 t_reduce=0.000348 n_allreduce=4000 n_sendrecv=367 n_bcast=4000
+RANK r=4 P=13 N=4000 host=node5 linhas=308 t_comp=18.543601 t_comm=31.596848 t_total=50.140449 t_espera=0.000473 t_allreduce=4.516431 t_sendrecv=0.355945 t_bcast=26.724416 t_reduce=0.000056 n_allreduce=4000 n_sendrecv=400 n_bcast=4000
+RANK r=5 P=13 N=4000 host=node6 linhas=308 t_comp=18.243876 t_comm=31.898152 t_total=50.142029 t_espera=0.000283 t_allreduce=4.826087 t_sendrecv=0.408986 t_bcast=26.662492 t_reduce=0.000588 n_allreduce=4000 n_sendrecv=424 n_bcast=4000
+RANK r=6 P=13 N=4000 host=node7 linhas=308 t_comp=18.587619 t_comm=31.554400 t_total=50.142019 t_espera=0.000273 t_allreduce=4.858941 t_sendrecv=0.435798 t_bcast=26.259619 t_reduce=0.000042 n_allreduce=4000 n_sendrecv=503 n_bcast=4000
+RANK r=7 P=13 N=4000 host=node8 linhas=308 t_comp=18.689203 t_comm=31.453577 t_total=50.142780 t_espera=0.000296 t_allreduce=4.366680 t_sendrecv=0.508138 t_bcast=26.578725 t_reduce=0.000034 n_allreduce=4000 n_sendrecv=551 n_bcast=4000
+RANK r=8 P=13 N=4000 host=node9 linhas=308 t_comp=18.377087 t_comm=31.763643 t_total=50.140731 t_espera=0.000763 t_allreduce=5.022306 t_sendrecv=0.469079 t_bcast=26.272223 t_reduce=0.000035 n_allreduce=4000 n_sendrecv=555 n_bcast=4000
+RANK r=9 P=13 N=4000 host=node10 linhas=307 t_comp=18.814313 t_comm=31.326158 t_total=50.140470 t_espera=0.000345 t_allreduce=4.335777 t_sendrecv=0.631878 t_bcast=26.358471 t_reduce=0.000031 n_allreduce=4000 n_sendrecv=646 n_bcast=4000
+RANK r=10 P=13 N=4000 host=node11 linhas=307 t_comp=18.168466 t_comm=31.971945 t_total=50.140411 t_espera=0.000444 t_allreduce=5.104898 t_sendrecv=0.631734 t_bcast=26.235281 t_reduce=0.000032 n_allreduce=4000 n_sendrecv=691 n_bcast=4000
+RANK r=11 P=13 N=4000 host=node12 linhas=307 t_comp=18.288303 t_comm=31.852343 t_total=50.140646 t_espera=0.000635 t_allreduce=4.744669 t_sendrecv=0.992990 t_bcast=26.114637 t_reduce=0.000047 n_allreduce=4000 n_sendrecv=802 n_bcast=4000
+RANK r=12 P=13 N=4000 host=node13 linhas=307 t_comp=18.127773 t_comm=32.006641 t_total=50.134414 t_espera=0.006253 t_allreduce=5.464109 t_sendrecv=0.549082 t_bcast=25.993423 t_reduce=0.000026 n_allreduce=4000 n_sendrecv=808 n_bcast=4000
+
+=== Estatisticas entre os 13 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       18.824182    18.127773    18.445605     0.233529
+Tcomm                       32.006641    31.316224    31.694969     0.232851
+Ttotal                      50.142780    50.134414    50.140574     0.001930
+  Tcomm: Allreduce          23.504532     4.335777     6.634316     5.058035
+  Tcomm: Sendrecv            0.992990     0.295889     0.483932     0.182452
+  Tcomm: Bcast              26.732713     8.038224    24.575877     4.934678
+  Tcomm: Reduce              0.005994     0.000026     0.000843     0.001760
+Tespera (barr. final)        0.006253     0.000138     0.000822     0.001576
+Leitura (fora da secao)      0.007872     0.007152     0.007497     0.000210
+
+Fcomm = Tcomm_max / Ttotal_max            = 63.83 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0205  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 50.141793 s
+Trocas de linha: 3991 (entre ranks: 3351) de 4000 iteracoes
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=13 N=4000 t_secao=50.141793 tmax_total=50.142780 tmax_comp=18.824182 tmin_comp=18.127773 tmedia_comp=18.445605 desvio_comp=0.233529 tmax_comm=32.006641 tmedia_comm=31.694969 fcomm=63.8310 trocas=3991 trocas_inter=3351 checksum=6.775485558388e+05
+######## res/mpi_P1_r1.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=4000 P=1 ===
+RANK r=0 P=1 N=4000 host=node1 linhas=4000 t_comp=242.532916 t_comm=0.014459 t_total=242.547375 t_espera=0.000001 t_allreduce=0.011426 t_sendrecv=0.000000 t_bcast=0.003027 t_reduce=0.000006 n_allreduce=4000 n_sendrecv=0 n_bcast=4000
+
+=== Estatisticas entre os 1 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                      242.532916   242.532916   242.532916     0.000000
+Tcomm                        0.014459     0.014459     0.014459     0.000000
+Ttotal                     242.547375   242.547375   242.547375     0.000000
+  Tcomm: Allreduce           0.011426     0.011426     0.011426     0.000000
+  Tcomm: Sendrecv            0.000000     0.000000     0.000000     0.000000
+  Tcomm: Bcast               0.003027     0.003027     0.003027     0.000000
+  Tcomm: Reduce              0.000006     0.000006     0.000006     0.000000
+Tespera (barr. final)        0.000001     0.000001     0.000001     0.000000
+Leitura (fora da secao)      0.090439     0.090439     0.090439     0.000000
+
+Fcomm = Tcomm_max / Ttotal_max            = 0.01 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0000  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 242.547375 s
+Trocas de linha: 3991 (entre ranks: 0) de 4000 iteracoes
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=1 N=4000 t_secao=242.547375 tmax_total=242.547375 tmax_comp=242.532916 tmin_comp=242.532916 tmedia_comp=242.532916 desvio_comp=0.000000 tmax_comm=0.014459 tmedia_comm=0.014459 fcomm=0.0060 trocas=3991 trocas_inter=0 checksum=6.775485558388e+05
+######## res/mpi_P1_r2.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=4000 P=1 ===
+RANK r=0 P=1 N=4000 host=node1 linhas=4000 t_comp=242.572832 t_comm=0.016345 t_total=242.589177 t_espera=0.000000 t_allreduce=0.013107 t_sendrecv=0.000000 t_bcast=0.003218 t_reduce=0.000020 n_allreduce=4000 n_sendrecv=0 n_bcast=4000
+
+=== Estatisticas entre os 1 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                      242.572832   242.572832   242.572832     0.000000
+Tcomm                        0.016345     0.016345     0.016345     0.000000
+Ttotal                     242.589177   242.589177   242.589177     0.000000
+  Tcomm: Allreduce           0.013107     0.013107     0.013107     0.000000
+  Tcomm: Sendrecv            0.000000     0.000000     0.000000     0.000000
+  Tcomm: Bcast               0.003218     0.003218     0.003218     0.000000
+  Tcomm: Reduce              0.000020     0.000020     0.000020     0.000000
+Tespera (barr. final)        0.000000     0.000000     0.000000     0.000000
+Leitura (fora da secao)      0.089814     0.089814     0.089814     0.000000
+
+Fcomm = Tcomm_max / Ttotal_max            = 0.01 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0000  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 242.589177 s
+Trocas de linha: 3991 (entre ranks: 0) de 4000 iteracoes
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=1 N=4000 t_secao=242.589177 tmax_total=242.589177 tmax_comp=242.572832 tmin_comp=242.572832 tmedia_comp=242.572832 desvio_comp=0.000000 tmax_comm=0.016345 tmedia_comm=0.016345 fcomm=0.0067 trocas=3991 trocas_inter=0 checksum=6.775485558388e+05
+######## res/mpi_P1_r3.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=4000 P=1 ===
+RANK r=0 P=1 N=4000 host=node1 linhas=4000 t_comp=242.753891 t_comm=0.014554 t_total=242.768445 t_espera=0.000000 t_allreduce=0.011647 t_sendrecv=0.000000 t_bcast=0.002900 t_reduce=0.000007 n_allreduce=4000 n_sendrecv=0 n_bcast=4000
+
+=== Estatisticas entre os 1 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                      242.753891   242.753891   242.753891     0.000000
+Tcomm                        0.014554     0.014554     0.014554     0.000000
+Ttotal                     242.768445   242.768445   242.768445     0.000000
+  Tcomm: Allreduce           0.011647     0.011647     0.011647     0.000000
+  Tcomm: Sendrecv            0.000000     0.000000     0.000000     0.000000
+  Tcomm: Bcast               0.002900     0.002900     0.002900     0.000000
+  Tcomm: Reduce              0.000007     0.000007     0.000007     0.000000
+Tespera (barr. final)        0.000000     0.000000     0.000000     0.000000
+Leitura (fora da secao)      0.089828     0.089828     0.089828     0.000000
+
+Fcomm = Tcomm_max / Ttotal_max            = 0.01 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0000  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 242.768446 s
+Trocas de linha: 3991 (entre ranks: 0) de 4000 iteracoes
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=1 N=4000 t_secao=242.768446 tmax_total=242.768445 tmax_comp=242.753891 tmin_comp=242.753891 tmedia_comp=242.753891 desvio_comp=0.000000 tmax_comm=0.014554 tmedia_comm=0.014554 fcomm=0.0060 trocas=3991 trocas_inter=0 checksum=6.775485558388e+05
+######## res/mpi_P2_r1.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=4000 P=2 ===
+RANK r=0 P=2 N=4000 host=node1 linhas=2000 t_comp=121.042563 t_comm=5.299417 t_total=126.341980 t_espera=0.000015 t_allreduce=1.443997 t_sendrecv=2.000731 t_bcast=1.854644 t_reduce=0.000044 n_allreduce=4000 n_sendrecv=1416 n_bcast=4000
+
+=== Estatisticas entre os 2 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                      121.042563   119.915392   120.478977     0.563586
+Tcomm                        6.423664     5.299417     5.861541     0.562124
+Ttotal                     126.341980   126.339056   126.340518     0.001462
+  Tcomm: Allreduce           2.385758     1.443997     1.914877     0.470880
+  Tcomm: Sendrecv            2.051144     2.000731     2.025938     0.025206
+  Tcomm: Bcast               1.986725     1.854644     1.920685     0.066040
+  Tcomm: Reduce              0.000044     0.000037     0.000041     0.000003
+Tespera (barr. final)        0.001192     0.000015     0.000603     0.000589
+Leitura (fora da secao)      0.573083     0.046430     0.309756     0.263327
+
+Fcomm = Tcomm_max / Ttotal_max            = 5.08 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0047  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 126.341995 s
+Trocas de linha: 3991 (entre ranks: 1416) de 4000 iteracoes
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=2 N=4000 t_secao=126.341995 tmax_total=126.341980 tmax_comp=121.042563 tmin_comp=119.915392 tmedia_comp=120.478977 desvio_comp=0.563586 tmax_comm=6.423664 tmedia_comm=5.861541 fcomm=5.0843 trocas=3991 trocas_inter=1416 checksum=6.775485558388e+05
+RANK r=1 P=2 N=4000 host=node2 linhas=2000 t_comp=119.915392 t_comm=6.423664 t_total=126.339056 t_espera=0.001192 t_allreduce=2.385758 t_sendrecv=2.051144 t_bcast=1.986725 t_reduce=0.000037 n_allreduce=4000 n_sendrecv=1416 n_bcast=4000
+######## res/mpi_P2_r2.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=4000 P=2 ===
+RANK r=0 P=2 N=4000 host=node1 linhas=2000 t_comp=121.115318 t_comm=6.110666 t_total=127.225984 t_espera=0.000015 t_allreduce=2.088465 t_sendrecv=2.174792 t_bcast=1.847365 t_reduce=0.000044 n_allreduce=4000 n_sendrecv=1416 n_bcast=4000
+
+=== Estatisticas entre os 2 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                      121.115318   121.075029   121.095174     0.020144
+Tcomm                        6.148832     6.110666     6.129749     0.019083
+Ttotal                     127.225984   127.223862   127.224923     0.001061
+  Tcomm: Allreduce           2.088465     1.958449     2.023457     0.065008
+  Tcomm: Sendrecv            2.174792     2.058289     2.116540     0.058251
+  Tcomm: Bcast               2.132051     1.847365     1.989708     0.142343
+  Tcomm: Reduce              0.000044     0.000044     0.000044     0.000000
+Tespera (barr. final)        0.000369     0.000015     0.000192     0.000177
+Leitura (fora da secao)      0.045335     0.045242     0.045288     0.000046
+
+Fcomm = Tcomm_max / Ttotal_max            = 4.83 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0002  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 127.225998 s
+Trocas de linha: 3991 (entre ranks: 1416) de 4000 iteracoes
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=2 N=4000 t_secao=127.225998 tmax_total=127.225984 tmax_comp=121.115318 tmin_comp=121.075029 tmedia_comp=121.095174 desvio_comp=0.020144 tmax_comm=6.148832 tmedia_comm=6.129749 fcomm=4.8330 trocas=3991 trocas_inter=1416 checksum=6.775485558388e+05
+RANK r=1 P=2 N=4000 host=node2 linhas=2000 t_comp=121.075029 t_comm=6.148832 t_total=127.223862 t_espera=0.000369 t_allreduce=1.958449 t_sendrecv=2.058289 t_bcast=2.132051 t_reduce=0.000044 n_allreduce=4000 n_sendrecv=1416 n_bcast=4000
+######## res/mpi_P2_r3.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=4000 P=2 ===
+RANK r=0 P=2 N=4000 host=node1 linhas=2000 t_comp=121.007026 t_comm=6.313973 t_total=127.320999 t_espera=0.000014 t_allreduce=2.069844 t_sendrecv=2.402374 t_bcast=1.841703 t_reduce=0.000052 n_allreduce=4000 n_sendrecv=1416 n_bcast=4000
+
+=== Estatisticas entre os 2 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                      121.134033   121.007026   121.070529     0.063503
+Tcomm                        6.313973     6.184423     6.249198     0.064775
+Ttotal                     127.320999   127.318456   127.319727     0.001272
+  Tcomm: Allreduce           2.069844     1.741373     1.905609     0.164236
+  Tcomm: Sendrecv            2.402374     2.058214     2.230294     0.172080
+  Tcomm: Bcast               2.384789     1.841703     2.113246     0.271543
+  Tcomm: Reduce              0.000052     0.000047     0.000050     0.000002
+Tespera (barr. final)        0.000769     0.000014     0.000392     0.000378
+Leitura (fora da secao)      0.045486     0.045144     0.045315     0.000171
+
+Fcomm = Tcomm_max / Ttotal_max            = 4.96 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0005  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 127.321013 s
+Trocas de linha: 3991 (entre ranks: 1416) de 4000 iteracoes
+Checksum (soma |Inv|): 6.775485558388e+05
+RANK r=1 P=2 N=4000 host=node2 linhas=2000 t_comp=121.134033 t_comm=6.184423 t_total=127.318456 t_espera=0.000769 t_allreduce=1.741373 t_sendrecv=2.058214 t_bcast=2.384789 t_reduce=0.000047 n_allreduce=4000 n_sendrecv=1416 n_bcast=4000
+RESULT mpi P=2 N=4000 t_secao=127.321013 tmax_total=127.320999 tmax_comp=121.134033 tmin_comp=121.007026 tmedia_comp=121.070529 desvio_comp=0.063503 tmax_comm=6.313973 tmedia_comm=6.249198 fcomm=4.9591 trocas=3991 trocas_inter=1416 checksum=6.775485558388e+05
+######## res/mpi_P4_r1.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=4000 P=4 ===
+RANK r=0 P=4 N=4000 host=node1 linhas=1000 t_comp=60.530174 t_comm=14.274534 t_total=74.804708 t_espera=0.000041 t_allreduce=8.108970 t_sendrecv=1.237311 t_bcast=4.927103 t_reduce=0.001149 n_allreduce=4000 n_sendrecv=881 n_bcast=4000
+RANK r=1 P=4 N=4000 host=node2 linhas=1000 t_comp=60.649597 t_comm=14.154314 t_total=74.803910 t_espera=0.000530 t_allreduce=4.991698 t_sendrecv=3.130360 t_bcast=6.032212 t_reduce=0.000043 n_allreduce=4000 n_sendrecv=1069 n_bcast=4000
+RANK r=2 P=4 N=4000 host=node3 linhas=1000 t_comp=61.153766 t_comm=13.649665 t_total=74.803430 t_espera=0.000112 t_allreduce=4.590445 t_sendrecv=2.456423 t_bcast=6.602765 t_reduce=0.000032 n_allreduce=4000 n_sendrecv=1435 n_bcast=4000
+RANK r=3 P=4 N=4000 host=node4 linhas=1000 t_comp=60.471367 t_comm=14.330020 t_total=74.801387 t_espera=0.001945 t_allreduce=4.276190 t_sendrecv=3.234388 t_bcast=6.819409 t_reduce=0.000033 n_allreduce=4000 n_sendrecv=1399 n_bcast=4000
+
+=== Estatisticas entre os 4 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       61.153766    60.471367    60.701226     0.269050
+Tcomm                       14.330020    13.649665    14.102133     0.268843
+Ttotal                      74.804708    74.801387    74.803359     0.001226
+  Tcomm: Allreduce           8.108970     4.276190     5.491826     1.532142
+  Tcomm: Sendrecv            3.234388     1.237311     2.514621     0.795630
+  Tcomm: Bcast               6.819409     4.927103     6.095372     0.733232
+  Tcomm: Reduce              0.001149     0.000032     0.000314     0.000482
+Tespera (barr. final)        0.001945     0.000041     0.000657     0.000766
+Leitura (fora da secao)      0.836976     0.024288     0.622876     0.345867
+
+Fcomm = Tcomm_max / Ttotal_max            = 19.16 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0075  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 74.804749 s
+Trocas de linha: 3991 (entre ranks: 2392) de 4000 iteracoes
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=4 N=4000 t_secao=74.804749 tmax_total=74.804708 tmax_comp=61.153766 tmin_comp=60.471367 tmedia_comp=60.701226 desvio_comp=0.269050 tmax_comm=14.330020 tmedia_comm=14.102133 fcomm=19.1566 trocas=3991 trocas_inter=2392 checksum=6.775485558388e+05
+######## res/mpi_P4_r2.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=4000 P=4 ===
+RANK r=0 P=4 N=4000 host=node1 linhas=1000 t_comp=60.656351 t_comm=13.675228 t_total=74.331579 t_espera=0.000041 t_allreduce=7.575247 t_sendrecv=1.221274 t_bcast=4.877655 t_reduce=0.001052 n_allreduce=4000 n_sendrecv=881 n_bcast=4000
+RANK r=1 P=4 N=4000 host=node2 linhas=1000 t_comp=60.509584 t_comm=13.821176 t_total=74.330760 t_espera=0.000553 t_allreduce=4.893446 t_sendrecv=2.770136 t_bcast=6.157537 t_reduce=0.000058 n_allreduce=4000 n_sendrecv=1069 n_bcast=4000
+RANK r=2 P=4 N=4000 host=node3 linhas=1000 t_comp=61.119334 t_comm=13.210977 t_total=74.330311 t_espera=0.000121 t_allreduce=3.119335 t_sendrecv=3.452375 t_bcast=6.639224 t_reduce=0.000043 n_allreduce=4000 n_sendrecv=1435 n_bcast=4000
+
+=== Estatisticas entre os 4 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       61.119334    60.509584    60.738782     0.228526
+Tcomm                       13.821176    13.210977    13.591488     0.228614
+Ttotal                      74.331579    74.328432    74.330271     0.001155
+  Tcomm: Allreduce           7.575247     3.119335     5.114465     1.592536
+  Tcomm: Sendrecv            3.452375     1.221274     2.358820     0.835761
+  Tcomm: Bcast               6.797214     4.877655     6.117907     0.753828
+  Tcomm: Reduce              0.001052     0.000034     0.000297     0.000436
+Tespera (barr. final)        0.001767     0.000041     0.000620     0.000690
+Leitura (fora da secao)      0.023349     0.022682     0.022980     0.000245
+
+Fcomm = Tcomm_max / Ttotal_max            = 18.59 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0063  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 74.331620 s
+Trocas de linha: 3991 (entre ranks: 2392) de 4000 iteracoes
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=4 N=4000 t_secao=74.331620 tmax_total=74.331579 tmax_comp=61.119334 tmin_comp=60.509584 tmedia_comp=60.738782 desvio_comp=0.228526 tmax_comm=13.821176 tmedia_comm=13.591488 fcomm=18.5939 trocas=3991 trocas_inter=2392 checksum=6.775485558388e+05
+RANK r=3 P=4 N=4000 host=node4 linhas=1000 t_comp=60.669859 t_comm=13.658572 t_total=74.328432 t_espera=0.001767 t_allreduce=4.869830 t_sendrecv=1.991494 t_bcast=6.797214 t_reduce=0.000034 n_allreduce=4000 n_sendrecv=1399 n_bcast=4000
+######## res/mpi_P4_r3.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=4000 P=4 ===
+RANK r=0 P=4 N=4000 host=node1 linhas=1000 t_comp=60.405462 t_comm=13.880626 t_total=74.286089 t_espera=0.000018 t_allreduce=7.969393 t_sendrecv=1.228789 t_bcast=4.682404 t_reduce=0.000040 n_allreduce=4000 n_sendrecv=881 n_bcast=4000
+RANK r=1 P=4 N=4000 host=node2 linhas=1000 t_comp=60.840290 t_comm=13.445146 t_total=74.285435 t_espera=0.000298 t_allreduce=4.608356 t_sendrecv=2.125940 t_bcast=6.710799 t_reduce=0.000050 n_allreduce=4000 n_sendrecv=1069 n_bcast=4000
+RANK r=2 P=4 N=4000 host=node3 linhas=1000 t_comp=60.554458 t_comm=13.730289 t_total=74.284747 t_espera=0.000138 t_allreduce=3.523034 t_sendrecv=3.657177 t_bcast=6.550043 t_reduce=0.000036 n_allreduce=4000 n_sendrecv=1435 n_bcast=4000
+
+=== Estatisticas entre os 4 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       60.840290    60.388486    60.547174     0.181131
+Tcomm                       13.894770    13.445146    13.737708     0.180791
+Ttotal                      74.286089    74.283256    74.284882     0.001052
+  Tcomm: Allreduce           7.969393     3.523034     5.078165     1.713827
+  Tcomm: Sendrecv            3.657177     1.228789     2.448548     0.889389
+  Tcomm: Bcast               6.900573     4.682404     6.210955     0.891188
+  Tcomm: Reduce              0.000050     0.000036     0.000040     0.000006
+Tespera (barr. final)        0.001423     0.000018     0.000469     0.000559
+RANK r=3 P=4 N=4000 host=node4 linhas=1000 t_comp=60.388486 t_comm=13.894770 t_total=74.283256 t_espera=0.001423 t_allreduce=4.211876 t_sendrecv=2.782284 t_bcast=6.900573 t_reduce=0.000036 n_allreduce=4000 n_sendrecv=1399 n_bcast=4000
+Leitura (fora da secao)      0.023243     0.022886     0.023106     0.000133
+
+Fcomm = Tcomm_max / Ttotal_max            = 18.70 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0048  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 74.286106 s
+Trocas de linha: 3991 (entre ranks: 2392) de 4000 iteracoes
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=4 N=4000 t_secao=74.286106 tmax_total=74.286089 tmax_comp=60.840290 tmin_comp=60.388486 tmedia_comp=60.547174 desvio_comp=0.181131 tmax_comm=13.894770 tmedia_comm=13.737708 fcomm=18.7044 trocas=3991 trocas_inter=2392 checksum=6.775485558388e+05
+######## res/mpi_P8_r1.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=4000 P=8 ===
+RANK r=0 P=8 N=4000 host=node1 linhas=500 t_comp=30.096546 t_comm=21.026198 t_total=51.122744 t_espera=0.000033 t_allreduce=13.973131 t_sendrecv=0.544939 t_bcast=6.504838 t_reduce=0.003290 n_allreduce=4000 n_sendrecv=469 n_bcast=4000
+RANK r=1 P=8 N=4000 host=node2 linhas=500 t_comp=29.933373 t_comm=21.188314 t_total=51.121687 t_espera=0.000352 t_allreduce=9.142017 t_sendrecv=0.597375 t_bcast=11.447247 t_reduce=0.001675 n_allreduce=4000 n_sendrecv=536 n_bcast=4000
+RANK r=2 P=8 N=4000 host=node3 linhas=500 t_comp=30.614986 t_comm=20.506495 t_total=51.121481 t_espera=0.000074 t_allreduce=4.341122 t_sendrecv=0.603149 t_bcast=15.562003 t_reduce=0.000221 n_allreduce=4000 n_sendrecv=580 n_bcast=4000
+RANK r=3 P=8 N=4000 host=node4 linhas=500 t_comp=30.381401 t_comm=20.739859 t_total=51.121260 t_espera=0.000458 t_allreduce=3.899501 t_sendrecv=0.706733 t_bcast=16.133580 t_reduce=0.000044 n_allreduce=4000 n_sendrecv=669 n_bcast=4000
+RANK r=4 P=8 N=4000 host=node5 linhas=500 t_comp=30.198586 t_comm=20.923657 t_total=51.122243 t_espera=0.000247 t_allreduce=2.950702 t_sendrecv=0.853415 t_bcast=17.119508 t_reduce=0.000033 n_allreduce=4000 n_sendrecv=832 n_bcast=4000
+RANK r=5 P=8 N=4000 host=node6 linhas=500 t_comp=29.922573 t_comm=21.199049 t_total=51.121622 t_espera=0.000417 t_allreduce=4.479198 t_sendrecv=0.922619 t_bcast=15.797201 t_reduce=0.000031 n_allreduce=4000 n_sendrecv=887 n_bcast=4000
+RANK r=6 P=8 N=4000 host=node7 linhas=500 t_comp=30.077697 t_comm=21.044141 t_total=51.121838 t_espera=0.000176 t_allreduce=3.906487 t_sendrecv=1.091177 t_bcast=16.046440 t_reduce=0.000037 n_allreduce=4000 n_sendrecv=1025 n_bcast=4000
+RANK r=7 P=8 N=4000 host=node8 linhas=500 t_comp=29.837756 t_comm=21.281477 t_total=51.119233 t_espera=0.003561 t_allreduce=3.230604 t_sendrecv=1.140599 t_bcast=16.910236 t_reduce=0.000037 n_allreduce=4000 n_sendrecv=1086 n_bcast=4000
+
+=== Estatisticas entre os 8 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       30.614986    29.837756    30.132865     0.243414
+Tcomm                       21.281477    20.506495    20.988649     0.243147
+Ttotal                      51.122744    51.119233    51.121513     0.000966
+  Tcomm: Allreduce          13.973131     2.950702     5.740345     3.600887
+  Tcomm: Sendrecv            1.140599     0.544939     0.807501     0.215578
+  Tcomm: Bcast              17.119508     6.504838    14.440132     3.423356
+  Tcomm: Reduce              0.003290     0.000031     0.000671     0.001123
+Tespera (barr. final)        0.003561     0.000033     0.000665     0.001104
+Leitura (fora da secao)      0.697257     0.012300     0.403277     0.304208
+
+Fcomm = Tcomm_max / Ttotal_max            = 41.63 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0160  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 51.122777 s
+Trocas de linha: 3991 (entre ranks: 3042) de 4000 iteracoes
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=8 N=4000 t_secao=51.122777 tmax_total=51.122744 tmax_comp=30.614986 tmin_comp=29.837756 tmedia_comp=30.132865 desvio_comp=0.243414 tmax_comm=21.281477 tmedia_comm=20.988649 fcomm=41.6282 trocas=3991 trocas_inter=3042 checksum=6.775485558388e+05
+######## res/mpi_P8_r2.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=4000 P=8 ===
+RANK r=0 P=8 N=4000 host=node1 linhas=500 t_comp=30.135143 t_comm=19.852301 t_total=49.987444 t_espera=0.000032 t_allreduce=13.217964 t_sendrecv=0.507559 t_bcast=6.123487 t_reduce=0.003291 n_allreduce=4000 n_sendrecv=469 n_bcast=4000
+RANK r=1 P=8 N=4000 host=node2 linhas=500 t_comp=30.282053 t_comm=19.704546 t_total=49.986600 t_espera=0.000159 t_allreduce=7.037229 t_sendrecv=0.555281 t_bcast=12.110323 t_reduce=0.001715 n_allreduce=4000 n_sendrecv=536 n_bcast=4000
+RANK r=2 P=8 N=4000 host=node3 linhas=500 t_comp=30.574239 t_comm=19.412190 t_total=49.986429 t_espera=0.000091 t_allreduce=3.560736 t_sendrecv=0.627016 t_bcast=15.224206 t_reduce=0.000232 n_allreduce=4000 n_sendrecv=580 n_bcast=4000
+RANK r=3 P=8 N=4000 host=node4 linhas=500 t_comp=29.921966 t_comm=20.064095 t_total=49.986061 t_espera=0.000489 t_allreduce=3.454472 t_sendrecv=0.703879 t_bcast=15.905700 t_reduce=0.000043 n_allreduce=4000 n_sendrecv=669 n_bcast=4000
+RANK r=4 P=8 N=4000 host=node5 linhas=500 t_comp=29.822763 t_comm=20.164032 t_total=49.986795 t_espera=0.000428 t_allreduce=3.229123 t_sendrecv=0.893758 t_bcast=16.041115 t_reduce=0.000036 n_allreduce=4000 n_sendrecv=832 n_bcast=4000
+RANK r=5 P=8 N=4000 host=node6 linhas=500 t_comp=30.004552 t_comm=19.981983 t_total=49.986535 t_espera=0.000248 t_allreduce=3.040421 t_sendrecv=0.926084 t_bcast=16.015445 t_reduce=0.000033 n_allreduce=4000 n_sendrecv=887 n_bcast=4000
+RANK r=6 P=8 N=4000 host=node7 linhas=500 t_comp=30.079479 t_comm=19.907297 t_total=49.986776 t_espera=0.000172 t_allreduce=2.797077 t_sendrecv=1.085635 t_bcast=16.024550 t_reduce=0.000034 n_allreduce=4000 n_sendrecv=1025 n_bcast=4000
+RANK r=7 P=8 N=4000 host=node8 linhas=500 t_comp=30.344957 t_comm=19.639056 t_total=49.984013 t_espera=0.003625 t_allreduce=2.470767 t_sendrecv=1.196396 t_bcast=15.971860 t_reduce=0.000032 n_allreduce=4000 n_sendrecv=1086 n_bcast=4000
+
+=== Estatisticas entre os 8 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       30.574239    29.822763    30.145644     0.229321
+Tcomm                       20.164032    19.412190    19.840687     0.229619
+Ttotal                      49.987444    49.984013    49.986332     0.000950
+  Tcomm: Allreduce          13.217964     2.470767     4.850974     3.431354
+  Tcomm: Sendrecv            1.196396     0.507559     0.811951     0.236335
+  Tcomm: Bcast              16.041115     6.123487    14.177086     3.292132
+  Tcomm: Reduce              0.003291     0.000032     0.000677     0.001127
+Tespera (barr. final)        0.003625     0.000032     0.000655     0.001132
+Leitura (fora da secao)      0.084395     0.011130     0.021073     0.023940
+
+Fcomm = Tcomm_max / Ttotal_max            = 40.34 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0142  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 49.987476 s
+Trocas de linha: 3991 (entre ranks: 3042) de 4000 iteracoes
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=8 N=4000 t_secao=49.987476 tmax_total=49.987444 tmax_comp=30.574239 tmin_comp=29.822763 tmedia_comp=30.145644 desvio_comp=0.229321 tmax_comm=20.164032 tmedia_comm=19.840687 fcomm=40.3382 trocas=3991 trocas_inter=3042 checksum=6.775485558388e+05
+######## res/mpi_P8_r3.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=4000 P=8 ===
+RANK r=0 P=8 N=4000 host=node1 linhas=500 t_comp=30.259206 t_comm=19.791671 t_total=50.050877 t_espera=0.000026 t_allreduce=13.273277 t_sendrecv=0.495790 t_bcast=6.019460 t_reduce=0.003144 n_allreduce=4000 n_sendrecv=469 n_bcast=4000
+RANK r=1 P=8 N=4000 host=node2 linhas=500 t_comp=30.324024 t_comm=19.725969 t_total=50.049993 t_espera=0.000177 t_allreduce=7.559730 t_sendrecv=0.560873 t_bcast=11.603672 t_reduce=0.001694 n_allreduce=4000 n_sendrecv=536 n_bcast=4000
+RANK r=2 P=8 N=4000 host=node3 linhas=500 t_comp=30.508879 t_comm=19.540870 t_total=50.049749 t_espera=0.000073 t_allreduce=3.987319 t_sendrecv=0.623795 t_bcast=14.929455 t_reduce=0.000300 n_allreduce=4000 n_sendrecv=580 n_bcast=4000
+RANK r=3 P=8 N=4000 host=node4 linhas=500 t_comp=30.449302 t_comm=19.600313 t_total=50.049615 t_espera=0.000336 t_allreduce=2.935308 t_sendrecv=0.704641 t_bcast=15.960317 t_reduce=0.000048 n_allreduce=4000 n_sendrecv=669 n_bcast=4000
+RANK r=4 P=8 N=4000 host=node5 linhas=500 t_comp=30.117076 t_comm=19.932989 t_total=50.050065 t_espera=0.000504 t_allreduce=3.012557 t_sendrecv=0.905178 t_bcast=16.015221 t_reduce=0.000034 n_allreduce=4000 n_sendrecv=832 n_bcast=4000
+RANK r=5 P=8 N=4000 host=node6 linhas=500 t_comp=29.925505 t_comm=20.124361 t_total=50.049867 t_espera=0.000231 t_allreduce=3.299465 t_sendrecv=0.943553 t_bcast=15.881315 t_reduce=0.000028 n_allreduce=4000 n_sendrecv=887 n_bcast=4000
+RANK r=6 P=8 N=4000 host=node7 linhas=500 t_comp=30.118072 t_comm=19.931952 t_total=50.050023 t_espera=0.000148 t_allreduce=2.928551 t_sendrecv=1.087545 t_bcast=15.915818 t_reduce=0.000037 n_allreduce=4000 n_sendrecv=1025 n_bcast=4000
+RANK r=7 P=8 N=4000 host=node8 linhas=500 t_comp=30.217755 t_comm=19.829534 t_total=50.047289 t_espera=0.003681 t_allreduce=2.582413 t_sendrecv=1.171736 t_bcast=16.075353 t_reduce=0.000032 n_allreduce=4000 n_sendrecv=1086 n_bcast=4000
+
+=== Estatisticas entre os 8 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       30.508879    29.925505    30.239977     0.177803
+Tcomm                       20.124361    19.540870    19.809707     0.177834
+Ttotal                      50.050877    50.047289    50.049685     0.000972
+  Tcomm: Allreduce          13.273277     2.582413     4.947328     3.486456
+  Tcomm: Sendrecv            1.171736     0.495790     0.811639     0.234873
+  Tcomm: Bcast              16.075353     6.019460    14.050076     3.348432
+  Tcomm: Reduce              0.003144     0.000028     0.000665     0.001079
+Tespera (barr. final)        0.003681     0.000026     0.000647     0.001155
+Leitura (fora da secao)      0.012070     0.011229     0.011671     0.000245
+
+Fcomm = Tcomm_max / Ttotal_max            = 40.21 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0089  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 50.050903 s
+Trocas de linha: 3991 (entre ranks: 3042) de 4000 iteracoes
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=8 N=4000 t_secao=50.050903 tmax_total=50.050877 tmax_comp=30.508879 tmin_comp=29.925505 tmedia_comp=30.239977 desvio_comp=0.177803 tmax_comm=20.124361 tmedia_comm=19.809707 fcomm=40.2078 trocas=3991 trocas_inter=3042 checksum=6.775485558388e+05
+######## res/mpi_W_P13_N4703_r1.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=4703 P=13 ===
+RANK r=0 P=13 N=4703 host=node1 linhas=362 t_comp=29.909448 t_comm=45.683853 t_total=75.593301 t_espera=0.000110 t_allreduce=22.728079 t_sendrecv=0.398537 t_bcast=22.554935 t_reduce=0.002302 n_allreduce=4703 n_sendrecv=352 n_bcast=4703
+RANK r=1 P=13 N=4703 host=node2 linhas=362 t_comp=30.443068 t_comm=45.149164 t_total=75.592232 t_espera=0.000229 t_allreduce=10.054258 t_sendrecv=0.437007 t_bcast=34.656732 t_reduce=0.001167 n_allreduce=4703 n_sendrecv=377 n_bcast=4703
+RANK r=2 P=13 N=4703 host=node3 linhas=362 t_comp=30.100250 t_comm=45.491264 t_total=75.591514 t_espera=0.000308 t_allreduce=9.993057 t_sendrecv=0.511610 t_bcast=34.985136 t_reduce=0.001460 n_allreduce=4703 n_sendrecv=417 n_bcast=4703
+RANK r=3 P=13 N=4703 host=node4 linhas=362 t_comp=30.283152 t_comm=45.308543 t_total=75.591694 t_espera=0.000246 t_allreduce=9.235888 t_sendrecv=0.510814 t_bcast=35.560894 t_reduce=0.000947 n_allreduce=4703 n_sendrecv=437 n_bcast=4703
+RANK r=4 P=13 N=4703 host=node5 linhas=362 t_comp=30.292179 t_comm=45.299768 t_total=75.591947 t_espera=0.000879 t_allreduce=9.052414 t_sendrecv=0.529786 t_bcast=35.717412 t_reduce=0.000156 n_allreduce=4703 n_sendrecv=484 n_bcast=4703
+RANK r=5 P=13 N=4703 host=node6 linhas=362 t_comp=30.032254 t_comm=45.560968 t_total=75.593222 t_espera=0.000384 t_allreduce=8.289497 t_sendrecv=0.644273 t_bcast=36.627144 t_reduce=0.000054 n_allreduce=4703 n_sendrecv=510 n_bcast=4703
+RANK r=6 P=13 N=4703 host=node7 linhas=362 t_comp=30.226569 t_comm=45.366699 t_total=75.593268 t_espera=0.000299 t_allreduce=7.236814 t_sendrecv=0.644221 t_bcast=37.484554 t_reduce=0.001110 n_allreduce=4703 n_sendrecv=582 n_bcast=4703
+RANK r=7 P=13 N=4703 host=node8 linhas=362 t_comp=30.231006 t_comm=45.362916 t_total=75.593922 t_espera=0.000875 t_allreduce=8.410828 t_sendrecv=0.703111 t_bcast=36.248944 t_reduce=0.000032 n_allreduce=4703 n_sendrecv=588 n_bcast=4703
+RANK r=8 P=13 N=4703 host=node9 linhas=362 t_comp=29.771034 t_comm=45.821087 t_total=75.592121 t_espera=0.000838 t_allreduce=6.562521 t_sendrecv=0.659888 t_bcast=38.598644 t_reduce=0.000035 n_allreduce=4703 n_sendrecv=658 n_bcast=4703
+RANK r=9 P=13 N=4703 host=node10 linhas=362 t_comp=30.298174 t_comm=45.293210 t_total=75.591384 t_espera=0.000634 t_allreduce=6.223450 t_sendrecv=0.784660 t_bcast=38.285067 t_reduce=0.000032 n_allreduce=4703 n_sendrecv=725 n_bcast=4703
+RANK r=10 P=13 N=4703 host=node11 linhas=361 t_comp=30.136393 t_comm=45.455264 t_total=75.591657 t_espera=0.000364 t_allreduce=6.129295 t_sendrecv=0.972641 t_bcast=38.353295 t_reduce=0.000034 n_allreduce=4703 n_sendrecv=827 n_bcast=4703
+RANK r=11 P=13 N=4703 host=node12 linhas=361 t_comp=30.182861 t_comm=45.409494 t_total=75.592356 t_espera=0.000274 t_allreduce=4.829625 t_sendrecv=1.124839 t_bcast=39.454991 t_reduce=0.000039 n_allreduce=4703 n_sendrecv=916 n_bcast=4703
+RANK r=12 P=13 N=4703 host=node13 linhas=361 t_comp=30.016660 t_comm=45.568594 t_total=75.585254 t_espera=0.007203 t_allreduce=4.968322 t_sendrecv=0.788745 t_bcast=39.811492 t_reduce=0.000035 n_allreduce=4703 n_sendrecv=951 n_bcast=4703
+
+=== Estatisticas entre os 13 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       30.443068    29.771034    30.147927     0.174317
+Tcomm                       45.821087    45.149164    45.443910     0.174057
+Ttotal                      75.593922    75.585254    75.591836     0.002051
+  Tcomm: Allreduce          22.728079     4.829625     8.747235     4.379008
+  Tcomm: Sendrecv            1.124839     0.398537     0.670010     0.201209
+  Tcomm: Bcast              39.811492    22.554935    36.026095     4.210828
+  Tcomm: Reduce              0.002302     0.000032     0.000569     0.000720
+Tespera (barr. final)        0.007203     0.000110     0.000972     0.001816
+Leitura (fora da secao)      1.534686     1.513106     1.521873     0.005959
+
+Fcomm = Tcomm_max / Ttotal_max            = 60.61 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0098  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 75.593411 s
+Trocas de linha: 4695 (entre ranks: 3912) de 4703 iteracoes
+Checksum (soma |Inv|): 1.057075149346e+06
+RESULT mpi P=13 N=4703 t_secao=75.593411 tmax_total=75.593922 tmax_comp=30.443068 tmin_comp=29.771034 tmedia_comp=30.147927 desvio_comp=0.174317 tmax_comm=45.821087 tmedia_comm=45.443910 fcomm=60.6148 trocas=4695 trocas_inter=3912 checksum=1.057075149346e+06
+######## res/mpi_W_P13_N4703_r2.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=4703 P=13 ===
+RANK r=0 P=13 N=4703 host=node1 linhas=362 t_comp=29.909386 t_comm=44.063862 t_total=73.973248 t_espera=0.000154 t_allreduce=18.976942 t_sendrecv=0.418364 t_bcast=24.666760 t_reduce=0.001797 n_allreduce=4703 n_sendrecv=352 n_bcast=4703
+RANK r=1 P=13 N=4703 host=node2 linhas=362 t_comp=29.981831 t_comm=43.990393 t_total=73.972224 t_espera=0.000124 t_allreduce=9.592608 t_sendrecv=0.485343 t_bcast=33.911180 t_reduce=0.001262 n_allreduce=4703 n_sendrecv=377 n_bcast=4703
+RANK r=2 P=13 N=4703 host=node3 linhas=362 t_comp=30.175864 t_comm=43.795749 t_total=73.971613 t_espera=0.000228 t_allreduce=8.330002 t_sendrecv=0.469928 t_bcast=34.994831 t_reduce=0.000987 n_allreduce=4703 n_sendrecv=417 n_bcast=4703
+RANK r=3 P=13 N=4703 host=node4 linhas=362 t_comp=30.095414 t_comm=43.876187 t_total=73.971602 t_espera=0.000270 t_allreduce=6.977915 t_sendrecv=0.498271 t_bcast=36.399113 t_reduce=0.000889 n_allreduce=4703 n_sendrecv=437 n_bcast=4703
+RANK r=4 P=13 N=4703 host=node5 linhas=362 t_comp=29.930677 t_comm=44.041247 t_total=73.971924 t_espera=0.000906 t_allreduce=8.555107 t_sendrecv=0.505116 t_bcast=34.980971 t_reduce=0.000054 n_allreduce=4703 n_sendrecv=484 n_bcast=4703
+RANK r=5 P=13 N=4703 host=node6 linhas=362 t_comp=29.950224 t_comm=44.022602 t_total=73.972826 t_espera=0.000661 t_allreduce=6.417423 t_sendrecv=0.580542 t_bcast=37.024590 t_reduce=0.000046 n_allreduce=4703 n_sendrecv=510 n_bcast=4703
+RANK r=6 P=13 N=4703 host=node7 linhas=362 t_comp=29.949733 t_comm=44.023601 t_total=73.973334 t_espera=0.000223 t_allreduce=7.071583 t_sendrecv=0.692191 t_bcast=36.259436 t_reduce=0.000390 n_allreduce=4703 n_sendrecv=582 n_bcast=4703
+RANK r=7 P=13 N=4703 host=node8 linhas=362 t_comp=30.245380 t_comm=43.728956 t_total=73.974335 t_espera=0.000209 t_allreduce=5.743785 t_sendrecv=0.710433 t_bcast=37.274696 t_reduce=0.000042 n_allreduce=4703 n_sendrecv=588 n_bcast=4703
+RANK r=8 P=13 N=4703 host=node9 linhas=362 t_comp=30.337951 t_comm=43.633549 t_total=73.971500 t_espera=0.001443 t_allreduce=6.113407 t_sendrecv=0.702519 t_bcast=36.817586 t_reduce=0.000036 n_allreduce=4703 n_sendrecv=658 n_bcast=4703
+RANK r=9 P=13 N=4703 host=node10 linhas=362 t_comp=30.585165 t_comm=43.385577 t_total=73.970742 t_espera=0.001179 t_allreduce=4.865183 t_sendrecv=0.827361 t_bcast=37.692997 t_reduce=0.000036 n_allreduce=4703 n_sendrecv=725 n_bcast=4703
+RANK r=10 P=13 N=4703 host=node11 linhas=361 t_comp=29.774317 t_comm=44.197433 t_total=73.971750 t_espera=0.000300 t_allreduce=5.820723 t_sendrecv=0.909056 t_bcast=37.467606 t_reduce=0.000047 n_allreduce=4703 n_sendrecv=827 n_bcast=4703
+RANK r=11 P=13 N=4703 host=node12 linhas=361 t_comp=29.718628 t_comm=44.253578 t_total=73.972207 t_espera=0.000338 t_allreduce=5.799997 t_sendrecv=0.976874 t_bcast=37.476674 t_reduce=0.000034 n_allreduce=4703 n_sendrecv=916 n_bcast=4703
+RANK r=12 P=13 N=4703 host=node13 linhas=361 t_comp=29.977376 t_comm=43.988104 t_total=73.965480 t_espera=0.006994 t_allreduce=5.484025 t_sendrecv=0.775394 t_bcast=37.728652 t_reduce=0.000033 n_allreduce=4703 n_sendrecv=951 n_bcast=4703
+
+=== Estatisticas entre os 13 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       30.585165    29.718628    30.048611     0.227886
+Tcomm                       44.253578    43.385577    43.923141     0.228016
+Ttotal                      73.974335    73.965480    73.971753     0.002028
+  Tcomm: Allreduce          18.976942     4.865183     7.672977     3.517689
+  Tcomm: Sendrecv            0.976874     0.418364     0.657800     0.173331
+  Tcomm: Bcast              37.728652    24.666760    35.591930     3.356373
+  Tcomm: Reduce              0.001797     0.000033     0.000435     0.000575
+Tespera (barr. final)        0.006994     0.000124     0.001002     0.001777
+Leitura (fora da secao)      0.072724     0.010207     0.016087     0.016557
+
+Fcomm = Tcomm_max / Ttotal_max            = 59.82 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0179  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 73.973403 s
+Trocas de linha: 4695 (entre ranks: 3912) de 4703 iteracoes
+Checksum (soma |Inv|): 1.057075149346e+06
+RESULT mpi P=13 N=4703 t_secao=73.973403 tmax_total=73.974335 tmax_comp=30.585165 tmin_comp=29.718628 tmedia_comp=30.048611 desvio_comp=0.227886 tmax_comm=44.253578 tmedia_comm=43.923141 fcomm=59.8229 trocas=4695 trocas_inter=3912 checksum=1.057075149346e+06
+######## res/mpi_W_P13_N4703_r3.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=4703 P=13 ===
+RANK r=0 P=13 N=4703 host=node1 linhas=362 t_comp=30.012513 t_comm=44.663042 t_total=74.675555 t_espera=0.000147 t_allreduce=21.743091 t_sendrecv=0.418654 t_bcast=22.499026 t_reduce=0.002271 n_allreduce=4703 n_sendrecv=352 n_bcast=4703
+RANK r=1 P=13 N=4703 host=node2 linhas=362 t_comp=30.317709 t_comm=44.356657 t_total=74.674366 t_espera=0.000186 t_allreduce=10.346588 t_sendrecv=0.443276 t_bcast=33.565802 t_reduce=0.000991 n_allreduce=4703 n_sendrecv=377 n_bcast=4703
+RANK r=2 P=13 N=4703 host=node3 linhas=362 t_comp=30.577772 t_comm=44.095990 t_total=74.673762 t_espera=0.000277 t_allreduce=8.344997 t_sendrecv=0.480844 t_bcast=35.269260 t_reduce=0.000890 n_allreduce=4703 n_sendrecv=417 n_bcast=4703
+RANK r=3 P=13 N=4703 host=node4 linhas=362 t_comp=30.289619 t_comm=44.384103 t_total=74.673722 t_espera=0.000357 t_allreduce=8.005114 t_sendrecv=0.516485 t_bcast=35.862058 t_reduce=0.000446 n_allreduce=4703 n_sendrecv=437 n_bcast=4703
+RANK r=4 P=13 N=4703 host=node5 linhas=362 t_comp=30.140130 t_comm=44.534756 t_total=74.674886 t_espera=0.000338 t_allreduce=8.994320 t_sendrecv=0.501553 t_bcast=35.038524 t_reduce=0.000360 n_allreduce=4703 n_sendrecv=484 n_bcast=4703
+RANK r=5 P=13 N=4703 host=node6 linhas=362 t_comp=29.888535 t_comm=44.787085 t_total=74.675620 t_espera=0.000157 t_allreduce=8.683255 t_sendrecv=0.583040 t_bcast=35.519161 t_reduce=0.001629 n_allreduce=4703 n_sendrecv=510 n_bcast=4703
+RANK r=6 P=13 N=4703 host=node7 linhas=362 t_comp=30.127411 t_comm=44.548116 t_total=74.675526 t_espera=0.000341 t_allreduce=8.832966 t_sendrecv=0.578789 t_bcast=35.135333 t_reduce=0.001027 n_allreduce=4703 n_sendrecv=582 n_bcast=4703
+RANK r=7 P=13 N=4703 host=node8 linhas=362 t_comp=30.288288 t_comm=44.387695 t_total=74.675983 t_espera=0.000913 t_allreduce=6.722902 t_sendrecv=0.684852 t_bcast=36.979906 t_reduce=0.000035 n_allreduce=4703 n_sendrecv=588 n_bcast=4703
+RANK r=8 P=13 N=4703 host=node9 linhas=362 t_comp=30.229452 t_comm=44.445435 t_total=74.674887 t_espera=0.000340 t_allreduce=6.079157 t_sendrecv=0.676054 t_bcast=37.690191 t_reduce=0.000033 n_allreduce=4703 n_sendrecv=658 n_bcast=4703
+RANK r=9 P=13 N=4703 host=node10 linhas=362 t_comp=30.683122 t_comm=43.990752 t_total=74.673874 t_espera=0.000234 t_allreduce=6.321303 t_sendrecv=0.812472 t_bcast=36.856943 t_reduce=0.000034 n_allreduce=4703 n_sendrecv=725 n_bcast=4703
+RANK r=10 P=13 N=4703 host=node11 linhas=361 t_comp=30.234381 t_comm=44.439407 t_total=74.673788 t_espera=0.000463 t_allreduce=5.068377 t_sendrecv=0.918289 t_bcast=38.452706 t_reduce=0.000035 n_allreduce=4703 n_sendrecv=827 n_bcast=4703
+RANK r=11 P=13 N=4703 host=node12 linhas=361 t_comp=30.211549 t_comm=44.462867 t_total=74.674417 t_espera=0.000370 t_allreduce=4.921770 t_sendrecv=0.967990 t_bcast=38.573074 t_reduce=0.000034 n_allreduce=4703 n_sendrecv=916 n_bcast=4703
+RANK r=12 P=13 N=4703 host=node13 linhas=361 t_comp=29.908578 t_comm=44.758918 t_total=74.667497 t_espera=0.007342 t_allreduce=5.389954 t_sendrecv=0.781658 t_bcast=38.587276 t_reduce=0.000031 n_allreduce=4703 n_sendrecv=951 n_bcast=4703
+
+=== Estatisticas entre os 13 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       30.683122    29.888535    30.223774     0.219541
+Tcomm                       44.787085    43.990752    44.450371     0.219215
+Ttotal                      74.675983    74.667497    74.674145     0.002064
+  Tcomm: Allreduce          21.743091     4.921770     8.419523     4.182200
+  Tcomm: Sendrecv            0.967990     0.418654     0.643381     0.173746
+  Tcomm: Bcast              38.587276    22.499026    35.386866     4.015859
+  Tcomm: Reduce              0.002271     0.000031     0.000601     0.000695
+Tespera (barr. final)        0.007342     0.000147     0.000882     0.001874
+Leitura (fora da secao)      0.163485     0.009944     0.043278     0.060809
+
+Fcomm = Tcomm_max / Ttotal_max            = 59.98 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0152  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 74.675702 s
+Trocas de linha: 4695 (entre ranks: 3912) de 4703 iteracoes
+Checksum (soma |Inv|): 1.057075149346e+06
+RESULT mpi P=13 N=4703 t_secao=74.675702 tmax_total=74.675983 tmax_comp=30.683122 tmin_comp=29.888535 tmedia_comp=30.223774 desvio_comp=0.219541 tmax_comm=44.787085 tmedia_comm=44.450371 fcomm=59.9752 trocas=4695 trocas_inter=3912 checksum=1.057075149346e+06
+######## res/mpi_W_P1_N2000_r1.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=2000 P=1 ===
+RANK r=0 P=1 N=2000 host=node1 linhas=2000 t_comp=30.478686 t_comm=0.006966 t_total=30.485652 t_espera=0.000000 t_allreduce=0.005444 t_sendrecv=0.000000 t_bcast=0.001516 t_reduce=0.000006 n_allreduce=2000 n_sendrecv=0 n_bcast=2000
+
+=== Estatisticas entre os 1 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       30.478686    30.478686    30.478686     0.000000
+Tcomm                        0.006966     0.006966     0.006966     0.000000
+Ttotal                      30.485652    30.485652    30.485652     0.000000
+  Tcomm: Allreduce           0.005444     0.005444     0.005444     0.000000
+  Tcomm: Sendrecv            0.000000     0.000000     0.000000     0.000000
+  Tcomm: Bcast               0.001516     0.001516     0.001516     0.000000
+  Tcomm: Reduce              0.000006     0.000006     0.000006     0.000000
+Tespera (barr. final)        0.000000     0.000000     0.000000     0.000000
+Leitura (fora da secao)      0.024668     0.024668     0.024668     0.000000
+
+Fcomm = Tcomm_max / Ttotal_max            = 0.02 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0000  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 30.485652 s
+Trocas de linha: 1989 (entre ranks: 0) de 2000 iteracoes
+Checksum (soma |Inv|): 6.185307565785e+06
+RESULT mpi P=1 N=2000 t_secao=30.485652 tmax_total=30.485652 tmax_comp=30.478686 tmin_comp=30.478686 tmedia_comp=30.478686 desvio_comp=0.000000 tmax_comm=0.006966 tmedia_comm=0.006966 fcomm=0.0228 trocas=1989 trocas_inter=0 checksum=6.185307565785e+06
+######## res/mpi_W_P1_N2000_r2.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=2000 P=1 ===
+RANK r=0 P=1 N=2000 host=node1 linhas=2000 t_comp=30.478637 t_comm=0.007188 t_total=30.485824 t_espera=0.000000 t_allreduce=0.005619 t_sendrecv=0.000000 t_bcast=0.001562 t_reduce=0.000006 n_allreduce=2000 n_sendrecv=0 n_bcast=2000
+
+=== Estatisticas entre os 1 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       30.478637    30.478637    30.478637     0.000000
+Tcomm                        0.007188     0.007188     0.007188     0.000000
+Ttotal                      30.485824    30.485824    30.485824     0.000000
+  Tcomm: Allreduce           0.005619     0.005619     0.005619     0.000000
+  Tcomm: Sendrecv            0.000000     0.000000     0.000000     0.000000
+  Tcomm: Bcast               0.001562     0.001562     0.001562     0.000000
+  Tcomm: Reduce              0.000006     0.000006     0.000006     0.000000
+Tespera (barr. final)        0.000000     0.000000     0.000000     0.000000
+Leitura (fora da secao)      0.023996     0.023996     0.023996     0.000000
+
+Fcomm = Tcomm_max / Ttotal_max            = 0.02 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0000  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 30.485825 s
+Trocas de linha: 1989 (entre ranks: 0) de 2000 iteracoes
+Checksum (soma |Inv|): 6.185307565785e+06
+RESULT mpi P=1 N=2000 t_secao=30.485825 tmax_total=30.485824 tmax_comp=30.478637 tmin_comp=30.478637 tmedia_comp=30.478637 desvio_comp=0.000000 tmax_comm=0.007188 tmedia_comm=0.007188 fcomm=0.0236 trocas=1989 trocas_inter=0 checksum=6.185307565785e+06
+######## res/mpi_W_P1_N2000_r3.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=2000 P=1 ===
+RANK r=0 P=1 N=2000 host=node1 linhas=2000 t_comp=29.971159 t_comm=0.006327 t_total=29.977486 t_espera=0.000000 t_allreduce=0.004775 t_sendrecv=0.000000 t_bcast=0.001545 t_reduce=0.000007 n_allreduce=2000 n_sendrecv=0 n_bcast=2000
+
+=== Estatisticas entre os 1 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       29.971159    29.971159    29.971159     0.000000
+Tcomm                        0.006327     0.006327     0.006327     0.000000
+Ttotal                      29.977486    29.977486    29.977486     0.000000
+  Tcomm: Allreduce           0.004775     0.004775     0.004775     0.000000
+  Tcomm: Sendrecv            0.000000     0.000000     0.000000     0.000000
+  Tcomm: Bcast               0.001545     0.001545     0.001545     0.000000
+  Tcomm: Reduce              0.000007     0.000007     0.000007     0.000000
+Tespera (barr. final)        0.000000     0.000000     0.000000     0.000000
+Leitura (fora da secao)      0.023616     0.023616     0.023616     0.000000
+
+Fcomm = Tcomm_max / Ttotal_max            = 0.02 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0000  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 29.977486 s
+Trocas de linha: 1989 (entre ranks: 0) de 2000 iteracoes
+Checksum (soma |Inv|): 6.185307565785e+06
+RESULT mpi P=1 N=2000 t_secao=29.977486 tmax_total=29.977486 tmax_comp=29.971159 tmin_comp=29.971159 tmedia_comp=29.971159 desvio_comp=0.000000 tmax_comm=0.006327 tmedia_comm=0.006327 fcomm=0.0211 trocas=1989 trocas_inter=0 checksum=6.185307565785e+06
+######## res/mpi_W_P2_N2520_r1.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=2520 P=2 ===
+RANK r=0 P=2 N=2520 host=node1 linhas=1260 t_comp=30.373518 t_comm=2.287383 t_total=32.660901 t_espera=0.000013 t_allreduce=0.790808 t_sendrecv=0.697832 t_bcast=0.798705 t_reduce=0.000038 n_allreduce=2520 n_sendrecv=863 n_bcast=2520
+
+=== Estatisticas entre os 2 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       30.418832    30.373518    30.396175     0.022657
+Tcomm                        2.287383     2.241132     2.264257     0.023125
+Ttotal                      32.660901    32.659964    32.660432     0.000469
+  Tcomm: Allreduce           0.793812     0.790808     0.792310     0.001502
+  Tcomm: Sendrecv            0.821598     0.697832     0.759715     0.061883
+  Tcomm: Bcast               0.798705     0.625688     0.712196     0.086508
+  Tcomm: Reduce              0.000038     0.000034     0.000036     0.000002
+Tespera (barr. final)        0.000505     0.000013     0.000259     0.000246
+Leitura (fora da secao)      0.451389     0.429254     0.440321     0.011067
+
+Fcomm = Tcomm_max / Ttotal_max            = 7.00 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0007  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 32.660913 s
+Trocas de linha: 2511 (entre ranks: 863) de 2520 iteracoes
+Checksum (soma |Inv|): 4.481060255443e+05
+RESULT mpi P=2 N=2520 t_secao=32.660913 tmax_total=32.660901 tmax_comp=30.418832 tmin_comp=30.373518 tmedia_comp=30.396175 desvio_comp=0.022657 tmax_comm=2.287383 tmedia_comm=2.264257 fcomm=7.0034 trocas=2511 trocas_inter=863 checksum=4.481060255443e+05
+RANK r=1 P=2 N=2520 host=node2 linhas=1260 t_comp=30.418832 t_comm=2.241132 t_total=32.659964 t_espera=0.000505 t_allreduce=0.793812 t_sendrecv=0.821598 t_bcast=0.625688 t_reduce=0.000034 n_allreduce=2520 n_sendrecv=863 n_bcast=2520
+######## res/mpi_W_P2_N2520_r2.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=2520 P=2 ===
+RANK r=0 P=2 N=2520 host=node1 linhas=1260 t_comp=30.168015 t_comm=2.271666 t_total=32.439681 t_espera=0.000030 t_allreduce=0.773161 t_sendrecv=0.699388 t_bcast=0.799089 t_reduce=0.000028 n_allreduce=2520 n_sendrecv=863 n_bcast=2520
+
+=== Estatisticas entre os 2 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       30.427270    30.168015    30.297642     0.129627
+Tcomm                        2.271666     2.011845     2.141755     0.129911
+Ttotal                      32.439681    32.439114    32.439398     0.000283
+  Tcomm: Allreduce           0.773161     0.561381     0.667271     0.105890
+  Tcomm: Sendrecv            0.822193     0.699388     0.760790     0.061402
+  Tcomm: Bcast               0.799089     0.628227     0.713658     0.085431
+  Tcomm: Reduce              0.000045     0.000028     0.000037     0.000008
+Tespera (barr. final)        0.000175     0.000030     0.000103     0.000072
+Leitura (fora da secao)      0.019904     0.019690     0.019797     0.000107
+
+Fcomm = Tcomm_max / Ttotal_max            = 7.00 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0043  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 32.439711 s
+Trocas de linha: 2511 (entre ranks: 863) de 2520 iteracoes
+Checksum (soma |Inv|): 4.481060255443e+05
+RANK r=1 P=2 N=2520 host=node2 linhas=1260 t_comp=30.427270 t_comm=2.011845 t_total=32.439114 t_espera=0.000175 t_allreduce=0.561381 t_sendrecv=0.822193 t_bcast=0.628227 t_reduce=0.000045 n_allreduce=2520 n_sendrecv=863 n_bcast=2520
+RESULT mpi P=2 N=2520 t_secao=32.439711 tmax_total=32.439681 tmax_comp=30.427270 tmin_comp=30.168015 tmedia_comp=30.297642 desvio_comp=0.129627 tmax_comm=2.271666 tmedia_comm=2.141755 fcomm=7.0027 trocas=2511 trocas_inter=863 checksum=4.481060255443e+05
+######## res/mpi_W_P2_N2520_r3.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=2520 P=2 ===
+RANK r=0 P=2 N=2520 host=node1 linhas=1260 t_comp=30.258034 t_comm=2.368860 t_total=32.626894 t_espera=0.000023 t_allreduce=0.870375 t_sendrecv=0.701303 t_bcast=0.797142 t_reduce=0.000040 n_allreduce=2520 n_sendrecv=863 n_bcast=2520
+
+=== Estatisticas entre os 2 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       30.393245    30.258034    30.325639     0.067605
+Tcomm                        2.368860     2.232733     2.300796     0.068064
+Ttotal                      32.626894    32.625977    32.626435     0.000458
+  Tcomm: Allreduce           0.870375     0.783402     0.826889     0.043486
+  Tcomm: Sendrecv            0.821983     0.701303     0.761643     0.060340
+  Tcomm: Bcast               0.797142     0.627315     0.712228     0.084914
+  Tcomm: Reduce              0.000040     0.000033     0.000036     0.000004
+Tespera (barr. final)        0.000524     0.000023     0.000274     0.000251
+RANK r=1 P=2 N=2520 host=node2 linhas=1260 t_comp=30.393245 t_comm=2.232733 t_total=32.625977 t_espera=0.000524 t_allreduce=0.783402 t_sendrecv=0.821983 t_bcast=0.627315 t_reduce=0.000033 n_allreduce=2520 n_sendrecv=863 n_bcast=2520
+Leitura (fora da secao)      0.019443     0.019106     0.019275     0.000169
+
+Fcomm = Tcomm_max / Ttotal_max            = 7.26 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0022  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 32.626917 s
+Trocas de linha: 2511 (entre ranks: 863) de 2520 iteracoes
+Checksum (soma |Inv|): 4.481060255443e+05
+RESULT mpi P=2 N=2520 t_secao=32.626917 tmax_total=32.626894 tmax_comp=30.393245 tmin_comp=30.258034 tmedia_comp=30.325639 desvio_comp=0.067605 tmax_comm=2.368860 tmedia_comm=2.300796 fcomm=7.2605 trocas=2511 trocas_inter=863 checksum=4.481060255443e+05
+######## res/mpi_W_P4_N3175_r1.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=3175 P=4 ===
+RANK r=0 P=4 N=3175 host=node1 linhas=794 t_comp=30.065097 t_comm=6.916966 t_total=36.982062 t_espera=0.000041 t_allreduce=3.516615 t_sendrecv=0.648424 t_bcast=2.751176 t_reduce=0.000751 n_allreduce=3175 n_sendrecv=677 n_bcast=3175
+RANK r=1 P=4 N=3175 host=node2 linhas=794 t_comp=30.305448 t_comm=6.676464 t_total=36.981912 t_espera=0.000395 t_allreduce=2.230683 t_sendrecv=0.850388 t_bcast=3.595346 t_reduce=0.000047 n_allreduce=3175 n_sendrecv=845 n_bcast=3175
+RANK r=2 P=4 N=3175 host=node3 linhas=794 t_comp=30.567314 t_comm=6.414225 t_total=36.981539 t_espera=0.000112 t_allreduce=1.463247 t_sendrecv=1.101773 t_bcast=3.849172 t_reduce=0.000033 n_allreduce=3175 n_sendrecv=1125 n_bcast=3175
+
+=== Estatisticas entre os 4 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       30.567314    30.065097    30.361862     0.197032
+Tcomm                        6.916966     6.414225     6.619583     0.197495
+Ttotal                      36.982062    36.980264    36.981445     0.000707
+  Tcomm: Allreduce           3.516615     1.075244     2.071447     0.932228
+  Tcomm: Sendrecv            1.101773     0.648424     0.917863     0.183292
+  Tcomm: Bcast               4.324530     2.751176     3.630056     0.570951
+  Tcomm: Reduce              0.000751     0.000033     0.000216     0.000309
+Tespera (barr. final)        0.001137     0.000041     0.000421     0.000434
+Leitura (fora da secao)      0.708860     0.667089     0.686842     0.015074
+
+Fcomm = Tcomm_max / Ttotal_max            = 18.70 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0068  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 36.982103 s
+Trocas de linha: 3167 (entre ranks: 1868) de 3175 iteracoes
+Checksum (soma |Inv|): 6.487901074502e+05
+RESULT mpi P=4 N=3175 t_secao=36.982103 tmax_total=36.982062 tmax_comp=30.567314 tmin_comp=30.065097 tmedia_comp=30.361862 desvio_comp=0.197032 tmax_comm=6.916966 tmedia_comm=6.619583 fcomm=18.7036 trocas=3167 trocas_inter=1868 checksum=6.487901074502e+05
+RANK r=3 P=4 N=3175 host=node4 linhas=793 t_comp=30.509589 t_comm=6.470675 t_total=36.980264 t_espera=0.001137 t_allreduce=1.075244 t_sendrecv=1.070867 t_bcast=4.324530 t_reduce=0.000034 n_allreduce=3175 n_sendrecv=1089 n_bcast=3175
+######## res/mpi_W_P4_N3175_r2.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=3175 P=4 ===
+RANK r=0 P=4 N=3175 host=node1 linhas=794 t_comp=30.180075 t_comm=6.971664 t_total=37.151739 t_espera=0.000043 t_allreduce=3.153767 t_sendrecv=0.652192 t_bcast=3.164754 t_reduce=0.000951 n_allreduce=3175 n_sendrecv=677 n_bcast=3175
+RANK r=1 P=4 N=3175 host=node2 linhas=794 t_comp=29.989180 t_comm=7.162220 t_total=37.151400 t_espera=0.000584 t_allreduce=2.630731 t_sendrecv=0.827658 t_bcast=3.703779 t_reduce=0.000052 n_allreduce=3175 n_sendrecv=845 n_bcast=3175
+RANK r=2 P=4 N=3175 host=node3 linhas=794 t_comp=30.568910 t_comm=6.582308 t_total=37.151217 t_espera=0.000115 t_allreduce=1.415998 t_sendrecv=1.314506 t_bcast=3.851771 t_reduce=0.000034 n_allreduce=3175 n_sendrecv=1125 n_bcast=3175
+
+=== Estatisticas entre os 4 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       30.568910    29.989180    30.247490     0.208925
+Tcomm                        7.162220     6.582308     6.903506     0.209033
+Ttotal                      37.151739    37.149627    37.150996     0.000812
+  Tcomm: Allreduce           3.153767     1.343175     2.135918     0.779035
+  Tcomm: Sendrecv            1.314506     0.652192     0.974282     0.253724
+  Tcomm: Bcast               4.451849     3.164754     3.793038     0.458309
+  Tcomm: Reduce              0.000951     0.000034     0.000268     0.000395
+Tespera (barr. final)        0.001474     0.000043     0.000554     0.000571
+Leitura (fora da secao)      0.015096     0.014930     0.014986     0.000064
+
+Fcomm = Tcomm_max / Ttotal_max            = 19.28 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0106  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 37.151781 s
+Trocas de linha: 3167 (entre ranks: 1868) de 3175 iteracoes
+Checksum (soma |Inv|): 6.487901074502e+05
+RESULT mpi P=4 N=3175 t_secao=37.151781 tmax_total=37.151739 tmax_comp=30.568910 tmin_comp=29.989180 tmedia_comp=30.247490 desvio_comp=0.208925 tmax_comm=7.162220 tmedia_comm=6.903506 fcomm=19.2783 trocas=3167 trocas_inter=1868 checksum=6.487901074502e+05
+RANK r=3 P=4 N=3175 host=node4 linhas=793 t_comp=30.251795 t_comm=6.897833 t_total=37.149627 t_espera=0.001474 t_allreduce=1.343175 t_sendrecv=1.102774 t_bcast=4.451849 t_reduce=0.000034 n_allreduce=3175 n_sendrecv=1089 n_bcast=3175
+######## res/mpi_W_P4_N3175_r3.out
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=3175 P=4 ===
+RANK r=0 P=4 N=3175 host=node1 linhas=794 t_comp=30.303644 t_comm=6.855741 t_total=37.159385 t_espera=0.000078 t_allreduce=3.004639 t_sendrecv=0.665175 t_bcast=3.185257 t_reduce=0.000671 n_allreduce=3175 n_sendrecv=677 n_bcast=3175
+RANK r=1 P=4 N=3175 host=node2 linhas=794 t_comp=30.301630 t_comm=6.857617 t_total=37.159248 t_espera=0.000411 t_allreduce=2.284121 t_sendrecv=0.848238 t_bcast=3.725210 t_reduce=0.000049 n_allreduce=3175 n_sendrecv=845 n_bcast=3175
+RANK r=2 P=4 N=3175 host=node3 linhas=794 t_comp=30.575823 t_comm=6.583074 t_total=37.158897 t_espera=0.000147 t_allreduce=1.435754 t_sendrecv=1.283542 t_bcast=3.863744 t_reduce=0.000034 n_allreduce=3175 n_sendrecv=1125 n_bcast=3175
+
+=== Estatisticas entre os 4 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       30.575823    30.300502    30.370400     0.118606
+Tcomm                        6.857617     6.583074     6.788309     0.118495
+Ttotal                      37.159385    37.157307    37.158709     0.000829
+  Tcomm: Allreduce           3.004639     1.301583     2.006524     0.688479
+  Tcomm: Sendrecv            1.283542     0.665175     0.971639     0.234706
+  Tcomm: Bcast               4.465588     3.185257     3.809949     0.455570
+  Tcomm: Reduce              0.000671     0.000034     0.000197     0.000274
+Tespera (barr. final)        0.001445     0.000078     0.000520     0.000548
+Leitura (fora da secao)      0.014719     0.014452     0.014636     0.000107
+
+Fcomm = Tcomm_max / Ttotal_max            = 18.45 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0068  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 37.159463 s
+Trocas de linha: 3167 (entre ranks: 1868) de 3175 iteracoes
+Checksum (soma |Inv|): 6.487901074502e+05
+RANK r=3 P=4 N=3175 host=node4 linhas=793 t_comp=30.300502 t_comm=6.856805 t_total=37.157307 t_espera=0.001445 t_allreduce=1.301583 t_sendrecv=1.089600 t_bcast=4.465588 t_reduce=0.000035 n_allreduce=3175 n_sendrecv=1089 n_bcast=3175
+RESULT mpi P=4 N=3175 t_secao=37.159463 tmax_total=37.159385 tmax_comp=30.575823 tmin_comp=30.300502 tmedia_comp=30.370400 desvio_comp=0.118606 tmax_comm=6.857617 tmedia_comm=6.788309 fcomm=18.4546 trocas=3167 trocas_inter=1868 checksum=6.487901074502e+05
+######## res/otim_P13_r1.out
+=== Versao MPI (Opcao A) N=4000 P=13 ===
+RANK r=0 P=13 N=4000 host=node1 linhas=308 t_comp=13.686461 t_comm=24.491567 t_total=38.178029 t_espera=0.000126 t_allreduce=19.035005 t_sendrecv=0.290414 t_bcast=5.165141 t_reduce=0.001006 n_allreduce=4000 n_sendrecv=294 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=18449496
+RANK r=1 P=13 N=4000 host=node2 linhas=308 t_comp=14.023041 t_comm=24.154267 t_total=38.177309 t_espera=0.000306 t_allreduce=10.523167 t_sendrecv=0.302833 t_bcast=13.327569 t_reduce=0.000698 n_allreduce=4000 n_sendrecv=320 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=19345960
+RANK r=2 P=13 N=4000 host=node3 linhas=308 t_comp=13.822220 t_comm=24.354870 t_total=38.177090 t_espera=0.000193 t_allreduce=8.376609 t_sendrecv=0.282642 t_bcast=15.694753 t_reduce=0.000865 n_allreduce=4000 n_sendrecv=341 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=19891200
+RANK r=3 P=13 N=4000 host=node4 linhas=308 t_comp=13.857358 t_comm=24.319593 t_total=38.176951 t_espera=0.000336 t_allreduce=6.042751 t_sendrecv=0.307865 t_bcast=17.968882 t_reduce=0.000095 n_allreduce=4000 n_sendrecv=367 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=20675400
+RANK r=4 P=13 N=4000 host=node5 linhas=308 t_comp=13.586329 t_comm=24.591319 t_total=38.177648 t_espera=0.000188 t_allreduce=5.955673 t_sendrecv=0.339207 t_bcast=18.295986 t_reduce=0.000453 n_allreduce=4000 n_sendrecv=400 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=21743256
+RANK r=5 P=13 N=4000 host=node6 linhas=308 t_comp=13.830499 t_comm=24.347736 t_total=38.178234 t_espera=0.000470 t_allreduce=5.343199 t_sendrecv=0.342886 t_bcast=18.661263 t_reduce=0.000388 n_allreduce=4000 n_sendrecv=424 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=22331208
+RANK r=6 P=13 N=4000 host=node7 linhas=308 t_comp=13.652741 t_comm=24.525871 t_total=38.178612 t_espera=0.000167 t_allreduce=5.550407 t_sendrecv=0.350437 t_bcast=18.624969 t_reduce=0.000058 n_allreduce=4000 n_sendrecv=503 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=25780208
+RANK r=7 P=13 N=4000 host=node8 linhas=308 t_comp=13.733371 t_comm=24.445241 t_total=38.178613 t_espera=0.000632 t_allreduce=5.217848 t_sendrecv=0.450925 t_bcast=18.776438 t_reduce=0.000030 n_allreduce=4000 n_sendrecv=551 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=27382264
+RANK r=8 P=13 N=4000 host=node9 linhas=308 t_comp=13.731824 t_comm=24.445886 t_total=38.177710 t_espera=0.000219 t_allreduce=5.029356 t_sendrecv=0.335980 t_bcast=19.080516 t_reduce=0.000034 n_allreduce=4000 n_sendrecv=555 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=26636808
+RANK r=9 P=13 N=4000 host=node10 linhas=307 t_comp=13.899356 t_comm=24.277430 t_total=38.176786 t_espera=0.000584 t_allreduce=3.967067 t_sendrecv=0.462260 t_bcast=19.848071 t_reduce=0.000033 n_allreduce=4000 n_sendrecv=646 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=30035824
+RANK r=10 P=13 N=4000 host=node11 linhas=307 t_comp=13.731355 t_comm=24.445510 t_total=38.176865 t_espera=0.000524 t_allreduce=3.963580 t_sendrecv=0.435062 t_bcast=20.046834 t_reduce=0.000033 n_allreduce=4000 n_sendrecv=691 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=30881256
+RANK r=11 P=13 N=4000 host=node12 linhas=307 t_comp=13.609259 t_comm=24.568035 t_total=38.177295 t_espera=0.000347 t_allreduce=3.753999 t_sendrecv=0.538312 t_bcast=20.275691 t_reduce=0.000033 n_allreduce=4000 n_sendrecv=802 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=34959752
+RANK r=12 P=13 N=4000 host=node13 linhas=307 t_comp=13.987139 t_comm=24.189134 t_total=38.176273 t_espera=0.001373 t_allreduce=3.001527 t_sendrecv=0.422806 t_bcast=20.764766 t_reduce=0.000035 n_allreduce=4000 n_sendrecv=808 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=35280664
+
+=== Estatisticas entre os 13 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       14.023041    13.586329    13.780843     0.131558
+Tcomm                       24.591319    24.154267    24.396651     0.131924
+Ttotal                      38.178613    38.176273    38.177493     0.000697
+  Tcomm: Allreduce          19.035005     3.001527     6.596938     4.075185
+  Tcomm: Sendrecv            0.538312     0.282642     0.373971     0.076343
+  Tcomm: Bcast              20.764766     5.165141    17.425452     4.025901
+  Tcomm: Reduce              0.001006     0.000030     0.000289     0.000344
+Tespera (barr. final)        0.001373     0.000126     0.000420     0.000318
+Leitura (fora da secao)      0.994476     0.007474     0.882532     0.269149
+
+Fcomm = Tcomm_max / Ttotal_max            = 64.41 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0176  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 38.178155 s
+Trocas de linha: 3991 (entre ranks: 3351) de 4000 iteracoes
+Volume por rank no Bcast: 192.02 MB | Sendrecv enviado (soma dos ranks): 333.39 MB
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=13 N=4000 t_secao=38.178155 tmax_total=38.178613 tmax_comp=14.023041 tmin_comp=13.586329 tmedia_comp=13.780843 desvio_comp=0.131558 tmax_comm=24.591319 tmedia_comm=24.396651 fcomm=64.4112 trocas=3991 trocas_inter=3351 vol_bcast_mb=192.016 vol_sendrecv_mb_total=333.393 checksum=6.775485558388e+05
+######## res/otim_P13_r2.out
+=== Versao MPI (Opcao A) N=4000 P=13 ===
+RANK r=0 P=13 N=4000 host=node1 linhas=308 t_comp=13.777826 t_comm=25.474140 t_total=39.251967 t_espera=0.000122 t_allreduce=19.672710 t_sendrecv=0.284098 t_bcast=5.515916 t_reduce=0.001417 n_allreduce=4000 n_sendrecv=294 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=18449496
+RANK r=1 P=13 N=4000 host=node2 linhas=308 t_comp=14.023159 t_comm=25.228165 t_total=39.251324 t_espera=0.000201 t_allreduce=11.199231 t_sendrecv=0.301272 t_bcast=13.726678 t_reduce=0.000984 n_allreduce=4000 n_sendrecv=320 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=19345960
+RANK r=2 P=13 N=4000 host=node3 linhas=308 t_comp=13.947527 t_comm=25.303469 t_total=39.250996 t_espera=0.000485 t_allreduce=9.399184 t_sendrecv=0.322438 t_bcast=15.581390 t_reduce=0.000456 n_allreduce=4000 n_sendrecv=341 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=19891200
+RANK r=3 P=13 N=4000 host=node4 linhas=308 t_comp=14.078026 t_comm=25.173090 t_total=39.251116 t_espera=0.000329 t_allreduce=6.146156 t_sendrecv=0.305707 t_bcast=18.720563 t_reduce=0.000664 n_allreduce=4000 n_sendrecv=367 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=20675400
+RANK r=4 P=13 N=4000 host=node5 linhas=308 t_comp=13.833768 t_comm=25.417512 t_total=39.251279 t_espera=0.000560 t_allreduce=6.894681 t_sendrecv=0.525272 t_bcast=17.997509 t_reduce=0.000050 n_allreduce=4000 n_sendrecv=400 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=21743256
+RANK r=5 P=13 N=4000 host=node6 linhas=308 t_comp=13.775675 t_comm=25.476355 t_total=39.252031 t_espera=0.000657 t_allreduce=6.305239 t_sendrecv=0.340808 t_bcast=18.829855 t_reduce=0.000454 n_allreduce=4000 n_sendrecv=424 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=22331208
+RANK r=6 P=13 N=4000 host=node7 linhas=308 t_comp=13.881945 t_comm=25.370430 t_total=39.252374 t_espera=0.000598 t_allreduce=6.249844 t_sendrecv=0.361114 t_bcast=18.759346 t_reduce=0.000125 n_allreduce=4000 n_sendrecv=503 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=25780208
+RANK r=7 P=13 N=4000 host=node8 linhas=308 t_comp=13.714277 t_comm=25.538245 t_total=39.252522 t_espera=0.000911 t_allreduce=5.507302 t_sendrecv=0.413591 t_bcast=19.617323 t_reduce=0.000029 n_allreduce=4000 n_sendrecv=551 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=27382264
+RANK r=8 P=13 N=4000 host=node9 linhas=308 t_comp=13.669984 t_comm=25.581166 t_total=39.251150 t_espera=0.000703 t_allreduce=5.094557 t_sendrecv=0.390551 t_bcast=20.096027 t_reduce=0.000031 n_allreduce=4000 n_sendrecv=555 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=26636808
+RANK r=9 P=13 N=4000 host=node10 linhas=307 t_comp=13.803289 t_comm=25.447270 t_total=39.250559 t_espera=0.000747 t_allreduce=4.921480 t_sendrecv=0.457568 t_bcast=20.068189 t_reduce=0.000033 n_allreduce=4000 n_sendrecv=646 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=30035824
+RANK r=10 P=13 N=4000 host=node11 linhas=307 t_comp=13.880588 t_comm=25.370321 t_total=39.250909 t_espera=0.000684 t_allreduce=4.535437 t_sendrecv=0.437700 t_bcast=20.397153 t_reduce=0.000031 n_allreduce=4000 n_sendrecv=691 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=30881256
+RANK r=11 P=13 N=4000 host=node12 linhas=307 t_comp=13.938830 t_comm=25.312623 t_total=39.251454 t_espera=0.000340 t_allreduce=3.768651 t_sendrecv=0.516056 t_bcast=21.027872 t_reduce=0.000044 n_allreduce=4000 n_sendrecv=802 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=34959752
+RANK r=12 P=13 N=4000 host=node13 linhas=307 t_comp=13.545723 t_comm=25.704037 t_total=39.249760 t_espera=0.001881 t_allreduce=4.272389 t_sendrecv=0.428459 t_bcast=21.003159 t_reduce=0.000029 n_allreduce=4000 n_sendrecv=808 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=35280664
+
+=== Estatisticas entre os 13 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       14.078026    13.545723    13.836201     0.140179
+Tcomm                       25.704037    25.173090    25.415140     0.140050
+Ttotal                      39.252522    39.249760    39.251342     0.000726
+  Tcomm: Allreduce          19.672710     3.768651     7.228220     4.106564
+  Tcomm: Sendrecv            0.525272     0.284098     0.391126     0.076992
+  Tcomm: Bcast              21.027872     5.515916    17.795460     4.080193
+  Tcomm: Reduce              0.001417     0.000029     0.000335     0.000430
+Tespera (barr. final)        0.001881     0.000122     0.000632     0.000422
+Leitura (fora da secao)      0.053294     0.007432     0.011165     0.012162
+
+Fcomm = Tcomm_max / Ttotal_max            = 65.48 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0175  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 39.252089 s
+Trocas de linha: 3991 (entre ranks: 3351) de 4000 iteracoes
+Volume por rank no Bcast: 192.02 MB | Sendrecv enviado (soma dos ranks): 333.39 MB
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=13 N=4000 t_secao=39.252089 tmax_total=39.252522 tmax_comp=14.078026 tmin_comp=13.545723 tmedia_comp=13.836201 desvio_comp=0.140179 tmax_comm=25.704037 tmedia_comm=25.415140 fcomm=65.4838 trocas=3991 trocas_inter=3351 vol_bcast_mb=192.016 vol_sendrecv_mb_total=333.393 checksum=6.775485558388e+05
+######## res/otim_P13_r3.out
+=== Versao MPI (Opcao A) N=4000 P=13 ===
+RANK r=0 P=13 N=4000 host=node1 linhas=308 t_comp=13.829470 t_comm=25.266294 t_total=39.095764 t_espera=0.000128 t_allreduce=19.585082 t_sendrecv=0.327998 t_bcast=5.352094 t_reduce=0.001119 n_allreduce=4000 n_sendrecv=294 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=18449496
+RANK r=1 P=13 N=4000 host=node2 linhas=308 t_comp=14.051672 t_comm=25.043429 t_total=39.095101 t_espera=0.000283 t_allreduce=10.961021 t_sendrecv=0.336990 t_bcast=13.744775 t_reduce=0.000644 n_allreduce=4000 n_sendrecv=320 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=19345960
+RANK r=2 P=13 N=4000 host=node3 linhas=308 t_comp=14.038761 t_comm=25.056217 t_total=39.094978 t_espera=0.000168 t_allreduce=9.690154 t_sendrecv=0.465527 t_bcast=14.900083 t_reduce=0.000453 n_allreduce=4000 n_sendrecv=341 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=19891200
+RANK r=3 P=13 N=4000 host=node4 linhas=308 t_comp=13.714426 t_comm=25.380454 t_total=39.094880 t_espera=0.000273 t_allreduce=7.752980 t_sendrecv=0.308851 t_bcast=17.318370 t_reduce=0.000253 n_allreduce=4000 n_sendrecv=367 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=20675400
+RANK r=4 P=13 N=4000 host=node5 linhas=308 t_comp=13.694569 t_comm=25.400920 t_total=39.095490 t_espera=0.000247 t_allreduce=7.191532 t_sendrecv=0.314657 t_bcast=17.894162 t_reduce=0.000570 n_allreduce=4000 n_sendrecv=400 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=21743256
+RANK r=5 P=13 N=4000 host=node6 linhas=308 t_comp=13.702820 t_comm=25.393386 t_total=39.096206 t_espera=0.000398 t_allreduce=6.277477 t_sendrecv=0.340111 t_bcast=18.775344 t_reduce=0.000454 n_allreduce=4000 n_sendrecv=424 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=22331208
+RANK r=6 P=13 N=4000 host=node7 linhas=308 t_comp=13.967261 t_comm=25.129072 t_total=39.096333 t_espera=0.000252 t_allreduce=6.290671 t_sendrecv=0.360864 t_bcast=18.477472 t_reduce=0.000065 n_allreduce=4000 n_sendrecv=503 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=25780208
+RANK r=7 P=13 N=4000 host=node8 linhas=308 t_comp=13.781250 t_comm=25.315294 t_total=39.096544 t_espera=0.000595 t_allreduce=6.245257 t_sendrecv=0.422917 t_bcast=18.647091 t_reduce=0.000030 n_allreduce=4000 n_sendrecv=551 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=27382264
+RANK r=8 P=13 N=4000 host=node9 linhas=308 t_comp=13.668524 t_comm=25.426936 t_total=39.095460 t_espera=0.000185 t_allreduce=4.497638 t_sendrecv=0.341487 t_bcast=20.587775 t_reduce=0.000035 n_allreduce=4000 n_sendrecv=555 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=26636808
+RANK r=9 P=13 N=4000 host=node10 linhas=307 t_comp=13.715490 t_comm=25.379157 t_total=39.094647 t_espera=0.000518 t_allreduce=5.322243 t_sendrecv=0.443843 t_bcast=19.613038 t_reduce=0.000033 n_allreduce=4000 n_sendrecv=646 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=30035824
+RANK r=10 P=13 N=4000 host=node11 linhas=307 t_comp=13.522263 t_comm=25.572617 t_total=39.094880 t_espera=0.000378 t_allreduce=5.118695 t_sendrecv=0.478336 t_bcast=19.975542 t_reduce=0.000043 n_allreduce=4000 n_sendrecv=691 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=30881256
+RANK r=11 P=13 N=4000 host=node12 linhas=307 t_comp=13.664759 t_comm=25.430473 t_total=39.095232 t_espera=0.000283 t_allreduce=3.369797 t_sendrecv=0.522409 t_bcast=21.538234 t_reduce=0.000033 n_allreduce=4000 n_sendrecv=802 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=34959752
+RANK r=12 P=13 N=4000 host=node13 linhas=307 t_comp=13.834255 t_comm=25.259948 t_total=39.094204 t_espera=0.001331 t_allreduce=2.827754 t_sendrecv=0.417831 t_bcast=22.014328 t_reduce=0.000035 n_allreduce=4000 n_sendrecv=808 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=35280664
+
+=== Estatisticas entre os 13 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       14.051672    13.522263    13.783502     0.150618
+Tcomm                       25.572617    25.043429    25.311861     0.150568
+Ttotal                      39.096544    39.094204    39.095363     0.000667
+  Tcomm: Allreduce          19.585082     2.827754     7.317715     4.163940
+  Tcomm: Sendrecv            0.522409     0.308851     0.390909     0.068159
+  Tcomm: Bcast              22.014328     5.352094    17.602947     4.198858
+  Tcomm: Reduce              0.001119     0.000030     0.000290     0.000327
+Tespera (barr. final)        0.001331     0.000128     0.000388     0.000301
+Leitura (fora da secao)      0.007628     0.007173     0.007394     0.000139
+
+Fcomm = Tcomm_max / Ttotal_max            = 65.41 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0195  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 39.095893 s
+Trocas de linha: 3991 (entre ranks: 3351) de 4000 iteracoes
+Volume por rank no Bcast: 192.02 MB | Sendrecv enviado (soma dos ranks): 333.39 MB
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=13 N=4000 t_secao=39.095893 tmax_total=39.096544 tmax_comp=14.051672 tmin_comp=13.522263 tmedia_comp=13.783502 desvio_comp=0.150618 tmax_comm=25.572617 tmedia_comm=25.311861 fcomm=65.4089 trocas=3991 trocas_inter=3351 vol_bcast_mb=192.016 vol_sendrecv_mb_total=333.393 checksum=6.775485558388e+05
+######## res/otim_P1_r1.out
+=== Versao MPI (Opcao A) N=4000 P=1 ===
+RANK r=0 P=1 N=4000 host=node1 linhas=4000 t_comp=183.228600 t_comm=0.015698 t_total=183.244299 t_espera=0.000000 t_allreduce=0.011724 t_sendrecv=0.000000 t_bcast=0.003956 t_reduce=0.000018 n_allreduce=4000 n_sendrecv=0 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=0
+
+=== Estatisticas entre os 1 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                      183.228600   183.228600   183.228600     0.000000
+Tcomm                        0.015698     0.015698     0.015698     0.000000
+Ttotal                     183.244299   183.244299   183.244299     0.000000
+  Tcomm: Allreduce           0.011724     0.011724     0.011724     0.000000
+  Tcomm: Sendrecv            0.000000     0.000000     0.000000     0.000000
+  Tcomm: Bcast               0.003956     0.003956     0.003956     0.000000
+  Tcomm: Reduce              0.000018     0.000018     0.000018     0.000000
+Tespera (barr. final)        0.000000     0.000000     0.000000     0.000000
+Leitura (fora da secao)      0.089177     0.089177     0.089177     0.000000
+
+Fcomm = Tcomm_max / Ttotal_max            = 0.01 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0000  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 183.244299 s
+Trocas de linha: 3991 (entre ranks: 0) de 4000 iteracoes
+Volume por rank no Bcast: 192.02 MB | Sendrecv enviado (soma dos ranks): 0.00 MB
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=1 N=4000 t_secao=183.244299 tmax_total=183.244299 tmax_comp=183.228600 tmin_comp=183.228600 tmedia_comp=183.228600 desvio_comp=0.000000 tmax_comm=0.015698 tmedia_comm=0.015698 fcomm=0.0086 trocas=3991 trocas_inter=0 vol_bcast_mb=192.016 vol_sendrecv_mb_total=0.000 checksum=6.775485558388e+05
+######## res/otim_P1_r2.out
+=== Versao MPI (Opcao A) N=4000 P=1 ===
+RANK r=0 P=1 N=4000 host=node1 linhas=4000 t_comp=183.025835 t_comm=0.014984 t_total=183.040820 t_espera=0.000000 t_allreduce=0.011964 t_sendrecv=0.000000 t_bcast=0.003003 t_reduce=0.000017 n_allreduce=4000 n_sendrecv=0 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=0
+
+=== Estatisticas entre os 1 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                      183.025835   183.025835   183.025835     0.000000
+Tcomm                        0.014984     0.014984     0.014984     0.000000
+Ttotal                     183.040820   183.040820   183.040820     0.000000
+  Tcomm: Allreduce           0.011964     0.011964     0.011964     0.000000
+  Tcomm: Sendrecv            0.000000     0.000000     0.000000     0.000000
+  Tcomm: Bcast               0.003003     0.003003     0.003003     0.000000
+  Tcomm: Reduce              0.000017     0.000017     0.000017     0.000000
+Tespera (barr. final)        0.000000     0.000000     0.000000     0.000000
+Leitura (fora da secao)      0.089808     0.089808     0.089808     0.000000
+
+Fcomm = Tcomm_max / Ttotal_max            = 0.01 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0000  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 183.040820 s
+Trocas de linha: 3991 (entre ranks: 0) de 4000 iteracoes
+Volume por rank no Bcast: 192.02 MB | Sendrecv enviado (soma dos ranks): 0.00 MB
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=1 N=4000 t_secao=183.040820 tmax_total=183.040820 tmax_comp=183.025835 tmin_comp=183.025835 tmedia_comp=183.025835 desvio_comp=0.000000 tmax_comm=0.014984 tmedia_comm=0.014984 fcomm=0.0082 trocas=3991 trocas_inter=0 vol_bcast_mb=192.016 vol_sendrecv_mb_total=0.000 checksum=6.775485558388e+05
+######## res/otim_P1_r3.out
+=== Versao MPI (Opcao A) N=4000 P=1 ===
+RANK r=0 P=1 N=4000 host=node1 linhas=4000 t_comp=182.989250 t_comm=0.014532 t_total=183.003781 t_espera=0.000000 t_allreduce=0.011804 t_sendrecv=0.000000 t_bcast=0.002721 t_reduce=0.000006 n_allreduce=4000 n_sendrecv=0 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=0
+
+=== Estatisticas entre os 1 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                      182.989250   182.989250   182.989250     0.000000
+Tcomm                        0.014532     0.014532     0.014532     0.000000
+Ttotal                     183.003781   183.003781   183.003781     0.000000
+  Tcomm: Allreduce           0.011804     0.011804     0.011804     0.000000
+  Tcomm: Sendrecv            0.000000     0.000000     0.000000     0.000000
+  Tcomm: Bcast               0.002721     0.002721     0.002721     0.000000
+  Tcomm: Reduce              0.000006     0.000006     0.000006     0.000000
+Tespera (barr. final)        0.000000     0.000000     0.000000     0.000000
+Leitura (fora da secao)      0.089869     0.089869     0.089869     0.000000
+
+Fcomm = Tcomm_max / Ttotal_max            = 0.01 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0000  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 183.003782 s
+Trocas de linha: 3991 (entre ranks: 0) de 4000 iteracoes
+Volume por rank no Bcast: 192.02 MB | Sendrecv enviado (soma dos ranks): 0.00 MB
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=1 N=4000 t_secao=183.003782 tmax_total=183.003781 tmax_comp=182.989250 tmin_comp=182.989250 tmedia_comp=182.989250 desvio_comp=0.000000 tmax_comm=0.014532 tmedia_comm=0.014532 fcomm=0.0079 trocas=3991 trocas_inter=0 vol_bcast_mb=192.016 vol_sendrecv_mb_total=0.000 checksum=6.775485558388e+05
+######## res/otim_P2_r1.out
+=== Versao MPI (Opcao A) N=4000 P=2 ===
+RANK r=0 P=2 N=4000 host=node1 linhas=2000 t_comp=91.351608 t_comm=6.610513 t_total=97.962122 t_espera=0.000013 t_allreduce=1.753136 t_sendrecv=3.584719 t_bcast=1.272613 t_reduce=0.000046 n_allreduce=4000 n_sendrecv=1416 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=78236424
+
+=== Estatisticas entre os 2 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       91.538518    91.351608    91.445063     0.093455
+RANK r=1 P=2 N=4000 host=node2 linhas=2000 t_comp=91.538518 t_comm=6.421849 t_total=97.960368 t_espera=0.000393 t_allreduce=1.158145 t_sendrecv=1.859610 t_bcast=3.404047 t_reduce=0.000048 n_allreduce=4000 n_sendrecv=1416 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=78236424
+Tcomm                        6.610513     6.421849     6.516181     0.094332
+Ttotal                      97.962122    97.960368    97.961245     0.000877
+  Tcomm: Allreduce           1.753136     1.158145     1.455640     0.297495
+  Tcomm: Sendrecv            3.584719     1.859610     2.722164     0.862555
+  Tcomm: Bcast               3.404047     1.272613     2.338330     1.065717
+  Tcomm: Reduce              0.000048     0.000046     0.000047     0.000001
+Tespera (barr. final)        0.000393     0.000013     0.000203     0.000190
+Leitura (fora da secao)      0.045943     0.045377     0.045660     0.000283
+
+Fcomm = Tcomm_max / Ttotal_max            = 6.75 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0010  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 97.962135 s
+Trocas de linha: 3991 (entre ranks: 1416) de 4000 iteracoes
+Volume por rank no Bcast: 192.02 MB | Sendrecv enviado (soma dos ranks): 156.47 MB
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=2 N=4000 t_secao=97.962135 tmax_total=97.962122 tmax_comp=91.538518 tmin_comp=91.351608 tmedia_comp=91.445063 desvio_comp=0.093455 tmax_comm=6.610513 tmedia_comm=6.516181 fcomm=6.7480 trocas=3991 trocas_inter=1416 vol_bcast_mb=192.016 vol_sendrecv_mb_total=156.473 checksum=6.775485558388e+05
+######## res/otim_P2_r2.out
+=== Versao MPI (Opcao A) N=4000 P=2 ===
+RANK r=0 P=2 N=4000 host=node1 linhas=2000 t_comp=90.147640 t_comm=6.937654 t_total=97.085294 t_espera=0.000039 t_allreduce=2.320680 t_sendrecv=3.372772 t_bcast=1.244141 t_reduce=0.000061 n_allreduce=4000 n_sendrecv=1416 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=78236424
+RANK r=1 P=2 N=4000 host=node2 linhas=2000 t_comp=91.497567 t_comm=5.586261 t_total=97.083828 t_espera=0.000163 t_allreduce=0.523583 t_sendrecv=1.854600 t_bcast=3.208032 t_reduce=0.000046 n_allreduce=4000 n_sendrecv=1416 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=78236424
+
+=== Estatisticas entre os 2 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       91.497567    90.147640    90.822604     0.674964
+Tcomm                        6.937654     5.586261     6.261957     0.675696
+Ttotal                      97.085294    97.083828    97.084561     0.000733
+  Tcomm: Allreduce           2.320680     0.523583     1.422131     0.898548
+  Tcomm: Sendrecv            3.372772     1.854600     2.613686     0.759086
+  Tcomm: Bcast               3.208032     1.244141     2.226086     0.981945
+  Tcomm: Reduce              0.000061     0.000046     0.000054     0.000007
+Tespera (barr. final)        0.000163     0.000039     0.000101     0.000062
+Leitura (fora da secao)      0.045309     0.044848     0.045079     0.000230
+
+Fcomm = Tcomm_max / Ttotal_max            = 7.15 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0074  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 97.085333 s
+Trocas de linha: 3991 (entre ranks: 1416) de 4000 iteracoes
+Volume por rank no Bcast: 192.02 MB | Sendrecv enviado (soma dos ranks): 156.47 MB
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=2 N=4000 t_secao=97.085333 tmax_total=97.085294 tmax_comp=91.497567 tmin_comp=90.147640 tmedia_comp=90.822604 desvio_comp=0.674964 tmax_comm=6.937654 tmedia_comm=6.261957 fcomm=7.1459 trocas=3991 trocas_inter=1416 vol_bcast_mb=192.016 vol_sendrecv_mb_total=156.473 checksum=6.775485558388e+05
+######## res/otim_P2_r3.out
+=== Versao MPI (Opcao A) N=4000 P=2 ===
+RANK r=1 P=2 N=4000 host=node2 linhas=2000 t_comp=90.351035 t_comm=6.962957 t_total=97.313992 t_espera=0.000810 t_allreduce=1.907517 t_sendrecv=1.862215 t_bcast=3.193181 t_reduce=0.000044 n_allreduce=4000 n_sendrecv=1416 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=78236424
+RANK r=0 P=2 N=4000 host=node1 linhas=2000 t_comp=91.490001 t_comm=5.826152 t_total=97.316153 t_espera=0.000014 t_allreduce=1.175276 t_sendrecv=3.370706 t_bcast=1.280126 t_reduce=0.000043 n_allreduce=4000 n_sendrecv=1416 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=78236424
+
+=== Estatisticas entre os 2 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       91.490001    90.351035    90.920518     0.569483
+Tcomm                        6.962957     5.826152     6.394555     0.568403
+Ttotal                      97.316153    97.313992    97.315073     0.001080
+  Tcomm: Allreduce           1.907517     1.175276     1.541397     0.366121
+  Tcomm: Sendrecv            3.370706     1.862215     2.616461     0.754245
+  Tcomm: Bcast               3.193181     1.280126     2.236653     0.956527
+  Tcomm: Reduce              0.000044     0.000043     0.000044     0.000001
+Tespera (barr. final)        0.000810     0.000014     0.000412     0.000398
+Leitura (fora da secao)      0.045998     0.045377     0.045688     0.000310
+
+Fcomm = Tcomm_max / Ttotal_max            = 7.15 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0063  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 97.316167 s
+Trocas de linha: 3991 (entre ranks: 1416) de 4000 iteracoes
+Volume por rank no Bcast: 192.02 MB | Sendrecv enviado (soma dos ranks): 156.47 MB
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=2 N=4000 t_secao=97.316167 tmax_total=97.316153 tmax_comp=91.490001 tmin_comp=90.351035 tmedia_comp=90.920518 desvio_comp=0.569483 tmax_comm=6.962957 tmedia_comm=6.394555 fcomm=7.1550 trocas=3991 trocas_inter=1416 vol_bcast_mb=192.016 vol_sendrecv_mb_total=156.473 checksum=6.775485558388e+05
+######## res/otim_P4_r1.out
+=== Versao MPI (Opcao A) N=4000 P=4 ===
+RANK r=0 P=4 N=4000 host=node1 linhas=1000 t_comp=45.752118 t_comm=10.192284 t_total=55.944402 t_espera=0.000041 t_allreduce=4.608009 t_sendrecv=1.166566 t_bcast=4.417140 t_reduce=0.000569 n_allreduce=4000 n_sendrecv=881 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=52697168
+RANK r=1 P=4 N=4000 host=node2 linhas=1000 t_comp=45.246532 t_comm=10.697442 t_total=55.943974 t_espera=0.000418 t_allreduce=3.749519 t_sendrecv=2.208135 t_bcast=4.739732 t_reduce=0.000056 n_allreduce=4000 n_sendrecv=1069 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=57430440
+RANK r=2 P=4 N=4000 host=node3 linhas=1000 t_comp=46.191915 t_comm=9.751565 t_total=55.943480 t_espera=0.000110 t_allreduce=1.847314 t_sendrecv=1.780747 t_bcast=6.123470 t_reduce=0.000034 n_allreduce=4000 n_sendrecv=1435 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=70988888
+
+=== Estatisticas entre os 4 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       46.191915    45.246532    45.715959     0.335420
+RANK r=3 P=4 N=4000 host=node4 linhas=1000 t_comp=45.673270 t_comm=10.269192 t_total=55.942462 t_espera=0.000897 t_allreduce=1.676156 t_sendrecv=1.948179 t_bcast=6.644811 t_reduce=0.000046 n_allreduce=4000 n_sendrecv=1399 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=69047472
+Tcomm                       10.697442     9.751565    10.227621     0.335536
+Ttotal                      55.944402    55.942462    55.943580     0.000723
+  Tcomm: Allreduce           4.608009     1.676156     2.970249     1.247515
+  Tcomm: Sendrecv            2.208135     1.166566     1.775907     0.383347
+  Tcomm: Bcast               6.644811     4.417140     5.481288     0.928507
+  Tcomm: Reduce              0.000569     0.000034     0.000176     0.000227
+Tespera (barr. final)        0.000897     0.000041     0.000367     0.000337
+Leitura (fora da secao)      0.023600     0.023323     0.023437     0.000101
+
+Fcomm = Tcomm_max / Ttotal_max            = 19.12 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0104  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 55.944443 s
+Trocas de linha: 3991 (entre ranks: 2392) de 4000 iteracoes
+Volume por rank no Bcast: 192.02 MB | Sendrecv enviado (soma dos ranks): 250.16 MB
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=4 N=4000 t_secao=55.944443 tmax_total=55.944402 tmax_comp=46.191915 tmin_comp=45.246532 tmedia_comp=45.715959 desvio_comp=0.335420 tmax_comm=10.697442 tmedia_comm=10.227621 fcomm=19.1216 trocas=3991 trocas_inter=2392 vol_bcast_mb=192.016 vol_sendrecv_mb_total=250.164 checksum=6.775485558388e+05
+######## res/otim_P4_r2.out
+=== Versao MPI (Opcao A) N=4000 P=4 ===
+RANK r=0 P=4 N=4000 host=node1 linhas=1000 t_comp=45.646365 t_comm=11.081133 t_total=56.727498 t_espera=0.000080 t_allreduce=4.498872 t_sendrecv=1.182744 t_bcast=5.399192 t_reduce=0.000325 n_allreduce=4000 n_sendrecv=881 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=52697168
+RANK r=1 P=4 N=4000 host=node2 linhas=1000 t_comp=45.306546 t_comm=11.420637 t_total=56.727184 t_espera=0.000275 t_allreduce=3.633340 t_sendrecv=3.173674 t_bcast=4.613582 t_reduce=0.000041 n_allreduce=4000 n_sendrecv=1069 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=57430440
+RANK r=2 P=4 N=4000 host=node3 linhas=1000 t_comp=45.664037 t_comm=11.062533 t_total=56.726571 t_espera=0.000144 t_allreduce=2.392338 t_sendrecv=1.761451 t_bcast=6.908712 t_reduce=0.000033 n_allreduce=4000 n_sendrecv=1435 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=70988888
+RANK r=3 P=4 N=4000 host=node4 linhas=1000 t_comp=45.786364 t_comm=10.939363 t_total=56.725726 t_espera=0.000750 t_allreduce=1.530897 t_sendrecv=1.970524 t_bcast=7.437909 t_reduce=0.000033 n_allreduce=4000 n_sendrecv=1399 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=69047472
+
+=== Estatisticas entre os 4 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       45.786364    45.306546    45.600828     0.178251
+Tcomm                       11.420637    10.939363    11.125917     0.178666
+Ttotal                      56.727498    56.725726    56.726745     0.000676
+  Tcomm: Allreduce           4.498872     1.530897     3.013862     1.137375
+  Tcomm: Sendrecv            3.173674     1.182744     2.022098     0.724783
+  Tcomm: Bcast               7.437909     4.613582     6.089849     1.134038
+  Tcomm: Reduce              0.000325     0.000033     0.000108     0.000125
+Tespera (barr. final)        0.000750     0.000080     0.000312     0.000262
+Leitura (fora da secao)      0.023304     0.022808     0.022980     0.000191
+
+Fcomm = Tcomm_max / Ttotal_max            = 20.13 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0041  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 56.727578 s
+Trocas de linha: 3991 (entre ranks: 2392) de 4000 iteracoes
+Volume por rank no Bcast: 192.02 MB | Sendrecv enviado (soma dos ranks): 250.16 MB
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=4 N=4000 t_secao=56.727578 tmax_total=56.727498 tmax_comp=45.786364 tmin_comp=45.306546 tmedia_comp=45.600828 desvio_comp=0.178251 tmax_comm=11.420637 tmedia_comm=11.125917 fcomm=20.1325 trocas=3991 trocas_inter=2392 vol_bcast_mb=192.016 vol_sendrecv_mb_total=250.164 checksum=6.775485558388e+05
+######## res/otim_P4_r3.out
+=== Versao MPI (Opcao A) N=4000 P=4 ===
+RANK r=0 P=4 N=4000 host=node1 linhas=1000 t_comp=45.684850 t_comm=11.323502 t_total=57.008352 t_espera=0.000038 t_allreduce=5.300325 t_sendrecv=1.181906 t_bcast=4.840653 t_reduce=0.000618 n_allreduce=4000 n_sendrecv=881 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=52697168
+RANK r=1 P=4 N=4000 host=node2 linhas=1000 t_comp=45.516052 t_comm=11.491699 t_total=57.007750 t_espera=0.000458 t_allreduce=3.437616 t_sendrecv=3.377300 t_bcast=4.676740 t_reduce=0.000043 n_allreduce=4000 n_sendrecv=1069 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=57430440
+RANK r=2 P=4 N=4000 host=node3 linhas=1000 t_comp=46.070539 t_comm=10.936906 t_total=57.007445 t_espera=0.000078 t_allreduce=2.401612 t_sendrecv=2.008604 t_bcast=6.526655 t_reduce=0.000034 n_allreduce=4000 n_sendrecv=1435 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=70988888
+RANK r=3 P=4 N=4000 host=node4 linhas=1000 t_comp=46.027786 t_comm=10.978760 t_total=57.006546 t_espera=0.000739 t_allreduce=2.229738 t_sendrecv=1.729883 t_bcast=7.019105 t_reduce=0.000034 n_allreduce=4000 n_sendrecv=1399 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=69047472
+
+=== Estatisticas entre os 4 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       46.070539    45.516052    45.824807     0.232649
+Tcomm                       11.491699    10.936906    11.182717     0.233083
+Ttotal                      57.008352    57.006546    57.007524     0.000652
+  Tcomm: Allreduce           5.300325     2.229738     3.342323     1.221232
+  Tcomm: Sendrecv            3.377300     1.181906     2.074423     0.808875
+  Tcomm: Bcast               7.019105     4.676740     5.765788     1.023673
+  Tcomm: Reduce              0.000618     0.000034     0.000182     0.000252
+Tespera (barr. final)        0.000739     0.000038     0.000328     0.000288
+Leitura (fora da secao)      0.023411     0.022851     0.023031     0.000222
+
+Fcomm = Tcomm_max / Ttotal_max            = 20.16 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0054  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 57.008390 s
+Trocas de linha: 3991 (entre ranks: 2392) de 4000 iteracoes
+Volume por rank no Bcast: 192.02 MB | Sendrecv enviado (soma dos ranks): 250.16 MB
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=4 N=4000 t_secao=57.008390 tmax_total=57.008352 tmax_comp=46.070539 tmin_comp=45.516052 tmedia_comp=45.824807 desvio_comp=0.232649 tmax_comm=11.491699 tmedia_comm=11.182717 fcomm=20.1579 trocas=3991 trocas_inter=2392 vol_bcast_mb=192.016 vol_sendrecv_mb_total=250.164 checksum=6.775485558388e+05
+######## res/otim_P8_r1.out
+=== Versao MPI (Opcao A) N=4000 P=8 ===
+RANK r=1 P=8 N=4000 host=node2 linhas=500 t_comp=22.928468 t_comm=15.303681 t_total=38.232149 t_espera=0.000076 t_allreduce=6.189711 t_sendrecv=0.525756 t_bcast=8.587736 t_reduce=0.000478 n_allreduce=4000 n_sendrecv=536 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=31319040
+RANK r=0 P=8 N=4000 host=node1 linhas=500 t_comp=22.685954 t_comm=15.546814 t_total=38.232769 t_espera=0.000039 t_allreduce=10.600446 t_sendrecv=0.538527 t_bcast=4.406915 t_reduce=0.000927 n_allreduce=4000 n_sendrecv=469 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=29059312
+RANK r=2 P=8 N=4000 host=node3 linhas=500 t_comp=22.976370 t_comm=15.255483 t_total=38.231853 t_espera=0.000197 t_allreduce=4.684964 t_sendrecv=0.532414 t_bcast=10.037701 t_reduce=0.000404 n_allreduce=4000 n_sendrecv=580 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=32017464
+RANK r=3 P=8 N=4000 host=node4 linhas=500 t_comp=22.939421 t_comm=15.292034 t_total=38.231454 t_espera=0.000531 t_allreduce=3.674651 t_sendrecv=0.574402 t_bcast=11.042936 t_reduce=0.000045 n_allreduce=4000 n_sendrecv=669 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=35105088
+RANK r=4 P=8 N=4000 host=node5 linhas=500 t_comp=22.661569 t_comm=15.570741 t_total=38.232311 t_espera=0.000251 t_allreduce=3.347467 t_sendrecv=0.685210 t_bcast=11.538034 t_reduce=0.000030 n_allreduce=4000 n_sendrecv=832 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=41730736
+RANK r=5 P=8 N=4000 host=node6 linhas=500 t_comp=22.999424 t_comm=15.232615 t_total=38.232039 t_espera=0.000150 t_allreduce=2.485142 t_sendrecv=0.707203 t_bcast=12.040238 t_reduce=0.000032 n_allreduce=4000 n_sendrecv=887 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=42285896
+RANK r=6 P=8 N=4000 host=node7 linhas=500 t_comp=22.853465 t_comm=15.378407 t_total=38.231873 t_espera=0.000424 t_allreduce=2.247465 t_sendrecv=0.776307 t_bcast=12.354604 t_reduce=0.000032 n_allreduce=4000 n_sendrecv=1025 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=46514440
+RANK r=7 P=8 N=4000 host=node8 linhas=500 t_comp=22.937431 t_comm=15.293760 t_total=38.231191 t_espera=0.001540 t_allreduce=1.712524 t_sendrecv=0.803548 t_bcast=12.777654 t_reduce=0.000034 n_allreduce=4000 n_sendrecv=1086 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=49440424
+
+=== Estatisticas entre os 8 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       22.999424    22.661569    22.872763     0.121644
+Tcomm                       15.570741    15.232615    15.359192     0.121950
+Ttotal                      38.232769    38.231191    38.231955     0.000459
+  Tcomm: Allreduce          10.600446     1.712524     4.367796     2.712888
+  Tcomm: Sendrecv            0.803548     0.525756     0.642921     0.106680
+  Tcomm: Bcast              12.777654     4.406915    10.348227     2.578366
+  Tcomm: Reduce              0.000927     0.000030     0.000248     0.000309
+Tespera (barr. final)        0.001540     0.000039     0.000401     0.000458
+Leitura (fora da secao)      0.012306     0.011491     0.011942     0.000302
+
+Fcomm = Tcomm_max / Ttotal_max            = 40.73 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0055  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 38.232808 s
+Trocas de linha: 3991 (entre ranks: 3042) de 4000 iteracoes
+Volume por rank no Bcast: 192.02 MB | Sendrecv enviado (soma dos ranks): 307.47 MB
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=8 N=4000 t_secao=38.232808 tmax_total=38.232769 tmax_comp=22.999424 tmin_comp=22.661569 tmedia_comp=22.872763 desvio_comp=0.121644 tmax_comm=15.570741 tmedia_comm=15.359192 fcomm=40.7262 trocas=3991 trocas_inter=3042 vol_bcast_mb=192.016 vol_sendrecv_mb_total=307.472 checksum=6.775485558388e+05
+######## res/otim_P8_r2.out
+=== Versao MPI (Opcao A) N=4000 P=8 ===
+RANK r=0 P=8 N=4000 host=node1 linhas=500 t_comp=22.512583 t_comm=15.518285 t_total=38.030868 t_espera=0.000034 t_allreduce=10.523615 t_sendrecv=0.524034 t_bcast=4.469707 t_reduce=0.000928 n_allreduce=4000 n_sendrecv=469 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=29059312
+RANK r=1 P=8 N=4000 host=node2 linhas=500 t_comp=22.907271 t_comm=15.122754 t_total=38.030025 t_espera=0.000317 t_allreduce=6.273519 t_sendrecv=0.536299 t_bcast=8.312809 t_reduce=0.000127 n_allreduce=4000 n_sendrecv=536 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=31319040
+RANK r=2 P=8 N=4000 host=node3 linhas=500 t_comp=22.972675 t_comm=15.057329 t_total=38.030004 t_espera=0.000083 t_allreduce=4.467333 t_sendrecv=0.525874 t_bcast=10.063439 t_reduce=0.000683 n_allreduce=4000 n_sendrecv=580 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=32017464
+RANK r=4 P=8 N=4000 host=node5 linhas=500 t_comp=22.647246 t_comm=15.383159 t_total=38.030404 t_espera=0.000246 t_allreduce=3.289323 t_sendrecv=0.690214 t_bcast=11.403581 t_reduce=0.000042 n_allreduce=4000 n_sendrecv=832 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=41730736
+RANK r=3 P=8 N=4000 host=node4 linhas=500 t_comp=22.947402 t_comm=15.082326 t_total=38.029728 t_espera=0.000418 t_allreduce=3.011507 t_sendrecv=0.588571 t_bcast=11.482184 t_reduce=0.000065 n_allreduce=4000 n_sendrecv=669 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=35105088
+RANK r=5 P=8 N=4000 host=node6 linhas=500 t_comp=22.777101 t_comm=15.252765 t_total=38.029866 t_espera=0.000427 t_allreduce=2.554233 t_sendrecv=0.688935 t_bcast=12.009564 t_reduce=0.000033 n_allreduce=4000 n_sendrecv=887 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=42285896
+RANK r=7 P=8 N=4000 host=node8 linhas=500 t_comp=22.864346 t_comm=15.165267 t_total=38.029613 t_espera=0.001281 t_allreduce=1.536641 t_sendrecv=0.867056 t_bcast=12.761535 t_reduce=0.000034 n_allreduce=4000 n_sendrecv=1086 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=49440424
+RANK r=6 P=8 N=4000 host=node7 linhas=500 t_comp=22.776632 t_comm=15.253540 t_total=38.030171 t_espera=0.000156 t_allreduce=2.178532 t_sendrecv=0.767950 t_bcast=12.307023 t_reduce=0.000034 n_allreduce=4000 n_sendrecv=1025 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=46514440
+
+=== Estatisticas entre os 8 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       22.972675    22.512583    22.800657     0.147564
+Tcomm                       15.518285    15.057329    15.229428     0.147881
+Ttotal                      38.030868    38.029613    38.030085     0.000376
+  Tcomm: Allreduce          10.523615     1.536641     4.229338     2.749600
+  Tcomm: Sendrecv            0.867056     0.524034     0.648617     0.118385
+  Tcomm: Bcast              12.761535     4.469707    10.351230     2.588474
+  Tcomm: Reduce              0.000928     0.000033     0.000243     0.000332
+Tespera (barr. final)        0.001281     0.000034     0.000370     0.000370
+Leitura (fora da secao)      0.011877     0.011434     0.011633     0.000141
+
+Fcomm = Tcomm_max / Ttotal_max            = 40.80 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0075  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 38.030902 s
+Trocas de linha: 3991 (entre ranks: 3042) de 4000 iteracoes
+Volume por rank no Bcast: 192.02 MB | Sendrecv enviado (soma dos ranks): 307.47 MB
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=8 N=4000 t_secao=38.030902 tmax_total=38.030868 tmax_comp=22.972675 tmin_comp=22.512583 tmedia_comp=22.800657 desvio_comp=0.147564 tmax_comm=15.518285 tmedia_comm=15.229428 fcomm=40.8044 trocas=3991 trocas_inter=3042 vol_bcast_mb=192.016 vol_sendrecv_mb_total=307.472 checksum=6.775485558388e+05
+######## res/otim_P8_r3.out
+=== Versao MPI (Opcao A) N=4000 P=8 ===
+RANK r=0 P=8 N=4000 host=node1 linhas=500 t_comp=22.879347 t_comm=15.552237 t_total=38.431584 t_espera=0.000021 t_allreduce=10.531800 t_sendrecv=0.499349 t_bcast=4.520066 t_reduce=0.001022 n_allreduce=4000 n_sendrecv=469 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=29059312
+RANK r=1 P=8 N=4000 host=node2 linhas=500 t_comp=22.943575 t_comm=15.487355 t_total=38.430930 t_espera=0.000103 t_allreduce=6.740469 t_sendrecv=0.561684 t_bcast=8.184663 t_reduce=0.000538 n_allreduce=4000 n_sendrecv=536 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=31319040
+RANK r=2 P=8 N=4000 host=node3 linhas=500 t_comp=23.135103 t_comm=15.295431 t_total=38.430533 t_espera=0.000285 t_allreduce=4.904715 t_sendrecv=0.538076 t_bcast=9.852217 t_reduce=0.000423 n_allreduce=4000 n_sendrecv=580 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=32017464
+RANK r=3 P=8 N=4000 host=node4 linhas=500 t_comp=22.856211 t_comm=15.573945 t_total=38.430157 t_espera=0.000669 t_allreduce=3.620685 t_sendrecv=0.574417 t_bcast=11.378803 t_reduce=0.000041 n_allreduce=4000 n_sendrecv=669 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=35105088
+RANK r=4 P=8 N=4000 host=node5 linhas=500 t_comp=22.697627 t_comm=15.733053 t_total=38.430679 t_espera=0.000664 t_allreduce=3.462201 t_sendrecv=0.689600 t_bcast=11.581218 t_reduce=0.000034 n_allreduce=4000 n_sendrecv=832 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=41730736
+RANK r=5 P=8 N=4000 host=node6 linhas=500 t_comp=22.904102 t_comm=15.526711 t_total=38.430813 t_espera=0.000191 t_allreduce=2.569077 t_sendrecv=0.699611 t_bcast=12.257991 t_reduce=0.000032 n_allreduce=4000 n_sendrecv=887 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=42285896
+RANK r=6 P=8 N=4000 host=node7 linhas=500 t_comp=22.803768 t_comm=15.626950 t_total=38.430718 t_espera=0.000364 t_allreduce=2.599319 t_sendrecv=0.779166 t_bcast=12.248429 t_reduce=0.000036 n_allreduce=4000 n_sendrecv=1025 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=46514440
+RANK r=7 P=8 N=4000 host=node8 linhas=500 t_comp=22.938678 t_comm=15.491442 t_total=38.430120 t_espera=0.001465 t_allreduce=1.576799 t_sendrecv=0.843128 t_bcast=13.071479 t_reduce=0.000036 n_allreduce=4000 n_sendrecv=1086 n_bcast=4000 bytes_bcast=192016000 bytes_sendrecv=49440424
+
+=== Estatisticas entre os 8 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       23.135103    22.697627    22.894801     0.117807
+Tcomm                       15.733053    15.295431    15.535890     0.117854
+Ttotal                      38.431584    38.430120    38.430692     0.000434
+  Tcomm: Allreduce          10.531800     1.576799     4.500633     2.722648
+  Tcomm: Sendrecv            0.843128     0.499349     0.648129     0.115498
+  Tcomm: Bcast              13.071479     4.520066    10.386858     2.649032
+  Tcomm: Reduce              0.001022     0.000032     0.000270     0.000342
+Tespera (barr. final)        0.001465     0.000021     0.000470     0.000437
+Leitura (fora da secao)      0.012202     0.011408     0.011654     0.000238
+
+Fcomm = Tcomm_max / Ttotal_max            = 40.94 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0105  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 38.431606 s
+Trocas de linha: 3991 (entre ranks: 3042) de 4000 iteracoes
+Volume por rank no Bcast: 192.02 MB | Sendrecv enviado (soma dos ranks): 307.47 MB
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=8 N=4000 t_secao=38.431606 tmax_total=38.431584 tmax_comp=23.135103 tmin_comp=22.697627 tmedia_comp=22.894801 desvio_comp=0.117807 tmax_comm=15.733053 tmedia_comm=15.535890 fcomm=40.9378 trocas=3991 trocas_inter=3042 vol_bcast_mb=192.016 vol_sendrecv_mb_total=307.472 checksum=6.775485558388e+05
+######## res/carga.log
+P1 r1 inicio  20:45:09 up 3 days,  7:59,  1 user,  load average: 0.00, 0.00, 0.00
+P1 r1 fim  20:49:14 up 3 days,  8:03,  1 user,  load average: 0.99, 0.57, 0.24
+P1 r2 inicio  20:49:14 up 3 days,  8:03,  1 user,  load average: 0.99, 0.57, 0.24
+P1 r2 fim  20:53:18 up 3 days,  8:07,  1 user,  load average: 1.00, 0.82, 0.43
+P1 r3 inicio  20:53:18 up 3 days,  8:07,  1 user,  load average: 1.00, 0.82, 0.43
+P1 r3 fim  20:57:22 up 3 days,  8:11,  1 user,  load average: 1.00, 0.93, 0.57
+P2 r1 inicio  21:11:46 up 3 days,  8:26,  2 users,  load average: 0.00, 0.04, 0.20
+P2 r1 fim  21:13:55 up 3 days,  8:28,  1 user,  load average: 0.88, 0.37, 0.30
+P2 r2 inicio  21:13:55 up 3 days,  8:28,  1 user,  load average: 0.88, 0.37, 0.30
+P2 r2 fim  21:16:04 up 3 days,  8:30,  1 user,  load average: 0.99, 0.60, 0.40
+P2 r3 inicio  21:16:04 up 3 days,  8:30,  1 user,  load average: 0.99, 0.60, 0.40
+P2 r3 fim  21:18:13 up 3 days,  8:32,  1 user,  load average: 1.00, 0.75, 0.48
+P4 r1 inicio  21:19:30 up 3 days,  8:34,  1 user,  load average: 0.28, 0.58, 0.44
+P4 r1 fim  21:20:48 up 3 days,  8:35,  1 user,  load average: 0.81, 0.68, 0.49
+P4 r2 inicio  21:20:48 up 3 days,  8:35,  1 user,  load average: 0.81, 0.68, 0.49
+P4 r2 fim  21:22:04 up 3 days,  8:36,  1 user,  load average: 0.95, 0.75, 0.54
+P4 r3 inicio  21:22:04 up 3 days,  8:36,  1 user,  load average: 0.95, 0.75, 0.54
+P4 r3 fim  21:23:20 up 3 days,  8:37,  1 user,  load average: 0.99, 0.81, 0.57
+P8 r1 inicio  21:24:05 up 3 days,  8:38,  1 user,  load average: 0.46, 0.70, 0.54
+P8 r1 fim  21:24:59 up 3 days,  8:39,  1 user,  load average: 0.85, 0.77, 0.58
+P8 r2 inicio  21:24:59 up 3 days,  8:39,  1 user,  load average: 0.85, 0.77, 0.58
+P8 r2 fim  21:25:51 up 3 days,  8:40,  1 user,  load average: 0.93, 0.80, 0.60
+P8 r3 inicio  21:25:51 up 3 days,  8:40,  1 user,  load average: 0.93, 0.80, 0.60
+P8 r3 fim  21:26:42 up 3 days,  8:41,  1 user,  load average: 1.01, 0.85, 0.63
+P13 r1 inicio  21:27:26 up 3 days,  8:41,  1 user,  load average: 0.47, 0.73, 0.60
+P13 r1 fim  21:28:19 up 3 days,  8:42,  1 user,  load average: 0.77, 0.77, 0.63
+P13 r2 inicio  21:28:19 up 3 days,  8:42,  1 user,  load average: 0.77, 0.77, 0.63
+P13 r2 fim  21:29:10 up 3 days,  8:43,  1 user,  load average: 0.90, 0.81, 0.65
+P13 r3 inicio  21:29:10 up 3 days,  8:43,  1 user,  load average: 0.90, 0.81, 0.65
+P13 r3 fim  21:30:02 up 3 days,  8:44,  1 user,  load average: 0.88, 0.83, 0.66
+W P1 N2000 r1 inicio  21:42:46 up 3 days,  8:57,  1 user,  load average: 0.02, 0.07, 0.27
+W P1 N2000 r1 fim  21:43:18 up 3 days,  8:57,  1 user,  load average: 0.45, 0.17, 0.30
+W P1 N2000 r2 inicio  21:43:18 up 3 days,  8:57,  1 user,  load average: 0.45, 0.17, 0.30
+W P1 N2000 r2 fim  21:43:50 up 3 days,  8:58,  1 user,  load average: 0.67, 0.25, 0.32
+W P1 N2000 r3 inicio  21:43:50 up 3 days,  8:58,  1 user,  load average: 0.67, 0.25, 0.32
+W P1 N2000 r3 fim  21:44:21 up 3 days,  8:58,  1 user,  load average: 0.80, 0.32, 0.35
+W P2 N2520 r1 inicio  21:46:15 up 3 days,  9:00,  1 user,  load average: 0.11, 0.22, 0.30
+W P2 N2520 r1 fim  21:46:50 up 3 days,  9:01,  1 user,  load average: 0.51, 0.30, 0.33
+W P2 N2520 r2 inicio  21:46:50 up 3 days,  9:01,  1 user,  load average: 0.51, 0.30, 0.33
+W P2 N2520 r2 fim  21:47:25 up 3 days,  9:01,  1 user,  load average: 0.73, 0.38, 0.36
+W P2 N2520 r3 inicio  21:47:25 up 3 days,  9:01,  1 user,  load average: 0.73, 0.38, 0.36
+W P2 N2520 r3 fim  21:47:59 up 3 days,  9:02,  1 user,  load average: 0.85, 0.45, 0.38
+W P4 N3175 r1 inicio  21:48:53 up 3 days,  9:03,  1 user,  load average: 0.34, 0.37, 0.36
+W P4 N3175 r1 fim  21:49:33 up 3 days,  9:04,  1 user,  load average: 0.66, 0.45, 0.38
+W P4 N3175 r2 inicio  21:49:33 up 3 days,  9:04,  1 user,  load average: 0.66, 0.45, 0.38
+W P4 N3175 r2 fim  21:50:12 up 3 days,  9:04,  1 user,  load average: 0.75, 0.51, 0.41
+W P4 N3175 r3 inicio  21:50:12 up 3 days,  9:04,  1 user,  load average: 0.75, 0.51, 0.41
+W P4 N3175 r3 fim  21:50:50 up 3 days,  9:05,  1 user,  load average: 0.86, 0.56, 0.43
+W P13 N4703 r1 inicio  21:51:47 up 3 days,  9:06,  1 user,  load average: 0.31, 0.46, 0.40
+W P13 N4703 r1 fim  21:53:06 up 3 days,  9:07,  1 user,  load average: 0.81, 0.58, 0.45
+W P13 N4703 r2 inicio  21:53:06 up 3 days,  9:07,  1 user,  load average: 0.81, 0.58, 0.45
+W P13 N4703 r2 fim  21:54:22 up 3 days,  9:08,  1 user,  load average: 0.87, 0.67, 0.49
+W P13 N4703 r3 inicio  21:54:22 up 3 days,  9:08,  1 user,  load average: 0.87, 0.67, 0.49
+W P13 N4703 r3 fim  21:55:38 up 3 days,  9:10,  1 user,  load average: 0.96, 0.74, 0.54
+L P1 N500 r1 inicio  17:54:40 up 8 days,  8:14,  1 user,  load average: 0.00, 0.02, 0.00
+L P1 N500 r1 fim  17:54:42 up 8 days,  8:14,  1 user,  load average: 0.00, 0.02, 0.00
+L P1 N500 r2 inicio  17:54:42 up 8 days,  8:14,  1 user,  load average: 0.00, 0.02, 0.00
+L P1 N500 r2 fim  17:54:44 up 8 days,  8:14,  1 user,  load average: 0.00, 0.02, 0.00
+L P1 N500 r3 inicio  17:54:44 up 8 days,  8:14,  1 user,  load average: 0.00, 0.02, 0.00
+L P1 N500 r3 fim  17:54:46 up 8 days,  8:14,  1 user,  load average: 0.00, 0.02, 0.00
+L P2 N1000 r1 inicio  17:54:46 up 8 days,  8:14,  1 user,  load average: 0.00, 0.02, 0.00
+L P2 N1000 r1 fim  17:54:50 up 8 days,  8:14,  1 user,  load average: 0.00, 0.02, 0.00
+L P2 N1000 r2 inicio  17:54:50 up 8 days,  8:14,  1 user,  load average: 0.00, 0.02, 0.00
+L P2 N1000 r2 fim  17:54:54 up 8 days,  8:14,  1 user,  load average: 0.00, 0.02, 0.00
+L P2 N1000 r3 inicio  17:54:54 up 8 days,  8:14,  1 user,  load average: 0.00, 0.02, 0.00
+L P2 N1000 r3 fim  17:54:58 up 8 days,  8:15,  1 user,  load average: 0.00, 0.02, 0.00
+L P4 N2000 r1 inicio  17:54:58 up 8 days,  8:15,  1 user,  load average: 0.00, 0.02, 0.00
+L P4 N2000 r1 fim  17:55:10 up 8 days,  8:15,  1 user,  load average: 0.00, 0.02, 0.00
+L P4 N2000 r2 inicio  17:55:10 up 8 days,  8:15,  1 user,  load average: 0.00, 0.02, 0.00
+L P4 N2000 r2 fim  17:55:22 up 8 days,  8:15,  1 user,  load average: 0.00, 0.02, 0.00
+L P4 N2000 r3 inicio  17:55:22 up 8 days,  8:15,  1 user,  load average: 0.00, 0.02, 0.00
+L P4 N2000 r3 fim  17:55:34 up 8 days,  8:15,  1 user,  load average: 0.00, 0.02, 0.00
+L P13 N6500 r1 inicio  17:57:01 up 8 days,  8:17,  1 user,  load average: 0.00, 0.01, 0.00
+L P13 N6500 r1 fim  18:00:03 up 8 days,  8:20,  1 user,  load average: 0.00, 0.00, 0.00
+L P13 N6500 r2 inicio  18:00:03 up 8 days,  8:20,  1 user,  load average: 0.00, 0.00, 0.00
+L P13 N6500 r2 fim  18:03:03 up 8 days,  8:23,  1 user,  load average: 0.00, 0.00, 0.00
+L P13 N6500 r3 inicio  18:03:03 up 8 days,  8:23,  1 user,  load average: 0.00, 0.00, 0.00
+L P13 N6500 r3 fim  18:06:01 up 8 days,  8:26,  1 user,  load average: 0.00, 0.00, 0.00
+O P1 r1 inicio  18:32:35 up 8 days,  8:52,  1 user,  load average: 0.01, 0.02, 0.00
+O P1 r1 fim  18:32:47 up 8 days,  8:52,  1 user,  load average: 0.01, 0.02, 0.00
+O P1 r2 inicio  18:32:47 up 8 days,  8:52,  1 user,  load average: 0.01, 0.02, 0.00
+O P1 r1 inicio  18:33:40 up 8 days,  8:53,  1 user,  load average: 0.00, 0.01, 0.00
+O P1 r1 fim  18:33:55 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P1 r2 inicio  18:33:55 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P1 r2 fim  18:33:57 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P1 r3 inicio  18:33:57 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P1 r3 fim  18:33:57 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P2 r1 inicio  18:33:57 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P2 r1 fim  18:33:59 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P2 r2 inicio  18:33:59 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P2 r2 fim  18:34:01 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P2 r3 inicio  18:34:01 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P2 r3 fim  18:34:01 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P4 r1 inicio  18:34:01 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P4 r1 fim  18:34:01 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P4 r2 inicio  18:34:01 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P4 r2 fim  18:34:02 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P4 r3 inicio  18:34:02 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P4 r3 fim  18:34:04 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P8 r1 inicio  18:34:04 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P8 r1 fim  18:34:09 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P8 r2 inicio  18:34:09 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P8 r2 fim  18:34:29 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P8 r3 inicio  18:34:29 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P8 r3 fim  18:34:30 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P13 r1 inicio  18:34:30 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P13 r1 fim  18:34:30 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P13 r2 inicio  18:34:30 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P13 r2 fim  18:34:31 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P13 r3 inicio  18:34:31 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P13 r3 fim  18:34:31 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P1 r1 inicio  18:34:45 up 8 days,  8:54,  1 user,  load average: 0.00, 0.01, 0.00
+O P1 r1 fim  18:37:50 up 8 days,  8:57,  1 user,  load average: 0.02, 0.01, 0.00
+O P1 r2 inicio  18:37:50 up 8 days,  8:57,  1 user,  load average: 0.02, 0.01, 0.00
+O P1 r2 fim  18:40:55 up 8 days,  9:00,  1 user,  load average: 0.07, 0.02, 0.00
+O P1 r3 inicio  18:40:55 up 8 days,  9:00,  1 user,  load average: 0.07, 0.02, 0.00
+O P1 r3 fim  18:44:00 up 8 days,  9:04,  1 user,  load average: 0.14, 0.06, 0.02
+O P2 r1 inicio  18:44:00 up 8 days,  9:04,  1 user,  load average: 0.14, 0.06, 0.02
+O P2 r1 fim  18:45:40 up 8 days,  9:05,  1 user,  load average: 0.02, 0.04, 0.01
+O P2 r2 inicio  18:45:40 up 8 days,  9:05,  1 user,  load average: 0.02, 0.04, 0.01
+O P2 r2 fim  18:47:18 up 8 days,  9:07,  1 user,  load average: 0.04, 0.05, 0.01
+O P2 r3 inicio  18:47:18 up 8 days,  9:07,  1 user,  load average: 0.04, 0.05, 0.01
+O P2 r3 fim  18:48:58 up 8 days,  9:09,  1 user,  load average: 0.01, 0.03, 0.00
+O P4 r1 inicio  18:48:58 up 8 days,  9:09,  1 user,  load average: 0.01, 0.03, 0.00
+O P4 r1 fim  18:49:55 up 8 days,  9:10,  1 user,  load average: 0.00, 0.02, 0.00
+O P4 r2 inicio  18:49:55 up 8 days,  9:10,  1 user,  load average: 0.00, 0.02, 0.00
+O P4 r2 fim  18:50:54 up 8 days,  9:10,  1 user,  load average: 0.00, 0.02, 0.00
+O P4 r3 inicio  18:50:54 up 8 days,  9:10,  1 user,  load average: 0.00, 0.02, 0.00
+O P4 r3 fim  18:51:53 up 8 days,  9:11,  1 user,  load average: 0.00, 0.01, 0.00
+O P8 r1 inicio  18:51:53 up 8 days,  9:11,  1 user,  load average: 0.00, 0.01, 0.00
+O P8 r1 fim  18:52:33 up 8 days,  9:12,  1 user,  load average: 0.00, 0.01, 0.00
+O P8 r2 inicio  18:52:33 up 8 days,  9:12,  1 user,  load average: 0.00, 0.01, 0.00
+O P8 r2 fim  18:53:13 up 8 days,  9:13,  1 user,  load average: 0.00, 0.00, 0.00
+O P8 r3 inicio  18:53:13 up 8 days,  9:13,  1 user,  load average: 0.00, 0.00, 0.00
+O P8 r3 fim  18:53:53 up 8 days,  9:13,  1 user,  load average: 0.00, 0.00, 0.00
+O P13 r1 inicio  18:53:53 up 8 days,  9:13,  1 user,  load average: 0.00, 0.00, 0.00
+O P13 r1 fim  18:54:34 up 8 days,  9:14,  1 user,  load average: 0.00, 0.00, 0.00
+O P13 r2 inicio  18:54:34 up 8 days,  9:14,  1 user,  load average: 0.00, 0.00, 0.00
+O P13 r2 fim  18:55:15 up 8 days,  9:15,  1 user,  load average: 0.00, 0.00, 0.00
+O P13 r3 inicio  18:55:15 up 8 days,  9:15,  1 user,  load average: 0.00, 0.00, 0.00
+O P13 r3 fim  18:55:56 up 8 days,  9:16,  1 user,  load average: 0.08, 0.02, 0.01
+######## stats1000.txt
+N=1000
+orientacao=linha
+tempo_leitura_s=0.073044
+tempo_setup_s=0.003733
+tempo_eliminacao_s=3.727702
+tempo_escrita_s=0.000042
+tempo_total_s=3.808156
+######## stats2000.txt
+N=2000
+orientacao=linha
+tempo_leitura_s=0.280387
+tempo_setup_s=0.012957
+tempo_eliminacao_s=30.583980
+tempo_escrita_s=0.000041
+tempo_total_s=30.887769
+######## stats3000.txt
+N=3000
+orientacao=linha
+tempo_leitura_s=0.626173
+tempo_setup_s=0.029069
+tempo_eliminacao_s=102.292440
+tempo_escrita_s=0.000043
+tempo_total_s=102.970049
+######## stats300.txt
+N=300
+orientacao=linha
+tempo_leitura_s=0.001005
+tempo_setup_s=0.000586
+tempo_eliminacao_s=0.036903
+tempo_escrita_s=0.025627
+tempo_total_s=0.089422
+residual_frobenius=9.913057e-13
+######## stats4000.txt
+N=4000
+orientacao=linha
+tempo_leitura_s=0.041884
+tempo_setup_s=0.051270
+tempo_eliminacao_s=241.644349
+tempo_escrita_s=1.782323
+tempo_total_s=243.559461
+######## st1000v.txt
+N=1000
+orientacao=linha
+tempo_leitura_s=0.073877
+tempo_setup_s=0.003455
+tempo_eliminacao_s=3.734932
+tempo_escrita_s=0.122867
+tempo_total_s=3.938716
+######## st300v.txt
+N=300
+orientacao=linha
+tempo_leitura_s=0.001741
+tempo_setup_s=0.000553
+tempo_eliminacao_s=0.036781
+tempo_escrita_s=0.020647
+tempo_total_s=0.060151
+######## validacao_p124.txt
+nohup: ignoring input
+=== N=300 P=1
+=== Versao MPI basica (Opcao A) N=300 P=1 ===
+Leitura (E/S, rank 0)   : 0.010920 s   (fora da secao paralela)
+Secao paralela          : 0.036233 s   (rank 0, entre barreiras)
+Trocas de linha         : 294 (entre ranks: 0) de 300 iteracoes
+Checksum (soma |Inv|)   : 6.918880731962e+03
+RESULT mpi P=1 N=300 t_read=0.010920 t_par=0.036233 trocas=294 trocas_inter=0 checksum=6.918880731962e+03
+VALIDACAO: FALHA ao ler 'inv300.bin' (confira N)
+=== N=300 P=2
+=== Versao MPI basica (Opcao A) N=300 P=2 ===
+Leitura (E/S, rank 0)   : 0.000825 s   (fora da secao paralela)
+Secao paralela          : 0.072085 s   (rank 0, entre barreiras)
+Trocas de linha         : 294 (entre ranks: 101) de 300 iteracoes
+Checksum (soma |Inv|)   : 6.918880731962e+03
+RESULT mpi P=2 N=300 t_read=0.000825 t_par=0.072085 trocas=294 trocas_inter=101 checksum=6.918880731962e+03
+VALIDACAO: FALHA ao ler 'inv300.bin' (confira N)
+=== N=300 P=4
+=== Versao MPI basica (Opcao A) N=300 P=4 ===
+Leitura (E/S, rank 0)   : 0.000255 s   (fora da secao paralela)
+Secao paralela          : 0.111716 s   (rank 0, entre barreiras)
+Trocas de linha         : 294 (entre ranks: 164) de 300 iteracoes
+Checksum (soma |Inv|)   : 6.918880731962e+03
+RESULT mpi P=4 N=300 t_read=0.000255 t_par=0.111716 trocas=294 trocas_inter=164 checksum=6.918880731962e+03
+VALIDACAO: FALHA ao ler 'inv300.bin' (confira N)
+=== N=1000 P=1
+=== Versao MPI basica (Opcao A) N=1000 P=1 ===
+Leitura (E/S, rank 0)   : 0.007142 s   (fora da secao paralela)
+Secao paralela          : 3.750302 s   (rank 0, entre barreiras)
+Trocas de linha         : 991 (entre ranks: 0) de 1000 iteracoes
+Checksum (soma |Inv|)   : 8.476808432586e+04
+RESULT mpi P=1 N=1000 t_read=0.007142 t_par=3.750302 trocas=991 trocas_inter=0 checksum=8.476808432586e+04
+VALIDACAO vs serial: max|diff| = 0.000e+00 ; elementos identicos: 1000000 de 1000000 -> OK
+=== N=1000 P=2
+=== Versao MPI basica (Opcao A) N=1000 P=2 ===
+Leitura (E/S, rank 0)   : 0.003236 s   (fora da secao paralela)
+Secao paralela          : 2.269060 s   (rank 0, entre barreiras)
+Trocas de linha         : 991 (entre ranks: 359) de 1000 iteracoes
+Checksum (soma |Inv|)   : 8.476808432587e+04
+RESULT mpi P=2 N=1000 t_read=0.003236 t_par=2.269060 trocas=991 trocas_inter=359 checksum=8.476808432587e+04
+VALIDACAO vs serial: max|diff| = 0.000e+00 ; elementos identicos: 1000000 de 1000000 -> OK
+=== N=1000 P=4
+=== Versao MPI basica (Opcao A) N=1000 P=4 ===
+Leitura (E/S, rank 0)   : 0.001747 s   (fora da secao paralela)
+Secao paralela          : 1.444462 s   (rank 0, entre barreiras)
+Trocas de linha         : 991 (entre ranks: 595) de 1000 iteracoes
+Checksum (soma |Inv|)   : 8.476808432587e+04
+RESULT mpi P=4 N=1000 t_read=0.001747 t_par=1.444462 trocas=991 trocas_inter=595 checksum=8.476808432587e+04
+VALIDACAO vs serial: max|diff| = 0.000e+00 ; elementos identicos: 1000000 de 1000000 -> OK
+######## teste_passo4.txt
+nohup: ignoring input
+### N=300 P=4
+=== Versao MPI (Opcao A) N=300 P=4 ===
+RANK r=0 P=4 N=300 host=node2 linhas=75 t_comp=0.008904 t_comm=0.101151 t_total=0.110055 t_espera=0.000034 t_allreduce=0.040883 t_sendrecv=0.006475 t_bcast=0.053664 t_reduce=0.000130 n_allreduce=300 n_sendrecv=64 n_bcast=300
+RANK r=1 P=4 N=300 host=node3 linhas=75 t_comp=0.009007 t_comm=0.101616 t_total=0.110623 t_espera=0.000126 t_allreduce=0.042240 t_sendrecv=0.010808 t_bcast=0.048556 t_reduce=0.000012 n_allreduce=300 n_sendrecv=75 n_bcast=300
+RANK r=2 P=4 N=300 host=node4 linhas=75 t_comp=0.008946 t_comm=0.101350 t_total=0.110296 t_espera=0.000085 t_allreduce=0.040774 t_sendrecv=0.011657 t_bcast=0.048909 t_reduce=0.000010 n_allreduce=300 n_sendrecv=93 n_bcast=300
+
+=== Estatisticas entre os 4 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                        0.011132     0.008904     0.009497     0.000945
+Tcomm                        0.101616     0.098693     0.100703     0.001172
+Ttotal                       0.110623     0.109825     0.110200     0.000296
+  Tcomm: Allreduce           0.042240     0.039723     0.040905     0.000894
+  Tcomm: Sendrecv            0.011707     0.006475     0.010162     0.002158
+  Tcomm: Bcast               0.053664     0.047254     0.049595     0.002428
+  Tcomm: Reduce              0.000130     0.000009     0.000040     0.000052
+Tespera (barr. final)        0.000269     0.000034     0.000128     0.000088
+Leitura (fora da secao)      0.001617     0.000264     0.001262     0.000577
+
+Fcomm = Tcomm_max / Ttotal_max            = 91.86 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.1721  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 0.110089 s
+Trocas de linha: 294 (entre ranks: 164) de 300 iteracoes
+Checksum (soma |Inv|): 6.918880731962e+03
+RESULT mpi P=4 N=300 t_secao=0.110089 tmax_total=0.110623 tmax_comp=0.011132 tmin_comp=0.008904 tmedia_comp=0.009497 desvio_comp=0.000945 tmax_comm=0.101616 tmedia_comm=0.100703 fcomm=91.8577 trocas=294 trocas_inter=164 checksum=6.918880731962e+03
+RANK r=3 P=4 N=300 host=node5 linhas=75 t_comp=0.011132 t_comm=0.098693 t_total=0.109825 t_espera=0.000269 t_allreduce=0.039723 t_sendrecv=0.011707 t_bcast=0.047254 t_reduce=0.000009 n_allreduce=300 n_sendrecv=96 n_bcast=300
+VALIDACAO vs serial: max|diff| = 0.000e+00 ; elementos identicos: 90000 de 90000 -> OK
+### N=1000 P=4
+=== Versao MPI (Opcao A) N=1000 P=4 ===
+RANK r=0 P=4 N=1000 host=node2 linhas=250 t_comp=0.592041 t_comm=0.708322 t_total=1.300363 t_espera=0.000036 t_allreduce=0.314625 t_sendrecv=0.054825 t_bcast=0.338625 t_reduce=0.000247 n_allreduce=1000 n_sendrecv=210 n_bcast=1000
+RANK r=1 P=4 N=1000 host=node3 linhas=250 t_comp=0.601151 t_comm=0.699788 t_total=1.300939 t_espera=0.000124 t_allreduce=0.249044 t_sendrecv=0.072406 t_bcast=0.378304 t_reduce=0.000034 n_allreduce=1000 n_sendrecv=279 n_bcast=1000
+RANK r=2 P=4 N=1000 host=node4 linhas=250 t_comp=0.589721 t_comm=0.710898 t_total=1.300618 t_espera=0.000086 t_allreduce=0.204368 t_sendrecv=0.083771 t_bcast=0.422731 t_reduce=0.000028 n_allreduce=1000 n_sendrecv=354 n_bcast=1000
+
+=== Estatisticas entre os 4 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                        0.628084     0.589721     0.602749     0.015238
+Tcomm                        0.710898     0.671900     0.697727     0.015468
+Ttotal                       1.300939     1.299984     1.300476     0.000350
+  Tcomm: Allreduce           0.314625     0.126041     0.223519     0.068594
+  Tcomm: Sendrecv            0.086015     0.054825     0.074254     0.012347
+  Tcomm: Bcast               0.459822     0.338625     0.399870     0.045642
+  Tcomm: Reduce              0.000247     0.000022     0.000083     0.000095
+Tespera (barr. final)        0.000427     0.000036     0.000168     0.000153
+Leitura (fora da secao)      0.003024     0.002718     0.002870     0.000122
+
+Fcomm = Tcomm_max / Ttotal_max            = 54.64 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0420  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 1.300399 s
+Trocas de linha: 991 (entre ranks: 595) de 1000 iteracoes
+Checksum (soma |Inv|): 8.476808432587e+04
+RANK r=3 P=4 N=1000 host=node5 linhas=250 t_comp=0.628084 t_comm=0.671900 t_total=1.299984 t_espera=0.000427 t_allreduce=0.126041 t_sendrecv=0.086015 t_bcast=0.459822 t_reduce=0.000022 n_allreduce=1000 n_sendrecv=347 n_bcast=1000
+RESULT mpi P=4 N=1000 t_secao=1.300399 tmax_total=1.300939 tmax_comp=0.628084 tmin_comp=0.589721 tmedia_comp=0.602749 desvio_comp=0.015238 tmax_comm=0.710898 tmedia_comm=0.697727 fcomm=54.6450 trocas=991 trocas_inter=595 checksum=8.476808432587e+04
+VALIDACAO vs serial: max|diff| = 0.000e+00 ; elementos identicos: 1000000 de 1000000 -> OK
+######## teste_N4000_P4.txt
+nohup: ignoring input
+=== Versao MPI (Opcao A) N=4000 P=4 ===
+RANK r=0 P=4 N=4000 host=node2 linhas=1000 t_comp=60.915763 t_comm=14.665454 t_total=75.581217 t_espera=0.000073 t_allreduce=6.801315 t_sendrecv=1.290528 t_bcast=6.572529 t_reduce=0.001081 n_allreduce=4000 n_sendrecv=881 n_bcast=4000
+RANK r=1 P=4 N=4000 host=node3 linhas=1000 t_comp=61.067449 t_comm=14.513931 t_total=75.581380 t_espera=0.000139 t_allreduce=6.285366 t_sendrecv=1.885817 t_bcast=6.342703 t_reduce=0.000046 n_allreduce=4000 n_sendrecv=1069 n_bcast=4000
+
+=== Estatisticas entre os 4 ranks (segundos) ===
+Metrica                          Tmax         Tmin       Tmedia       Desvio
+Tcomp                       61.119146    60.623458    60.931454     0.192893
+Tcomm                       14.957515    14.461231    14.649533     0.192972
+Ttotal                      75.581380    75.580377    75.580987     0.000381
+  Tcomm: Allreduce           6.801315     4.533795     5.745353     0.869241
+  Tcomm: Sendrecv            3.053669     1.290528     2.313306     0.755136
+  Tcomm: Bcast               6.904191     6.342703     6.590575     0.201492
+RANK r=2 P=4 N=4000 host=node4 linhas=1000 t_comp=60.623458 t_comm=14.957515 t_total=75.580974 t_espera=0.000221 t_allreduce=5.360935 t_sendrecv=3.053669 t_bcast=6.542877 t_reduce=0.000034 n_allreduce=4000 n_sendrecv=1435 n_bcast=4000
+  Tcomm: Reduce              0.001081     0.000034     0.000299     0.000452
+Tespera (barr. final)        0.001450     0.000073     0.000471     0.000568
+RANK r=3 P=4 N=4000 host=node5 linhas=1000 t_comp=61.119146 t_comm=14.461231 t_total=75.580377 t_espera=0.001450 t_allreduce=4.533795 t_sendrecv=3.023210 t_bcast=6.904191 t_reduce=0.000035 n_allreduce=4000 n_sendrecv=1399 n_bcast=4000
+Leitura (fora da secao)      1.120916     1.022290     1.060333     0.037026
+
+Fcomm = Tcomm_max / Ttotal_max            = 19.79 %
+Desbalanceamento de Tcomp = Tmax / Tmedia = 1.0031  (1 = perfeitamente balanceado)
+T_secao (barreira a barreira, rank 0)     = 75.581290 s
+Trocas de linha: 3991 (entre ranks: 2392) de 4000 iteracoes
+Checksum (soma |Inv|): 6.775485558388e+05
+RESULT mpi P=4 N=4000 t_secao=75.581290 tmax_total=75.581380 tmax_comp=61.119146 tmin_comp=60.623458 tmedia_comp=60.931454 desvio_comp=0.192893 tmax_comm=14.957515 tmedia_comm=14.649533 fcomm=19.7899 trocas=3991 trocas_inter=2392 checksum=6.775485558388e+05
+VALIDACAO vs serial: max|diff| = 0.000e+00 ; elementos identicos: 16000000 de 16000000 -> OK
+######## mf/mf_1
+node1 slots=1
+######## mf/mf_13
+node1 slots=1
+node2 slots=1
+node3 slots=1
+node4 slots=1
+node5 slots=1
+node6 slots=1
+node7 slots=1
+node8 slots=1
+node9 slots=1
+node10 slots=1
+node11 slots=1
+node12 slots=1
+node13 slots=1
+######## mf/mf_2
+node1 slots=1
+node2 slots=1
+######## mf/mf_4
+node1 slots=1
+node2 slots=1
+node3 slots=1
+node4 slots=1
+######## mf/mf_8
+node1 slots=1
+node2 slots=1
+node3 slots=1
+node4 slots=1
+node5 slots=1
+node6 slots=1
+node7 slots=1
+node8 slots=1
