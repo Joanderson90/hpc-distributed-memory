@@ -20,7 +20,7 @@ Este trabalho paraleliza, com MPI, o mesmo algoritmo do trabalho anterior (memó
 
 - [1. Algoritmo, volume de dados e decomposição](#1-algoritmo-volume-de-dados-e-decomposição)
 - [2. Código-fonte e ambiente de teste](#2-código-fonte-e-ambiente-de-teste)
-- [3. Medições de tempo (seção 2.2)](#3-medições-de-tempo-seção-22)
+- [3. Medições de tempo](#3-medições-de-tempo)
 - [4. Strong scaling](#4-strong-scaling)
 - [5. Weak scaling](#5-weak-scaling)
 - [6. Comunicação vs computação](#6-comunicação-vs-computação)
@@ -131,9 +131,8 @@ O serial só compila com o comando literal do enunciado se for acrescentado `-lm
 - **Por nó** (informado no material do cluster): Intel Core i3-3240, 2 GiB de RAM, 80 GiB de disco. Medido (`nproc`): 4 CPUs lógicas por nó.
 - **Rede:** Gigabit Ethernet (1000 Mb/s medido na interface); latência ICMP node1 → node2 de 0,169 ms em média (20 pacotes, mín 0,154 e máx 0,244 ms, sem perdas).
 - **Configuração de execução:** 1 processo por nó, nós `node1` a `nodeP`, `mpirun` lançado a partir do `node1`.
-- Especificação pública do i3-3240 (Intel, **não medida** nos nós): 2 núcleos, 4 threads, 3,4 GHz, 3 MB de cache L3.
 
-## 3. Medições de tempo (seção 2.2)
+## 3. Medições de tempo
 
 ### 3.1 Instrumentação com `MPI_Wtime`
 
