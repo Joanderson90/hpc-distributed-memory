@@ -513,16 +513,3 @@ O lançamento é feito sempre a partir do `node1`, que é o primeiro nó de todo
 | [`dados/por_rank.csv`](dados/por_rank.csv) | Uma linha por rank e execução (288): tempos por chamada, contagens, linhas e nó |
 | [`dados/tempo_externo.csv`](dados/tempo_externo.csv) | Tempo externo (`date`) de cada `mpirun` |
 | [`dados/saidas_brutas_completas.txt`](dados/saidas_brutas_completas.txt) | Saídas completas de todas as execuções, calibração do serial, validações, `carga.log` e machinefiles |
-
-### 12.4 Estrutura do repositório
-
-```
-memoria_distribuida/
-├── README.md
-├── programa_serial.c
-├── programa_mpi.c
-├── programa_otimizado.c
-├── gerador_matriz.c
-├── figs/      Figuras deste relatório
-└── dados/     Tabelas CSV e saídas brutas das execuções
-```
