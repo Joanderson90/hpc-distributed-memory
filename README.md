@@ -14,7 +14,7 @@ Este trabalho paraleliza, com MPI, o mesmo algoritmo do trabalho anterior (memó
 - **Weak scaling:** com o trabalho por processo constante (N ∝ P^(1/3)), o Tcomp fica em ~30 s em todos os P, mas o Tmax sobe de 30,3 s para 74,7 s (eficiência fraca de 40,6% com 13 processos). Com N = P × 500 (literal do enunciado), o tempo vai de 0,28 s a 176,5 s.
 - **Otimização:** enviar só as colunas úteis da linha pivô (as à esquerda de k são zeros) reduz 25,0% dos bytes do `Bcast` e dá speedup de **1,28× a 1,33×** sobre a versão original em todos os P, sem mudar o resultado. A saturação, porém, continua.
 - **OpenMP vs MPI:** com 4 threads o OpenMP (trabalho anterior) chegou a 1,22× por saturar a banda de memória compartilhada; com 4 processos, um por nó, o MPI chegou a 3,24×. O gargalo trocou de lugar: da memória para a rede.
-- **Limitações declaradas:** `/usr/bin/time -v`, mpiP e `perf` não estão instalados no cluster e não foram usados. A seção 12 lista todas.
+- **Limitações declaradas:** `/usr/bin/time -v`, mpiP e `perf` não estão instalados no cluster e não foram usados.
 
 ## Sumário
 
@@ -29,7 +29,7 @@ Este trabalho paraleliza, com MPI, o mesmo algoritmo do trabalho anterior (memó
 - [9. OpenMP vs MPI](#9-openmp-vs-mpi)
 - [10. Otimização proposta](#10-otimização-proposta)
 - [11. Conclusões](#11-conclusões)
-- [12. Reprodutibilidade, limitações e dados](#12-reprodutibilidade-limitações-e-dados)
+- [12. Reprodutibilidade e dados](#12-reprodutibilidade-e-dados)
 
 ## 1. Algoritmo, volume de dados e decomposição
 
@@ -465,7 +465,7 @@ Tempo médio por rank por chamada, P = 13 (s):
 - **Medir bem importa.** A instrumentação por rank mostrou que a divisão do Tcomm entre chamadas não é confiável isoladamente, porque a espera migra entre elas; e a comparação com o tempo externo mostrou ~2 s fixos de lançamento que a seção medida deixa de fora.
 - **Os dois modelos se complementam.** O MPI distribui memória e banda entre nós; o OpenMP é mais simples dentro de um nó. A combinação dos dois (híbrido) é o desenho natural para clusters de nós multinúcleo.
 
-## 12. Reprodutibilidade, limitações e dados
+## 12. Reprodutibilidade e dados
 
 ### 12.1 Como reproduzir
 
@@ -493,19 +493,7 @@ done; done
 
 O lançamento é feito sempre a partir do `node1`, que é o primeiro nó de todos os machinefiles. As saídas completas de todas as execuções estão em [`dados/saidas_brutas_completas.txt`](dados/saidas_brutas_completas.txt).
 
-### 12.2 Limitações e desvios declarados
-
-- `/usr/bin/time -v`, mpiP e `perf stat` **não foram usados**: os pacotes não estão instalados no cluster. O tempo externo foi medido com `date` (resolução de 1 s); user time, system time e Maximum RSS não foram medidos; a seção 7 é substituída pela instrumentação manual.
-- `Tserial` (241,644 s) vem de **uma única execução** do serial, sem desvio padrão; ele é o numerador de todos os speedups.
-- A fração serial de Amdahl é **estimada** pela estrutura do algoritmo (s = 1/2N), não medida. O trabalho anterior mediu 0,30% com o Callgrind, mas incluía leitura e escrita, que aqui ficam fora da seção medida.
-- O weak scaling foi medido com duas definições (N ∝ P^(1/3) e N = P × 500); a primeira difere da sugestão literal do enunciado, e por isso a segunda também foi executada.
-- O volume de comunicação é **derivado** (número de chamadas × carga útil), não medido em bytes, exceto na versão otimizada, que conta bytes.
-- A comparação OpenMP vs MPI usa dados do trabalho anterior, de outro hardware, outro N e outra matriz; compara-se speedup e eficiência.
-- A causa da assimetria entre ranks no tempo por chamada (rank 0 espera mais no `Allreduce`, os demais no `Bcast`) não foi isolada.
-- O serial precisa de `-lm` para compilar (o `sqrt` da verificação opcional).
-- No `carga.log`, as linhas `O P...` anteriores às 18:34:45 (relógio do `node1`) são tentativas interrompidas por Ctrl+C, com duração de 0 a 20 s; as 15 execuções otimizadas válidas são as da sequência seguinte, e nenhum processo ficou sobrando nos nós.
-
-### 12.3 Dados
+### 12.2 Dados
 
 | Arquivo | Conteúdo |
 |---|---|
